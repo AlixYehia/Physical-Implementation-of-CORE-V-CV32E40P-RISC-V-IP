@@ -1,7 +1,0 @@
-#@ # 
-#@ # Running icc2_lm_shell Version O-2018.06-SP1 for linux64 -- Jul 17, 2018
-#@ # Date:   Wed Jun 18 17:12:55 2025
-#@ # Run by: ICer@IC_EDA
-#@ 
-
-source -echo -verbose create_stdcell_ndm.tcl
