@@ -1,0 +1,141 @@
+
+*#########################################################################################
+*# SAED 14NM 1p9m STAR-RC Layer mapping file 						 #
+*# Author:         Hayk Avetisyan							 #
+*# drawing grid:   0.005 microns							 #
+*#											 #
+*# Revision History:									 #
+*# Rev.		date		what							 #
+*# --------------------------------------------------------------------------------------#	
+*# 1.0		10/Jan/2018	(First draft)						 #
+*#########################################################################################
+
+
+conducting_layers
+
+    psub		SUBSTRATE 
+    nwnr		SUBSTRATE 
+    pwell		SUBSTRATE
+    nwell               SUBSTRATE
+
+    diff                DIFF RPSQ=0
+    pdiffdio		DIFF RPSQ=0
+    ndiffdio		DIFF RPSQ=0
+    
+    nsd 		DIFF RPSQ=0
+    psd 		DIFF RPSQ=0
+    ntap 		DIFF RPSQ=0
+    ptap 		DIFF RPSQ=0
+    psdr                DIFF RPSQ=0 
+    nsdr                DIFF RPSQ=0
+    
+    1_0V_BJT_BASE	     DIFF RPSQ=0
+    1_0V_BJT_COLL	     DIFF RPSQ=0
+    1_0V_BJT_EMIT	     DIFF RPSQ=0
+    1_0V_BJT_COLL_NPN	     DIFF RPSQ=0
+    1_0V_BJT_EMIT_NPN	     DIFF RPSQ=0
+    1_0V_BJT_BASE_NPN	     DIFF RPSQ=0
+    
+    poly                POLY RPSQ=0
+    ngatepl      	POLY RPSQ=0
+    pgatepl      	POLY RPSQ=0
+    
+    
+    subtie_scon         SUBSTRATE
+    subtie              SUBSTRATE
+    pdores              DIFF RPSQ=0
+    ndores              DIFF RPSQ=0
+    
+
+    pgate		POLY RPSQ=0
+    ngate		POLY RPSQ=0
+    ngate_08 		POLY RPSQ=0
+    pgate_08 		POLY RPSQ=0
+    ngate_18 		POLY RPSQ=0	    
+    pgate_18 		POLY RPSQ=0
+    ngate_15		POLY RPSQ=0
+    pgate_15		POLY RPSQ=0
+    ngate_08_lvt 	POLY RPSQ=0
+    pgate_08_lvt 	POLY RPSQ=0
+    ngate_08_hvt 	POLY RPSQ=0
+    pgate_08_hvt 	POLY RPSQ=0
+    ngate_08_slvt 	POLY RPSQ=0
+    pgate_08_slvt 	POLY RPSQ=0
+    ponr		POLY 
+    ppores		POLY RPSQ=0
+    npores		POLY RPSQ=0
+    ppores_sblk		POLY RPSQ=0
+    npores_sblk		POLY RPSQ=0
+    
+    m1 			M1
+    m1res		M1 RPSQ=0
+
+    m1_3 			M1_3
+    m1_3res		M1_3 RPSQ=0
+
+    m2 			M2
+    m2res		M2 RPSQ=0 			
+
+    m2_3 		M2_3
+    m2_3res		M2_3 RPSQ=0
+    
+    m3 			M3
+    m3res		M3 RPSQ=0 
+
+    m3_3 		M3_3
+    m3_3res		M3_3 RPSQ=0
+    
+    m4 			M4
+    m4res		M4 RPSQ=0 
+    
+    m5 			M5
+    m5res		M5 RPSQ=0
+    
+    m6 			M6 
+    m6res		M6 RPSQ=0
+    
+    m7 			M7 
+    m7res		M7 RPSQ=0
+    
+    m8 			M8 
+    m8res		M8 RPSQ=0
+    
+    m9 			M9 
+    m9res		M9 RPSQ=0
+    
+    mrdl 		MRDL
+
+via_layers
+
+    pwell_cont		SUBCONT AREA=0.144 RPV=0
+    nwell_cont		SUBCONT AREA=0.144 RPV=0
+
+	via0		VIA0
+    via1		VIA1	
+    via2		VIA2
+    via3		VIA3
+    via4		VIA4
+    via5		VIA5
+    via6		VIA6
+    via7		VIA7
+    via8		VIA8
+    viardl              VIARDL
+    
+    1_0V_BJT_BASE_cont_NPN   DIFFCONT
+    1_0V_BJT_BASE_cont       DIFFCONT
+    1_0V_BJT_COLL_cont       DIFFCONT
+    1_0V_BJT_EMIT_cont       DIFFCONT
+    1_0V_BJT_COLL_cont_NPN   DIFFCONT
+
+marker_layers
+    m1pin_marker 
+    m2pin_marker 
+    m3pin_marker 
+    m4pin_marker 
+    m5pin_marker 
+    m6pin_marker 
+    m7pin_marker 
+    m8pin_marker 
+    m9pin_marker 
+  
+remove_layers
