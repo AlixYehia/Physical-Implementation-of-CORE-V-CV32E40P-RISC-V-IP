@@ -10,6 +10,7 @@ This project showcases the **full ASIC physical implementation** of the [CORE-V 
 ## 🛠️ Tools & Technologies
 
 - **Technology**: SAED 14nm standard cell library
+- **Data Format**: Synopsys New Data Model (NDM)
 - **Synthesis**: Synopsys Design Compiler
 - **Place & Route**: Synopsys IC Compiler II (ICC2)
 - **Timing Analysis**: Synopsys PrimeTime
