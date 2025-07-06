@@ -1,0 +1,250 @@
+Error: Library Compiler executable path is not set. (PT-063)
+
+                                 PrimeTime (R)
+
+               Version O-2018.06-SP1 for linux64 - Jul 19, 2018 
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+file delete -force ./work
+set multi_scenario_working_directory ./work 
+./work
+create_scenario -name func_slow_Cmax -image sessions/func_slow_Cmax
+1
+create_scenario -name func_slow_Cmin -image sessions/func_slow_Cmin
+1
+create_scenario -name func_fast_Cmax -image sessions/func_fast_Cmax
+1
+create_scenario -name func_fast_Cmin -image sessions/func_fast_Cmin
+1
+set_host_options -num_processes 4 -max_cores 4
+1
+start_hosts
+Launching 4 Distributed Worker(s)
+   1] Launched : sh localhost /home/synopsys/pts/O-2018.06-SP1/bin/pt_shell \
+                  -slv_type dmsa_slv -max_cores 4
+
+   2] Launched : sh localhost /home/synopsys/pts/O-2018.06-SP1/bin/pt_shell \
+                  -slv_type dmsa_slv -max_cores 4
+
+   3] Launched : sh localhost /home/synopsys/pts/O-2018.06-SP1/bin/pt_shell \
+                  -slv_type dmsa_slv -max_cores 4
+
+   4] Launched : sh localhost /home/synopsys/pts/O-2018.06-SP1/bin/pt_shell \
+                  -slv_type dmsa_slv -max_cores 4
+
+  ---------------------------------------------------------------------------
+  Distributed farm creation timeout   : 21600 seconds
+  Waiting for   4 (of   4) workers    : Sun Jul  6 21:54:52 2025
+  Waiting for   0 (of   4) workers    : Sun Jul  6 21:55:02 2025
+  ---------------------------------------------------------------------------
+
+1
+current_session {func_slow_Cmax func_slow_Cmin func_fast_Cmax func_fast_Cmin}
+{"func_slow_Cmax", "func_slow_Cmin", "func_fast_Cmax", "func_fast_Cmin"}
+############################ Before Fixing ############################
+report_constraints -all_violators > constraint_violations_before.rpt 
+report_global_timing > global_timing_before.rpt
+remote_execute {source /home/ICer/ITI/PnR_Grad/Backend/PnR/scripts/import/dont_use.tcl}
+
+Start of Master/Slave Task Processing
+-------------------------------------
+Started    : Command execution in scenario 'func_slow_Cmin'
+Started    : Command execution in scenario 'func_fast_Cmax'
+Started    : Command execution in scenario 'func_fast_Cmin'
+Started    : Command execution in scenario 'func_slow_Cmax'
+Succeeded  : Command execution in scenario 'func_fast_Cmin'
+Succeeded  : Command execution in scenario 'func_slow_Cmin'
+Succeeded  : Command execution in scenario 'func_slow_Cmax'
+Succeeded  : Command execution in scenario 'func_fast_Cmax'
+-----------------------------------
+End of Master/Slave Task Processing
+
+1
+fix_eco_timing -type setup -buffer_list {SAEDRVT14_BUF_1 SAEDRVT14_BUF_2 SAEDRVT14_BUF_3 SAEDRVT14_BUF_4 SAEDRVT14_BUF_6 SAEDRVT14_BUF_8 SAEDRVT14_BUF_10}
+Information: Starting timing fix iteration 1 at [ Sun Jul  6 21:55:27 2025 ]...
+Information: Analyzing scenarios...
+Information: Checked out license 'PrimeTime-SI' (PT-019)
+Information: Checked out license 'PrimeTime-SI' (PT-019)
+Information: Checked out license 'PrimeTime-SI' (PT-019)
+Information: Checked out license 'PrimeTime-SI' (PT-019)
+Information: 0 violating endpoints located in all scenarios... (PTECO-024)
+Information: Creating data base for fixing...
+Information: Fixing violations...
+Information: Finalizing ECO change list...
+Information: No more fixes are available.
+Information: The timing violation fixing process is complete.
+
+Final ECO Summary:
+--------------------------------------------------------
+Total number of commands                               0
+Total area increased                                0.00
+
+Fixing Summary:
+--------------------------------------------------------
+Total violating endpoints found                        0
+Total violating endpoints fixed                        0
+Total violating endpoints remaining                    0
+Total percentage of violations fixed                 0.0%
+
+Information: Elapsed time [               11 seconds ]
+Information: Completed at [ Sun Jul  6 21:55:38 2025 ]
+
+0
+fix_eco_timing -type hold -buffer_list {SAEDRVT14_BUF_1 SAEDRVT14_BUF_2 SAEDRVT14_BUF_3 SAEDRVT14_BUF_4 SAEDRVT14_BUF_6 SAEDRVT14_BUF_8 SAEDRVT14_BUF_10}
+Information: Starting timing fix iteration 1 at [ Sun Jul  6 21:55:39 2025 ]...
+Information: Analyzing scenarios...
+
+Available buffers:
+Lib_cell               Area
+--------------------------------------------------------
+SAEDRVT14_BUF_10       0.71
+SAEDRVT14_BUF_8        0.62
+SAEDRVT14_BUF_6        0.49
+SAEDRVT14_BUF_4        0.40
+SAEDRVT14_BUF_3        0.36
+SAEDRVT14_BUF_2        0.31
+SAEDRVT14_BUF_1        0.27
+
+Information: 0 violating endpoints located in all scenarios... (PTECO-024)
+Information: Creating data base for fixing...
+Information: Fixing violations...
+Information: Finalizing ECO change list...
+Information: No more fixes are available.
+Information: The timing violation fixing process is complete.
+
+Inserted buffers:
+   Count Lib_cell               Area          Total_area
+--------------------------------------------------------
+         No buffer           
+--------------------------------------------------------
+       0 TOTAL                                      0.00
+
+Final ECO Summary:
+--------------------------------------------------------
+Total number of commands                               0
+Total area increased                                0.00
+
+Fixing Summary:
+--------------------------------------------------------
+Total violating endpoints found                        0
+Total violating endpoints fixed                        0
+Total violating endpoints remaining                    0
+Total percentage of violations fixed                 0.0%
+
+Information: Elapsed time [                2 seconds ]
+Information: Completed at [ Sun Jul  6 21:55:41 2025 ]
+
+0
+fix_eco_drc -type max_capacitance -buffer_list {SAEDRVT14_BUF_1 SAEDRVT14_BUF_2 SAEDRVT14_BUF_3 SAEDRVT14_BUF_4 SAEDRVT14_BUF_6 SAEDRVT14_BUF_8 SAEDRVT14_BUF_10}
+Information: Starting DRC fix iteration 1 at [ Sun Jul  6 21:55:41 2025 ]...
+Information: Analyzing scenarios...
+
+Available buffers:
+Lib_cell               Area
+--------------------------------------------------------
+SAEDRVT14_BUF_10       0.71
+SAEDRVT14_BUF_8        0.62
+SAEDRVT14_BUF_6        0.49
+SAEDRVT14_BUF_4        0.40
+SAEDRVT14_BUF_3        0.36
+SAEDRVT14_BUF_2        0.31
+SAEDRVT14_BUF_1        0.27
+
+Information: 1 max capacitance violations located in the func_slow_Cmax scenario... (PTECO-023)
+Information: 1 max capacitance violations located in all scenarios... (PTECO-024)
+Information: Creating data base for fixing...
+Information: Fixing violations...
+Information: Finalizing ECO change list...
+Information: Starting updating timing at [ Sun Jul  6 21:56:13 2025 ]...
+Information: Finished updating timing at [ Sun Jul  6 21:56:14 2025 ]...
+Information: 1 cells have been resized.
+
+Information: Starting DRC fix iteration 2 at [ Sun Jul  6 21:56:14 2025 ]...
+Information: Analyzing scenarios...
+Information: 0 max capacitance violations located in all scenarios... (PTECO-024)
+Information: No more fixes are available.
+Information: The DRC violation fixing process is complete.
+
+
+Remaining Violations:
+Scenario                               Total  Unfixable
+--------------------------------------------------------
+func_slow_Cmax                             0          0
+func_slow_Cmin                             0          0
+func_fast_Cmax                             0          0
+func_fast_Cmin                             0          0
+--------------------------------------------------------
+Total                                      0          0
+
+Inserted buffers:
+   Count Lib_cell               Area          Total_area
+--------------------------------------------------------
+         No buffer           
+--------------------------------------------------------
+       0 TOTAL                                      0.00
+
+Final ECO Summary:
+--------------------------------------------------------
+Number of size_cell commands                           1
+Total number of commands                               1
+Area increased by cell sizing                       0.13
+Total area increased                                0.13
+
+Information: Elapsed time [               34 seconds ]
+Information: Completed at [ Sun Jul  6 21:56:15 2025 ]
+
+1
+############################ After Fixing ############################
+report_constraints -all_violators > constraint_violations_after.rpt 
+report_global_timing > global_timing_after.rpt
+remote_execute {write_changes -o /home/ICer/ITI/PnR_Grad/Backend/PrimeTime/output/eco.tcl}
+
+Start of Master/Slave Task Processing
+-------------------------------------
+Started    : Command execution in scenario 'func_fast_Cmin'
+Started    : Command execution in scenario 'func_slow_Cmin'
+Started    : Command execution in scenario 'func_fast_Cmax'
+Started    : Command execution in scenario 'func_slow_Cmax'
+Succeeded  : Command execution in scenario 'func_slow_Cmin'
+Succeeded  : Command execution in scenario 'func_slow_Cmax'
+Succeeded  : Command execution in scenario 'func_fast_Cmax'
+Succeeded  : Command execution in scenario 'func_fast_Cmin'
+-----------------------------------
+End of Master/Slave Task Processing
+
+1
+exit
+
+Timing updates: 0 (0 implicit, 0 explicit) (0 incremental, 0 full, 0 logical)
+Noise updates: 0 (0 implicit, 0 explicit) (0 incremental, 0 full)
+
+Maximum memory usage for distributed processes:
+AUTO_0          3   localhost          1471.09 MB
+                1   localhost          1455.60 MB
+                2   localhost          1471.09 MB
+                4   localhost          1455.60 MB
+CPU time usage for distributed processes:
+AUTO_0          3   localhost          35 seconds
+                1   localhost          34 seconds
+                2   localhost          34 seconds
+                4   localhost          35 seconds
+Elapsed time for distributed processes:
+AUTO_0          3   localhost          82 seconds
+                1   localhost          82 seconds
+                2   localhost          82 seconds
+                4   localhost          82 seconds
+Maximum memory usage for this session: 996.82 MB
+CPU usage for this session: 3 seconds 
+Elapsed time for this session: 90 seconds
+Shutting down worker processes ...
+ Shutdown Process 3
+ Shutdown Process 1
+ Shutdown Process 2
+ Shutdown Process 4
+Diagnostics summary: 1 error, 13 informationals
+
+Thank you for using pt_shell!

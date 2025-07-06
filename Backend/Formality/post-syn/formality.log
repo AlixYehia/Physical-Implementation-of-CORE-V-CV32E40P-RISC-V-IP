@@ -1,0 +1,124 @@
+****************************************************
+
+Info:  Net Imp:/WORK/cv32e40p_prefetch_controller_PULP_OBI0_COREV_PULP0_DEPTH2_DW01_add_0/SUM[1] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_prefetch_controller_PULP_OBI0_COREV_PULP0_DEPTH2_DW01_add_0/SUM[0] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_prefetch_controller_PULP_OBI0_COREV_PULP0_DEPTH2_DW01_add_0/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_aligner_DW01_add_0/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_aligner_DW01_add_1/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_if_stage_COREV_PULP0_PULP_OBI0_PULP_SECURE0_FPU0_ZFINX0_DW01_add_0/SUM[0] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_if_stage_COREV_PULP0_PULP_OBI0_PULP_SECURE0_FPU0_ZFINX0_DW01_add_0/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_id_stage_COREV_PULP0_COREV_CLUSTER0_N_HWLP2_PULP_SECURE0_USE_PMP0_A_EXTENSION0_APU0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_DEBUG_TRIGGER_EN1_DW01_add_0/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_id_stage_COREV_PULP0_COREV_CLUSTER0_N_HWLP2_PULP_SECURE0_USE_PMP0_A_EXTENSION0_APU0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_DEBUG_TRIGGER_EN1_DW01_add_1/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_id_stage_COREV_PULP0_COREV_CLUSTER0_N_HWLP2_PULP_SECURE0_USE_PMP0_A_EXTENSION0_APU0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_DEBUG_TRIGGER_EN1_DW01_add_2/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_alu_div_DW01_sub_0/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_alu_div_DW01_add_0/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_alu_div_DW01_sub_1/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_alu_div_DW01_cmp6_0/LT is undriven.
+Info:  Net Imp:/WORK/cv32e40p_alu_div_DW01_cmp6_0/LE is undriven.
+Info:  Net Imp:/WORK/cv32e40p_alu_div_DW01_cmp6_0/GE is undriven.
+Info:  Net Imp:/WORK/cv32e40p_alu_div_DW01_cmp6_0/NE is undriven.
+Info:  Net Imp:/WORK/cv32e40p_alu_DW01_cmp6_4/LT is undriven.
+Info:  Net Imp:/WORK/cv32e40p_alu_DW01_cmp6_4/GT is undriven.
+Info:  Net Imp:/WORK/cv32e40p_alu_DW01_cmp6_4/LE is undriven.
+Info:  Net Imp:/WORK/cv32e40p_alu_DW01_cmp6_4/GE is undriven.
+Info:  Net Imp:/WORK/cv32e40p_alu_DW01_cmp6_4/NE is undriven.
+Info:  Net Imp:/WORK/cv32e40p_alu_DW01_add_1/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_alu_DW01_ash_1/B[0] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_alu_DW01_add_2/SUM[27] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_alu_DW01_add_2/SUM[18] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_alu_DW01_add_2/SUM[9] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_alu_DW01_add_2/SUM[0] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_alu_DW01_add_2/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW01_ash_0/B[0] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW01_add_17/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW01_add_16/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW01_add_15/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_6/PRODUCT[33] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_6/PRODUCT[32] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW01_add_14/SUM[31] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW01_add_14/SUM[30] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW01_add_14/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_5/PRODUCT[33] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_5/PRODUCT[32] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW01_add_13/SUM[31] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW01_add_13/SUM[30] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW01_add_13/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW01_add_12/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW01_add_11/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW01_add_10/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[63] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[62] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[61] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[60] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[59] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[58] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[57] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[56] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[55] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[54] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[53] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[52] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[51] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[50] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[49] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[48] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[47] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[46] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[45] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[44] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[43] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[42] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[41] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[40] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[39] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[38] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[37] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[36] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[35] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[34] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[33] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW02_mult_4/PRODUCT[32] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW01_add_8/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW01_add_7/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW01_add_6/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW01_add_5/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW01_add_4/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW01_add_3/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW01_add_2/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW01_add_1/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_mult_DW01_add_0/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_load_store_unit_PULP_OBI0_DW02_mult_0/PRODUCT[32] is undriven.
+Info:  Net Imp:/WORK/cv32e40p_load_store_unit_PULP_OBI0_DW01_add_0/CO is undriven.
+Info:  Net Imp:/WORK/cv32e40p_cs_registers_N_HWLP2_APU0_A_EXTENSION0_FPU0_ZFINX0_PULP_SECURE0_USE_PMP0_N_PMP_ENTRIES16_NUM_MHPMCOUNTERS1_COREV_PULP0_COREV_CLUSTER0_DEBUG_TRIGGER_EN1_DW01_cmp6_0/LT is undriven.
+Info:  Net Imp:/WORK/cv32e40p_cs_registers_N_HWLP2_APU0_A_EXTENSION0_FPU0_ZFINX0_PULP_SECURE0_USE_PMP0_N_PMP_ENTRIES16_NUM_MHPMCOUNTERS1_COREV_PULP0_COREV_CLUSTER0_DEBUG_TRIGGER_EN1_DW01_cmp6_0/GT is undriven.
+Info:  Net Imp:/WORK/cv32e40p_cs_registers_N_HWLP2_APU0_A_EXTENSION0_FPU0_ZFINX0_PULP_SECURE0_USE_PMP0_N_PMP_ENTRIES16_NUM_MHPMCOUNTERS1_COREV_PULP0_COREV_CLUSTER0_DEBUG_TRIGGER_EN1_DW01_cmp6_0/LE is undriven.
+Info:  Net Imp:/WORK/cv32e40p_cs_registers_N_HWLP2_APU0_A_EXTENSION0_FPU0_ZFINX0_PULP_SECURE0_USE_PMP0_N_PMP_ENTRIES16_NUM_MHPMCOUNTERS1_COREV_PULP0_COREV_CLUSTER0_DEBUG_TRIGGER_EN1_DW01_cmp6_0/GE is undriven.
+Info:  Net Imp:/WORK/cv32e40p_cs_registers_N_HWLP2_APU0_A_EXTENSION0_FPU0_ZFINX0_PULP_SECURE0_USE_PMP0_N_PMP_ENTRIES16_NUM_MHPMCOUNTERS1_COREV_PULP0_COREV_CLUSTER0_DEBUG_TRIGGER_EN1_DW01_cmp6_0/NE is undriven.
+Info:  guide_uniquify 444 (Line: 3557)  Cannot find object "core_i/load_store_unit_i/dp_cluster_0/mult_add_346_aco" in design 'cv32e40p_top'.
+Info:  SVF Operation 444 (Line: 3557) - uniquify.  Status: rejected
+Info:  guide_uniquify 445 (Line: 3561)  Cannot find object "core_i/ex_stage_i/mult_i/dp_cluster_3/mult_266" in design 'cv32e40p_top'.
+Info:  SVF Operation 445 (Line: 3561) - uniquify.  Status: rejected
+Info:  guide_uniquify 446 (Line: 3565)  Cannot find object "core_i/ex_stage_i/mult_i/dp_cluster_3/mult_267" in design 'cv32e40p_top'.
+Info:  SVF Operation 446 (Line: 3565) - uniquify.  Status: rejected
+Info:  guide_uniquify 447 (Line: 3569)  Cannot find object "core_i/ex_stage_i/mult_i/dp_cluster_3/mult_268" in design 'cv32e40p_top'.
+Info:  SVF Operation 447 (Line: 3569) - uniquify.  Status: rejected
+Info:  guide_uniquify 448 (Line: 3573)  Cannot find object "core_i/ex_stage_i/mult_i/dp_cluster_3/mult_269" in design 'cv32e40p_top'.
+Info:  SVF Operation 448 (Line: 3573) - uniquify.  Status: rejected
+Info:  guide_uniquify 449 (Line: 3577)  Cannot find object "core_i/ex_stage_i/mult_i/dp_cluster_2/mult_224" in design 'cv32e40p_top'.
+Info:  SVF Operation 449 (Line: 3577) - uniquify.  Status: rejected
+Info:  guide_uniquify 450 (Line: 3581)  Cannot find object "core_i/ex_stage_i/mult_i/dp_cluster_1/mult_299" in design 'cv32e40p_top'.
+Info:  SVF Operation 450 (Line: 3581) - uniquify.  Status: rejected
+Info:  guide_uniquify 451 (Line: 3585)  Cannot find object "core_i/ex_stage_i/mult_i/dp_cluster_1/mult_300" in design 'cv32e40p_top'.
+Info:  SVF Operation 451 (Line: 3585) - uniquify.  Status: rejected
+Info:  guide_uniquify 452 (Line: 3589)  Cannot find object "core_i/ex_stage_i/mult_i/dp_cluster_0/mult_110" in design 'cv32e40p_top'.
+Info:  Pre-verification of Ref:/WORK/cv32e40p_mult/mult_110 SUCCEEDED.
+Info:  Pre-verification of Ref:/WORK/cv32e40p_mult/mult_224 SUCCEEDED.
+Info:  Pre-verification of Ref:/WORK/cv32e40p_mult/mult_266 SUCCEEDED.
+Info:  Pre-verification of Ref:/WORK/cv32e40p_mult/mult_267 SUCCEEDED.
+Info:  Pre-verification of Ref:/WORK/cv32e40p_mult/mult_268 SUCCEEDED.
+Info:  Pre-verification of Ref:/WORK/cv32e40p_mult/mult_269 SUCCEEDED.
+Info:  Pre-verification of Ref:/WORK/cv32e40p_mult/mult_299 SUCCEEDED.
+Info:  Pre-verification of Ref:/WORK/cv32e40p_mult/mult_300 SUCCEEDED.
+Info:  Pre-verification of Ref:/WORK/cv32e40p_load_store_unit_PULP_OBI0/mult_add_346_aco SUCCEEDED.
+****************************************************
+

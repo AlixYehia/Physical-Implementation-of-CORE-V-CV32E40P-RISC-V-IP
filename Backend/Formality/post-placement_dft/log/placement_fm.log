@@ -1,0 +1,561 @@
+
+                                 Formality (R)
+
+               Version L-2016.03-SP1 for linux64 - Apr 13, 2016 
+
+                    Copyright (c) 1988 - 2016 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+  ** Highlights of Formality (R) Version L-2016.03 **
+   - New alternate verification strategies for resolving inconclusive verifications
+   - Automation for deploying alternate strategies
+   - New command to export the mapping of reference to implementation registers
+   - New capability to combine PG and low power information from db libraries with Verilog functional models
+
+   * Please refer to the Formality Release Notes for details and additional enhancements
+
+Build: 4031317
+Hostname: IC_EDA (RHEL64)
+Current time: Mon Jul  7 00:00:59 2025
+
+Loading db file '/home/synopsys/Formality2016/libraries/syn/gtech.db'
+set_host_options -max_cores 12
+Warning:  max_cores must be <= 8; setting max_cores to 8.
+1
+############################  Search PATH ################################
+set top_module cv32e40p_top
+cv32e40p_top
+set rtl       "/home/ICer/ITI/PnR_Grad/rtl"
+/home/ICer/ITI/PnR_Grad/rtl
+set LIB_PATH  "/mnt/hgfs/saed14_pdk/stdcell_rvt/db_ccs"
+/mnt/hgfs/saed14_pdk/stdcell_rvt/db_ccs
+lappend search_path $LIB_PATH
+/mnt/hgfs/saed14_pdk/stdcell_rvt/db_ccs
+lappend search_path $rtl
+/mnt/hgfs/saed14_pdk/stdcell_rvt/db_ccs /home/ICer/ITI/PnR_Grad/rtl
+lappend search_path "/home/ICer/ITI/PnR_Grad/Backend/DFT"
+/mnt/hgfs/saed14_pdk/stdcell_rvt/db_ccs /home/ICer/ITI/PnR_Grad/rtl /home/ICer/ITI/PnR_Grad/Backend/DFT
+lappend search_path "/home/ICer/ITI/PnR_Grad/rtl/include"
+/mnt/hgfs/saed14_pdk/stdcell_rvt/db_ccs /home/ICer/ITI/PnR_Grad/rtl /home/ICer/ITI/PnR_Grad/Backend/DFT /home/ICer/ITI/PnR_Grad/rtl/include
+lappend search_path "/home/ICer/ITI/PnR_Grad/rtl/vendor/pulp_platform_fpnew/src"
+/mnt/hgfs/saed14_pdk/stdcell_rvt/db_ccs /home/ICer/ITI/PnR_Grad/rtl /home/ICer/ITI/PnR_Grad/Backend/DFT /home/ICer/ITI/PnR_Grad/rtl/include /home/ICer/ITI/PnR_Grad/rtl/vendor/pulp_platform_fpnew/src
+####################### Read Reference tech libs ########################
+set SSLIB "saed14rvt_ss0p6v125c.db" 
+saed14rvt_ss0p6v125c.db
+set TTLIB "saed14rvt_tt0p6v25c.db"
+saed14rvt_tt0p6v25c.db
+set FFLIB "saed14rvt_ff0p88v125c.db"
+saed14rvt_ff0p88v125c.db
+######################### Formality Setup File ###########################
+# Synopsys setup variable
+set synopsys_auto_setup true
+true
+# Formality Setup File
+set_svf $top_module.svf
+SVF set to '/home/ICer/ITI/PnR_Grad/Backend/DFT/cv32e40p_top.svf'.
+1
+###################################################################
+###################### Reference Container ########################
+###################################################################
+read_sverilog  -container Ref cv32e40p_pkg.sv
+No target library specified, default is WORK
+Initializing DesignWare ...
+Initialization Complete
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/include/cv32e40p_pkg.sv'
+Created container 'Ref'
+Current container set to 'Ref'
+1
+read_sverilog  -container Ref cv32e40p_fpu_pkg.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/include/cv32e40p_fpu_pkg.sv'
+1
+read_sverilog  -container Ref cv32e40p_apu_core_pkg.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/include/cv32e40p_apu_core_pkg.sv'
+1
+read_sverilog  -container Ref fpnew_pkg.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/vendor/pulp_platform_fpnew/src/fpnew_pkg.sv'
+Warning: Use of signed'() and unsigned'() may cause a simulation and synthesis mismatch. (Signal: <unknown> Block: /fpnew_pkg/max_fp_width File: /home/ICer/ITI/PnR_Grad/rtl/vendor/pulp_platform_fpnew/src/fpnew_pkg.sv Line: 313)  (FMR_VLOG-089)
+Warning: Use of signed'() and unsigned'() may cause a simulation and synthesis mismatch. (Signal: <unknown> Block: /fpnew_pkg/min_fp_width File: /home/ICer/ITI/PnR_Grad/rtl/vendor/pulp_platform_fpnew/src/fpnew_pkg.sv Line: 322)  (FMR_VLOG-089)
+Warning: Use of signed'() and unsigned'() may cause a simulation and synthesis mismatch. (Signal: <unknown> Block: /fpnew_pkg/bias File: /home/ICer/ITI/PnR_Grad/rtl/vendor/pulp_platform_fpnew/src/fpnew_pkg.sv Line: 338)  (FMR_VLOG-089)
+Warning: Use of signed'() and unsigned'() may cause a simulation and synthesis mismatch. (Signal: <unknown> Block: /fpnew_pkg/super_format File: /home/ICer/ITI/PnR_Grad/rtl/vendor/pulp_platform_fpnew/src/fpnew_pkg.sv Line: 346)  (FMR_VLOG-089)
+Warning: Use of signed'() and unsigned'() may cause a simulation and synthesis mismatch. (Signal: <unknown> Block: /fpnew_pkg/super_format File: /home/ICer/ITI/PnR_Grad/rtl/vendor/pulp_platform_fpnew/src/fpnew_pkg.sv Line: 347)  (FMR_VLOG-089)
+   ATTENTION: RTL interpretation messages were produced during read.
+              Verification results may disagree with a logic simulator.
+1
+read_sverilog  -container Ref cv32e40p_aligner.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/cv32e40p_aligner.sv'
+1
+read_sverilog  -container Ref cv32e40p_alu.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/cv32e40p_alu.sv'
+Warning: Vector reference made with the scalar variable 'operator_i'. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_alu.sv Line: 909)  (FMR_VLOG-068)
+1
+read_sverilog  -container Ref cv32e40p_alu_div.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/cv32e40p_alu_div.sv'
+1
+read_sverilog  -container Ref cv32e40p_apu_disp.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/cv32e40p_apu_disp.sv'
+1
+read_sverilog  -container Ref cv32e40p_compressed_decoder.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/cv32e40p_compressed_decoder.sv'
+1
+read_sverilog  -container Ref cv32e40p_controller.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/cv32e40p_controller.sv'
+1
+read_sverilog  -container Ref cv32e40p_core.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/cv32e40p_core.sv'
+1
+read_sverilog  -container Ref cv32e40p_cs_registers.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/cv32e40p_cs_registers.sv'
+Warning: Vector reference made with the scalar variable 'csr_addr_i'. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_cs_registers.sv Line: 382)  (FMR_VLOG-068)
+Warning: Vector reference made with the scalar variable 'csr_addr_i'. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_cs_registers.sv Line: 404)  (FMR_VLOG-068)
+Warning: Vector reference made with the scalar variable 'csr_addr_i'. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_cs_registers.sv Line: 416)  (FMR_VLOG-068)
+Warning: Vector reference made with the scalar variable 'csr_addr_i'. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_cs_registers.sv Line: 436)  (FMR_VLOG-068)
+Warning: Vector reference made with the scalar variable 'csr_addr_i'. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_cs_registers.sv Line: 549)  (FMR_VLOG-068)
+Warning: Vector reference made with the scalar variable 'csr_addr_i'. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_cs_registers.sv Line: 571)  (FMR_VLOG-068)
+Warning: Vector reference made with the scalar variable 'csr_addr_i'. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_cs_registers.sv Line: 583)  (FMR_VLOG-068)
+Warning: Vector reference made with the scalar variable 'csr_addr_i'. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_cs_registers.sv Line: 744)  (FMR_VLOG-068)
+Warning: Vector reference made with the scalar variable 'csr_addr_i'. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_cs_registers.sv Line: 745)  (FMR_VLOG-068)
+Warning: Vector reference made with the scalar variable 'csr_addr_i'. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_cs_registers.sv Line: 1405)  (FMR_VLOG-068)
+1
+read_sverilog  -container Ref cv32e40p_decoder.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/cv32e40p_decoder.sv'
+1
+read_sverilog  -container Ref cv32e40p_ex_stage.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/cv32e40p_ex_stage.sv'
+1
+read_sverilog  -container Ref cv32e40p_ff_one.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/cv32e40p_ff_one.sv'
+1
+read_sverilog  -container Ref cv32e40p_fifo.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/cv32e40p_fifo.sv'
+1
+read_sverilog  -container Ref cv32e40p_fp_wrapper.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/cv32e40p_fp_wrapper.sv'
+1
+read_sverilog  -container Ref cv32e40p_hwloop_regs.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/cv32e40p_hwloop_regs.sv'
+1
+read_sverilog  -container Ref cv32e40p_id_stage.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/cv32e40p_id_stage.sv'
+1
+read_sverilog  -container Ref cv32e40p_if_stage.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/cv32e40p_if_stage.sv'
+1
+read_sverilog  -container Ref cv32e40p_int_controller.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/cv32e40p_int_controller.sv'
+1
+read_sverilog  -container Ref cv32e40p_load_store_unit.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/cv32e40p_load_store_unit.sv'
+1
+read_sverilog  -container Ref cv32e40p_mult.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/cv32e40p_mult.sv'
+1
+read_sverilog  -container Ref cv32e40p_obi_interface.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/cv32e40p_obi_interface.sv'
+1
+read_sverilog  -container Ref cv32e40p_popcnt.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/cv32e40p_popcnt.sv'
+1
+read_sverilog  -container Ref cv32e40p_prefetch_buffer.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/cv32e40p_prefetch_buffer.sv'
+1
+read_sverilog  -container Ref cv32e40p_prefetch_controller.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/cv32e40p_prefetch_controller.sv'
+1
+read_sverilog  -container Ref cv32e40p_register_file_ff.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/cv32e40p_register_file_ff.sv'
+1
+read_sverilog  -container Ref cv32e40p_sleep_unit.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/cv32e40p_sleep_unit.sv'
+1
+read_sverilog  -container Ref cv32e40p_clock_gate.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/cv32e40p_clock_gate.sv'
+1
+read_sverilog  -container Ref mux2X1.sv
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/mux2X1.sv'
+1
+read_sverilog  -container Ref "/home/ICer/ITI/PnR_Grad/rtl/dft_top/cv32e40p_top.sv"
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/rtl/dft_top/cv32e40p_top.sv'
+1
+# Read Reference technology libraries
+read_db -container Ref [list $TTLIB]
+Loading db file '/mnt/hgfs/saed14_pdk/stdcell_rvt/db_ccs/saed14rvt_tt0p6v25c.db'
+1
+# set the top Reference Design
+set_reference_design cv32e40p_top
+Reference design set to 'Ref:/WORK/cv32e40p_top'
+1
+set_top cv32e40p_top
+Setting top design to 'Ref:/WORK/cv32e40p_top'
+Status:   Elaborating design cv32e40p_top   ...  
+Status:   Elaborating design mux2X1   ...  
+Status:   Elaborating design cv32e40p_core  COREV_PULP=0, COREV_CLUSTER=0, FPU=0, FPU_ADDMUL_LAT=0, FPU_OTHERS_LAT=0, ZFINX=0, NUM_MHPMCOUNTERS=1 ...  
+Information: Created design named 'cv32e40p_core_COREV_PULP0_COREV_CLUSTER0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_NUM_MHPMCOUNTERS1'. (FE-LINK-13)
+Status:   Elaborating design cv32e40p_sleep_unit  COREV_CLUSTER=0 ...  
+Information: Created design named 'cv32e40p_sleep_unit_COREV_CLUSTER0'. (FE-LINK-13)
+Status:   Elaborating design cv32e40p_clock_gate   ...  
+Status:   Elaborating design cv32e40p_if_stage  COREV_PULP=0, PULP_OBI=0, PULP_SECURE=0, FPU=0, ZFINX=0 ...  
+Information: Created design named 'cv32e40p_if_stage_COREV_PULP0_PULP_OBI0_PULP_SECURE0_FPU0_ZFINX0'. (FE-LINK-13)
+Status:   Elaborating design cv32e40p_prefetch_buffer  PULP_OBI=0, COREV_PULP=0 ...  
+Information: Created design named 'cv32e40p_prefetch_buffer_PULP_OBI0_COREV_PULP0'. (FE-LINK-13)
+Status:   Elaborating design cv32e40p_prefetch_controller  PULP_OBI=0, COREV_PULP=0, DEPTH=2 ...  
+Information: Created design named 'cv32e40p_prefetch_controller_PULP_OBI0_COREV_PULP0_DEPTH2'. (FE-LINK-13)
+Status:   Elaborating design cv32e40p_fifo  FALL_THROUGH=1'b0, DATA_WIDTH=32, DEPTH=2 ...  
+Warning: You are using the parallel_case directive but some items may overlap. (Signal: <unknown> Block: /cv32e40p_fifo File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_fifo.sv Line: 117)  (FMR_ELAB-116)
+Information: Created design named 'cv32e40p_fifo_0_32_2'. (FE-LINK-13)
+Status:   Elaborating design cv32e40p_obi_interface  TRANS_STABLE=0 ...  
+Information: Created design named 'cv32e40p_obi_interface_TRANS_STABLE0'. (FE-LINK-13)
+Status:   Elaborating design cv32e40p_aligner   ...  
+Status:   Elaborating design cv32e40p_compressed_decoder  FPU=0, ZFINX=0 ...  
+Information: Created design named 'cv32e40p_compressed_decoder_FPU0_ZFINX0'. (FE-LINK-13)
+Status:   Elaborating design cv32e40p_id_stage  COREV_PULP=0, COREV_CLUSTER=0, N_HWLP=2, PULP_SECURE=0, USE_PMP=0, A_EXTENSION=0, APU=0, FPU=0, FPU_ADDMUL_LAT=0, FPU_OTHERS_LAT=0, ZFINX=0, APU_NARGS_CPU=3, APU_WOP_CPU=6, APU_NDSFLAGS_CPU=15, APU_NUSFLAGS_CPU=5, DEBUG_TRIGGER_EN=1 ...  
+Information: Created design named 'cv32e40p_id_stage_COREV_PULP0_COREV_CLUSTER0_N_HWLP2_PULP_SECURE0_USE_PMP0_A_EXTENSION0_APU0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_DEBUG_TRIGGER_EN1'. (FE-LINK-13)
+Status:   Elaborating design cv32e40p_register_file  ADDR_WIDTH=6, DATA_WIDTH=32, FPU=0, ZFINX=0 ...  
+Information: Created design named 'cv32e40p_register_file_ADDR_WIDTH6_DATA_WIDTH32_FPU0_ZFINX0'. (FE-LINK-13)
+Status:   Elaborating design cv32e40p_decoder  COREV_PULP=0, COREV_CLUSTER=0, A_EXTENSION=0, FPU=0, FPU_ADDMUL_LAT=0, FPU_OTHERS_LAT=0, ZFINX=0, PULP_SECURE=0, USE_PMP=0, APU_WOP_CPU=6, DEBUG_TRIGGER_EN=1 ...  
+Information: Created design named 'cv32e40p_decoder_COREV_PULP0_COREV_CLUSTER0_A_EXTENSION0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_PULP_SECURE0_USE_PMP0_APU_WOP_CPU6_DEBUG_TRIGGER_EN1'. (FE-LINK-13)
+Status:   Elaborating design cv32e40p_controller  COREV_CLUSTER=0, COREV_PULP=0, FPU=0 ...  
+Warning: You are using the parallel_case directive but some items may overlap. (Signal: <unknown> Block: /cv32e40p_controller/blk_decode_level1 File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_controller.sv Line: 541)  (FMR_ELAB-116)
+Warning: You are using the parallel_case directive but some items may overlap. (Signal: <unknown> Block: /cv32e40p_controller/blk_decode_level1 File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_controller.sv Line: 677)  (FMR_ELAB-116)
+Warning: You are using the parallel_case directive but some items may overlap. (Signal: <unknown> Block: /cv32e40p_controller File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_controller.sv Line: 932)  (FMR_ELAB-116)
+Warning: You are using the parallel_case directive but some items may overlap. (Signal: <unknown> Block: /cv32e40p_controller File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_controller.sv Line: 1054)  (FMR_ELAB-116)
+Warning: You are using the parallel_case directive but some items may overlap. (Signal: <unknown> Block: /cv32e40p_controller File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_controller.sv Line: 1122)  (FMR_ELAB-116)
+Information: Created design named 'cv32e40p_controller_COREV_CLUSTER0_COREV_PULP0_FPU0'. (FE-LINK-13)
+Status:   Elaborating design cv32e40p_int_controller  PULP_SECURE=0 ...  
+Information: Created design named 'cv32e40p_int_controller_PULP_SECURE0'. (FE-LINK-13)
+Status:   Elaborating design cv32e40p_ex_stage  COREV_PULP=0, FPU=0, APU_NARGS_CPU=3, APU_WOP_CPU=6, APU_NDSFLAGS_CPU=15, APU_NUSFLAGS_CPU=5 ...  
+Information: Created design named 'cv32e40p_ex_stage_COREV_PULP0_FPU0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5'. (FE-LINK-13)
+Status:   Elaborating design cv32e40p_alu   ...  
+Warning: Signed to unsigned assignment occurs. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_alu.sv Line: 275)  (FMR_VLOG-063)
+Warning: Signed to unsigned assignment occurs. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_alu.sv Line: 278)  (FMR_VLOG-063)
+Warning: Signed to unsigned assignment occurs. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_alu.sv Line: 284)  (FMR_VLOG-063)
+Warning: Signed to unsigned assignment occurs. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_alu.sv Line: 287)  (FMR_VLOG-063)
+Warning: Signed to unsigned assignment occurs. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_alu.sv Line: 290)  (FMR_VLOG-063)
+Warning: Signed to unsigned assignment occurs. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_alu.sv Line: 293)  (FMR_VLOG-063)
+Warning: Signed to unsigned assignment occurs. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_alu.sv Line: 168)  (FMR_VLOG-063)
+Status:   Elaborating design cv32e40p_popcnt   ...  
+Status:   Elaborating design cv32e40p_ff_one   ...  
+Status:   Elaborating design cv32e40p_alu_div   ...  
+Status:   Elaborating design cv32e40p_mult   ...  
+Warning: Signed to unsigned assignment occurs. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_mult.sv Line: 108)  (FMR_VLOG-063)
+Warning: Signed to unsigned assignment occurs. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_mult.sv Line: 110)  (FMR_VLOG-063)
+Warning: Signed to unsigned assignment occurs. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_mult.sv Line: 111)  (FMR_VLOG-063)
+Warning: Signed to unsigned assignment occurs. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_mult.sv Line: 114)  (FMR_VLOG-063)
+Warning: Signed to unsigned assignment occurs. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_mult.sv Line: 224)  (FMR_VLOG-063)
+Warning: Signed to unsigned assignment occurs. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_mult.sv Line: 266)  (FMR_VLOG-063)
+Warning: Signed to unsigned assignment occurs. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_mult.sv Line: 267)  (FMR_VLOG-063)
+Warning: Signed to unsigned assignment occurs. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_mult.sv Line: 268)  (FMR_VLOG-063)
+Warning: Signed to unsigned assignment occurs. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_mult.sv Line: 269)  (FMR_VLOG-063)
+Warning: Signed to unsigned assignment occurs. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_mult.sv Line: 271)  (FMR_VLOG-063)
+Warning: Signed to unsigned assignment occurs. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_mult.sv Line: 299)  (FMR_VLOG-063)
+Warning: Signed to unsigned assignment occurs. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_mult.sv Line: 300)  (FMR_VLOG-063)
+Warning: Signed to unsigned assignment occurs. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_mult.sv Line: 302)  (FMR_VLOG-063)
+Warning: Signed to unsigned assignment occurs. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_mult.sv Line: 305)  (FMR_VLOG-063)
+Warning: Signed to unsigned assignment occurs. (File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_mult.sv Line: 312)  (FMR_VLOG-063)
+Status:   Elaborating design cv32e40p_load_store_unit  PULP_OBI=0 ...  
+Information: Created design named 'cv32e40p_load_store_unit_PULP_OBI0'. (FE-LINK-13)
+Status:   Elaborating design cv32e40p_obi_interface  TRANS_STABLE=1 ...  
+Information: Created design named 'cv32e40p_obi_interface_TRANS_STABLE1'. (FE-LINK-13)
+Status:   Elaborating design cv32e40p_cs_registers  N_HWLP=2, APU=0, A_EXTENSION=0, FPU=0, ZFINX=0, PULP_SECURE=0, USE_PMP=0, N_PMP_ENTRIES=16, NUM_MHPMCOUNTERS=1, COREV_PULP=0, COREV_CLUSTER=0, DEBUG_TRIGGER_EN=1 ...  
+Warning: You are using the parallel_case directive but some items may overlap. (Signal: <unknown> Block: /cv32e40p_cs_registers File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_cs_registers.sv Line: 1041)  (FMR_ELAB-116)
+Warning: You are using the parallel_case directive but some items may overlap. (Signal: <unknown> Block: /cv32e40p_cs_registers File: /home/ICer/ITI/PnR_Grad/rtl/cv32e40p_cs_registers.sv Line: 1044)  (FMR_ELAB-116)
+Information: Created design named 'cv32e40p_cs_registers_N_HWLP2_APU0_A_EXTENSION0_FPU0_ZFINX0_PULP_SECURE0_USE_PMP0_N_PMP_ENTRIES16_NUM_MHPMCOUNTERS1_COREV_PULP0_COREV_CLUSTER0_DEBUG_TRIGGER_EN1'. (FE-LINK-13)
+Status:  Implementing inferred operators...
+
+************ Library Checking Summary ************
+Warning:  62 unlinked power cell(s) with unread pg pins.
+Warning:  845 unlinked power cell(s) with no power down functions on outputs.
+Warning:  2 unlinked power cell(s) with unread backup pg pins.
+Warning:  238 unlinked power cell(s) with no power down function on an ff or latch.
+        Use 'report_libraries -defects all' for more details.
+**************************************************
+
+Top design set to 'Ref:/WORK/cv32e40p_top' with warnings
+   ATTENTION: RTL interpretation messages were produced during link.
+              Verification results may disagree with a logic simulator.
+
+************ RTL Interpretation Summary ************
+************ Design: Ref:/WORK/cv32e40p_top
+8 FMR_ELAB-116 messages produced    
+
+Please refer to the Formality log file for more details,
+or execute report_hdlin_mismatches.
+****************************************************
+
+Reference design set to 'Ref:/WORK/cv32e40p_top'
+1
+###################################################################
+#################### Implementation Container #####################
+###################################################################
+# Read Implementation Design Files
+read_verilog -container Imp -netlist "/home/ICer/ITI/PnR_Grad/Backend/PnR_dft/netlists/cv32e40p_top_placed.v"
+No target library specified, default is WORK
+Loading verilog file '/home/ICer/ITI/PnR_Grad/Backend/PnR_dft/netlists/cv32e40p_top_placed.v'
+Created container 'Imp'
+Current container set to 'Imp'
+1
+# Read Implementation technology libraries
+read_db -container Imp [list $TTLIB]
+Loading db file '/mnt/hgfs/saed14_pdk/stdcell_rvt/db_ccs/saed14rvt_tt0p6v25c.db'
+1
+# set the top Implementation Design
+set_implementation_design cv32e40p_top
+Implementation design set to 'Imp:/WORK/cv32e40p_top'
+1
+set_top cv32e40p_top
+Setting top design to 'Imp:/WORK/cv32e40p_top'
+Status:  Implementing inferred operators...
+
+************ Library Checking Summary ************
+Warning:  62 unlinked power cell(s) with unread pg pins.
+Warning:  845 unlinked power cell(s) with no power down functions on outputs.
+Warning:  2 unlinked power cell(s) with unread backup pg pins.
+Warning:  238 unlinked power cell(s) with no power down function on an ff or latch.
+        Use 'report_libraries -defects all' for more details.
+**************************************************
+
+Top design successfully set to 'Imp:/WORK/cv32e40p_top'
+Implementation design set to 'Imp:/WORK/cv32e40p_top'
+1
+########################## Don't verify ###########################
+# do not verify scan in & scan out ports as a compare point as it is existed only after synthesis and not existed in the RTL
+#scan in
+set_dont_verify_points -type port Ref:/WORK/*/SI*
+Set don't verify point 'Ref:/WORK/cv32e40p_top/SI[0]'
+Set don't verify point 'Ref:/WORK/cv32e40p_top/SI[1]'
+Set don't verify point 'Ref:/WORK/cv32e40p_top/SI[2]'
+Set don't verify point 'Ref:/WORK/cv32e40p_top/SI[3]'
+Set don't verify point 'Ref:/WORK/cv32e40p_top/SI[4]'
+1
+set_dont_verify_points -type port Imp:/WORK/*/SI*
+Set don't verify point 'Imp:/WORK/cv32e40p_top/SI[0]'
+Set don't verify point 'Imp:/WORK/cv32e40p_top/SI[1]'
+Set don't verify point 'Imp:/WORK/cv32e40p_top/SI[2]'
+Set don't verify point 'Imp:/WORK/cv32e40p_top/SI[3]'
+Set don't verify point 'Imp:/WORK/cv32e40p_top/SI[4]'
+1
+#scan_out
+set_dont_verify_points -type port Ref:/WORK/*/SO*
+Set don't verify point 'Ref:/WORK/cv32e40p_top/SO[0]'
+Set don't verify point 'Ref:/WORK/cv32e40p_top/SO[1]'
+Set don't verify point 'Ref:/WORK/cv32e40p_top/SO[2]'
+Set don't verify point 'Ref:/WORK/cv32e40p_top/SO[3]'
+Set don't verify point 'Ref:/WORK/cv32e40p_top/SO[4]'
+1
+set_dont_verify_points -type port Imp:/WORK/*/SO*
+Set don't verify point 'Imp:/WORK/cv32e40p_top/SO[0]'
+Set don't verify point 'Imp:/WORK/cv32e40p_top/SO[1]'
+Set don't verify point 'Imp:/WORK/cv32e40p_top/SO[2]'
+Set don't verify point 'Imp:/WORK/cv32e40p_top/SO[3]'
+Set don't verify point 'Imp:/WORK/cv32e40p_top/SO[4]'
+1
+############################### contants ##########################
+# all atpg enable (test_mode, scan_enable) are zero during formal compare
+#test_mode
+set_constant Ref:/WORK/*/test_mode 0
+Set 'Ref:/WORK/cv32e40p_top/test_mode' to constant 0
+1
+set_constant Imp:/WORK/*/test_mode 0
+Set 'Imp:/WORK/cv32e40p_top/test_mode' to constant 0
+1
+#scan_enable
+set_constant Ref:/WORK/*/SE 0
+Set 'Ref:/WORK/cv32e40p_top/SE' to constant 0
+1
+set_constant Imp:/WORK/*/SE 0
+Set 'Imp:/WORK/cv32e40p_top/SE' to constant 0
+1
+###################### Matching Compare points ####################
+match
+Reference design is 'Ref:/WORK/cv32e40p_top'
+Implementation design is 'Imp:/WORK/cv32e40p_top'
+Status:  Checking designs...
+    Warning: 5 (94) undriven nets found in reference (implementation) design; see formality.log for list (FM-399)
+    Warning: 0 (3879) black-box references found in reference (implementation) design; see formality.log for list (FM-182)
+Status:  Building verification models...
+Status:  Processing Guide Commands...
+    Set 'Ref:/WORK/cv32e40p_top/SE' to constant 0    
+    Set 'Imp:/WORK/cv32e40p_top/SE' to constant 0    
+    Set 'Ref:/WORK/cv32e40p_top/test_mode' to constant 0    
+    Set 'Imp:/WORK/cv32e40p_top/test_mode' to constant 0    
+    Set 'Imp:/WORK/cv32e40p_top/SE' to constant 0    ; previous value was also 0
+    Set 'Imp:/WORK/cv32e40p_top/test_mode' to constant 0    ; previous value was also 0
+
+***************************** Guidance Summary *****************************
+                                         Status
+Command                 Accepted   Rejected  Unsupported  Unprocessed  Total
+----------------------------------------------------------------------------
+environment         :          2          0          0          0          2
+instance_map        :         25          0          0          0         25
+mark                :         32          0          0          0         32
+multiplier          :          9          0          0          0          9
+reg_constant        :        354          0          0          0        354
+replace             :          2          0          0          0          2
+scan_input          :          2          0          0          0          2
+transformation
+   map              :        144          0          0          0        144
+   share            :          4          0          0          0          4
+   tree             :         10          0          0          0         10
+uniquify            :         20         10          0          0         30
+ununiquify          :          1          0          0          0          1
+
+Note: If verification succeeds you can safely ignore unaccepted guidance commands.
+
+SVF files read:
+      /home/ICer/ITI/PnR_Grad/Backend/DFT/cv32e40p_top.svf
+
+SVF files produced:
+  /home/ICer/ITI/PnR_Grad/Backend/Formality/post-placement_dft/formality_svf/
+    svf.txt
+****************************************************************************
+
+Status:  Matching...
+    
+*********************************** Matching Results ***********************************    
+ 2278 Compare points matched by name    
+ 0 Compare points matched by signature analysis    
+ 0 Compare points matched by topology    
+ 239 Matched primary inputs, black-box outputs    
+ 0(0) Unmatched reference(implementation) compare points    
+ 0(0) Unmatched reference(implementation) primary inputs, black-box outputs    
+ 355(0) Unmatched reference(implementation) unread points    
+----------------------------------------------------------------------------------------    
+Unmatched Objects                                                        REF        IMPL    
+----------------------------------------------------------------------------------------    
+ Black-boxes (BBox)                                                        0        3879    
+****************************************************************************************
+
+1
+######################### Run Verification ########################
+set successful [verify]
+Reference design is 'Ref:/WORK/cv32e40p_top'
+Implementation design is 'Imp:/WORK/cv32e40p_top'
+    
+*********************************** Matching Results ***********************************    
+ 2278 Compare points matched by name    
+ 0 Compare points matched by signature analysis    
+ 0 Compare points matched by topology    
+ 239 Matched primary inputs, black-box outputs    
+ 0(0) Unmatched reference(implementation) compare points    
+ 0(0) Unmatched reference(implementation) primary inputs, black-box outputs    
+ 355(0) Unmatched reference(implementation) unread points    
+----------------------------------------------------------------------------------------    
+Unmatched Objects                                                        REF        IMPL    
+----------------------------------------------------------------------------------------    
+ Black-boxes (BBox)                                                        0        3879    
+****************************************************************************************
+
+Status:  Verifying...
+.
+
+************ RTL Interpretation Summary ************
+************ Design: Ref:/WORK/cv32e40p_top
+8 FMR_ELAB-116 messages produced    
+
+Please refer to the Formality log file for more details,
+or execute report_hdlin_mismatches.
+****************************************************
+
+
+***************************** Synopsys Auto Setup Summary ******************************
+
+!!! Synopsys Auto Setup Mode was enabled. !!!
+!!! Verification results are valid assuming the following setup constraints: !!!
+
+### RTL Interpretation Setup
+   set hdlin_ignore_parallel_case false
+   set hdlin_ignore_full_case false
+   set hdlin_error_on_mismatch_message false
+   set hdlin_ignore_embedded_configuration true
+
+### Undriven Signal Handling Setup
+   set verification_set_undriven_signals synthesis
+
+### Test Logic Setup
+   set verification_verify_directly_undriven_output false
+   Constants set on:
+     cv32e40p_top/SE
+     cv32e40p_top/test_mode
+   For details see report_dont_verify_points and report_constants
+
+
+For further details on Synopsys Auto Setup Mode: Type man synopsys_auto_setup
+****************************************************************************************
+
+
+********************************* Verification Results *********************************
+Verification SUCCEEDED
+   ATTENTION: synopsys_auto_setup mode was enabled.
+              See Synopsys Auto Setup Summary for details.
+   ATTENTION: RTL interpretation messages were produced during link
+              of reference design.
+              Verification results may disagree with a logic simulator.
+-----------------------------------------------------------------------
+ Reference design: Ref:/WORK/cv32e40p_top
+ Implementation design: Imp:/WORK/cv32e40p_top
+ 2278 Passing compare points
+----------------------------------------------------------------------------------------
+Matched Compare Points     BBPin    Loop   BBNet     Cut    Port     DFF     LAT   TOTAL
+----------------------------------------------------------------------------------------
+Passing (equivalent)           0       0       0       0     113    2164       1    2278
+Failing (not equivalent)       0       0       0       0       0       0       0       0
+Not Compared
+  Constant reg                                                        86       0      86
+  Don't verify                 0       0       0       0       5       0       0       5
+  Unread                       0       0       0       0       0       8       0       8
+****************************************************************************************
+1
+if {!$successful} {
+diagnose
+analyze_points -failing
+}
+########################### Reporting ############################# 
+report_passing_points > reports/passing_points.rpt
+report_failing_points > reports/failing_points.rpt
+report_aborted_points > reports/aborted_points.rpt
+report_unverified_points > reports/unverified_points.rpt
+start_gui
+     1  source -echo -verbose scripts/placement_fm_script.tcl
+1
+1
+fm_shell (verify)> 
+Maximum memory usage for this session: 1853820 KB
+CPU usage for this session: 215.36 seconds
+Current time: Mon Jul  7 00:05:51 2025
+Elapsed time: 293 seconds
+Number of cores used: 8
+
+Thank you for using Formality (R)!

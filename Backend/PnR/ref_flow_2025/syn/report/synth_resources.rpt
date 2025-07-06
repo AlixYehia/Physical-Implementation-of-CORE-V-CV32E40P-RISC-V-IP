@@ -1,0 +1,22 @@
+ 
+****************************************
+Report : resources
+Design : mips_16
+Version: O-2018.06-SP1
+Date   : Sat Mar 15 16:26:39 2025
+****************************************
+
+Resource Sharing Report for design mips_16 in file ../rtl/mips_16.v
+
+===============================================================================
+|          |              |            | Contained     |                      |
+| Resource | Module       | Parameters | Resources     | Contained Operations |
+===============================================================================
+| r75      | DW01_add     | width=16   |               | add_47               |
+| r77      | DW01_sub     | width=16   |               | sub_1_root_sub_87    |
+| r79      | DW01_add     | width=16   |               | add_87               |
+===============================================================================
+
+
+No implementations to report
+1

@@ -1,0 +1,1235 @@
+Information: The stitching and editing of coupling caps is turned OFF for design 'cv32e40p_top:cv32e40p_top_5_cts.design'. (TIM-125)
+Information: Design Average RC for design cv32e40p_top_5_cts  (NEX-011)
+Information: r = 2.175318 ohm/um, via_r = 1.031427 ohm/cut, c = 0.127527 ff/um, cc = 0.000000 ff/um (X dir) (NEX-017)
+Information: r = 2.639974 ohm/um, via_r = 0.663827 ohm/cut, c = 0.121912 ff/um, cc = 0.000000 ff/um (Y dir) (NEX-017)
+Information: Update timing completed net estimation for all the timing graph nets (TIM-111)
+Information: Net estimation statistics: timing graph nets = 26990, routed nets = 101, across physical hierarchy nets = 0, parasitics cached nets = 1475, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 0. (TIM-112)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 20
+        -report_by design
+Design : cv32e40p_top
+Version: O-2018.06-SP1
+Date   : Tue Jul  1 13:07:20 2025
+****************************************
+
+  Startpoint: data_rvalid_i (input port clocked by clk_i)
+  Endpoint: core_i/id_stage_i/alu_operand_a_ex_o_reg[3] (rising edge-triggered flip-flop clocked by clk_i)
+  Mode: func
+  Corner: slow_Cmax
+  Scenario: func_slow_Cmax
+  Path Group: clk_i
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk_i (rise edge)                          0.00      0.00
+  clock network delay (ideal)                      0.17      0.17
+  input external delay                             4.00      4.17
+
+  data_rvalid_i (in)                               0.04      4.21 f
+  core_i/load_store_unit_i/PLACE_HFSINV_2703_270/X (SAEDRVT14_INV_S_7)
+                                                   0.06      4.28 r
+  core_i/load_store_unit_i/U17/X (SAEDRVT14_OAI21_V1_8)
+                                                   0.04      4.32 f
+  core_i/load_store_unit_i/U292/X (SAEDRVT14_AO22_2)
+                                                   0.04      4.36 f
+  core_i/load_store_unit_i/U288/X (SAEDRVT14_OR2_2)
+                                                   0.03      4.39 f
+  core_i/ex_stage_i/U88/X (SAEDRVT14_AN4_2)        0.05      4.44 f
+  core_i/ex_stage_i/U199/X (SAEDRVT14_OR2_MM_6)    0.05      4.49 f
+  core_i/id_stage_i/U1337/X (SAEDRVT14_AN4_2)      0.10      4.59 f
+  core_i/id_stage_i/PLACE_HFSINV_368_251/X (SAEDRVT14_INV_S_7)
+                                                   0.04      4.63 r
+  core_i/id_stage_i/U938/X (SAEDRVT14_OR2_2)       0.04      4.67 r
+  core_i/id_stage_i/U1334/X (SAEDRVT14_INV_S_2)    0.03      4.70 f
+  core_i/id_stage_i/U814/X (SAEDRVT14_ND3_4)       0.04      4.74 r
+  core_i/id_stage_i/PLACE_HFSINV_471_218/X (SAEDRVT14_INV_S_7)
+                                                   0.02      4.76 f
+  core_i/id_stage_i/U815/X (SAEDRVT14_AN2_MM_2)    0.04      4.80 f
+  core_i/id_stage_i/PLACE_HFSBUF_973_215/X (SAEDRVT14_BUF_20)
+                                                   0.03      4.82 f
+  core_i/id_stage_i/U1320/X (SAEDRVT14_AOI21_V1_8)
+                                                   0.06      4.88 r
+  core_i/id_stage_i/U816/X (SAEDRVT14_OR2_2)       0.06      4.94 r
+  core_i/id_stage_i/U813/X (SAEDRVT14_OAI22_4)     0.09      5.03 f
+  core_i/id_stage_i/U792/X (SAEDRVT14_BUF_S_2)     0.07      5.10 f
+  core_i/id_stage_i/U1745/X (SAEDRVT14_ND2_MM_2)   0.02      5.12 r
+  core_i/id_stage_i/U1357/X (SAEDRVT14_AN2_MM_2)   0.02      5.14 r
+  core_i/id_stage_i/U1036/X (SAEDRVT14_ND2_CDC_4)
+                                                   0.01      5.15 f
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[3]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.15 f
+  data arrival time                                          5.15
+
+  clock clk_i (rise edge)                          5.00      5.00
+  clock network delay (propagated)                 0.18      5.18
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[3]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.18 r
+  library setup time                               0.01      5.18
+  data required time                                         5.18
+  ------------------------------------------------------------------------
+  data required time                                         5.18
+  data arrival time                                         -5.15
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.03
+
+
+
+  Startpoint: data_rvalid_i (input port clocked by clk_i)
+  Endpoint: core_i/id_stage_i/alu_operand_a_ex_o_reg[0] (rising edge-triggered flip-flop clocked by clk_i)
+  Mode: func
+  Corner: slow_Cmax
+  Scenario: func_slow_Cmax
+  Path Group: clk_i
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk_i (rise edge)                          0.00      0.00
+  clock network delay (ideal)                      0.17      0.17
+  input external delay                             4.00      4.17
+
+  data_rvalid_i (in)                               0.04      4.21 f
+  core_i/load_store_unit_i/PLACE_HFSINV_2703_270/X (SAEDRVT14_INV_S_7)
+                                                   0.06      4.28 r
+  core_i/load_store_unit_i/U17/X (SAEDRVT14_OAI21_V1_8)
+                                                   0.04      4.32 f
+  core_i/load_store_unit_i/U292/X (SAEDRVT14_AO22_2)
+                                                   0.04      4.36 f
+  core_i/load_store_unit_i/U288/X (SAEDRVT14_OR2_2)
+                                                   0.03      4.39 f
+  core_i/ex_stage_i/U88/X (SAEDRVT14_AN4_2)        0.05      4.44 f
+  core_i/ex_stage_i/U199/X (SAEDRVT14_OR2_MM_6)    0.05      4.49 f
+  core_i/id_stage_i/U1337/X (SAEDRVT14_AN4_2)      0.10      4.59 f
+  core_i/id_stage_i/PLACE_HFSINV_368_251/X (SAEDRVT14_INV_S_7)
+                                                   0.04      4.63 r
+  core_i/id_stage_i/U938/X (SAEDRVT14_OR2_2)       0.04      4.67 r
+  core_i/id_stage_i/U1334/X (SAEDRVT14_INV_S_2)    0.03      4.70 f
+  core_i/id_stage_i/U814/X (SAEDRVT14_ND3_4)       0.04      4.74 r
+  core_i/id_stage_i/PLACE_HFSINV_471_218/X (SAEDRVT14_INV_S_7)
+                                                   0.02      4.76 f
+  core_i/id_stage_i/U815/X (SAEDRVT14_AN2_MM_2)    0.04      4.80 f
+  core_i/id_stage_i/PLACE_HFSBUF_973_215/X (SAEDRVT14_BUF_20)
+                                                   0.03      4.82 f
+  core_i/id_stage_i/U1320/X (SAEDRVT14_AOI21_V1_8)
+                                                   0.06      4.88 r
+  core_i/id_stage_i/U816/X (SAEDRVT14_OR2_2)       0.06      4.94 r
+  core_i/id_stage_i/U813/X (SAEDRVT14_OAI22_4)     0.09      5.03 f
+  core_i/id_stage_i/U792/X (SAEDRVT14_BUF_S_2)     0.07      5.10 f
+  core_i/id_stage_i/U1773/X (SAEDRVT14_ND2_MM_2)   0.02      5.11 r
+  core_i/id_stage_i/U1369/X (SAEDRVT14_AN2_MM_2)   0.02      5.14 r
+  core_i/id_stage_i/U1283/X (SAEDRVT14_ND2_CDC_4)
+                                                   0.01      5.15 f
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[0]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.15 f
+  data arrival time                                          5.15
+
+  clock clk_i (rise edge)                          5.00      5.00
+  clock network delay (propagated)                 0.18      5.18
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[0]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.18 r
+  library setup time                               0.01      5.18
+  data required time                                         5.18
+  ------------------------------------------------------------------------
+  data required time                                         5.18
+  data arrival time                                         -5.15
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.03
+
+
+
+  Startpoint: data_rvalid_i (input port clocked by clk_i)
+  Endpoint: core_i/id_stage_i/alu_operand_a_ex_o_reg[8] (rising edge-triggered flip-flop clocked by clk_i)
+  Mode: func
+  Corner: slow_Cmax
+  Scenario: func_slow_Cmax
+  Path Group: clk_i
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk_i (rise edge)                          0.00      0.00
+  clock network delay (ideal)                      0.17      0.17
+  input external delay                             4.00      4.17
+
+  data_rvalid_i (in)                               0.04      4.21 f
+  core_i/load_store_unit_i/PLACE_HFSINV_2703_270/X (SAEDRVT14_INV_S_7)
+                                                   0.06      4.28 r
+  core_i/load_store_unit_i/U17/X (SAEDRVT14_OAI21_V1_8)
+                                                   0.04      4.32 f
+  core_i/load_store_unit_i/U292/X (SAEDRVT14_AO22_2)
+                                                   0.04      4.36 f
+  core_i/load_store_unit_i/U288/X (SAEDRVT14_OR2_2)
+                                                   0.03      4.39 f
+  core_i/ex_stage_i/U88/X (SAEDRVT14_AN4_2)        0.05      4.44 f
+  core_i/ex_stage_i/U199/X (SAEDRVT14_OR2_MM_6)    0.05      4.49 f
+  core_i/id_stage_i/U1337/X (SAEDRVT14_AN4_2)      0.10      4.59 f
+  core_i/id_stage_i/PLACE_HFSINV_368_251/X (SAEDRVT14_INV_S_7)
+                                                   0.04      4.63 r
+  core_i/id_stage_i/U938/X (SAEDRVT14_OR2_2)       0.04      4.67 r
+  core_i/id_stage_i/U1334/X (SAEDRVT14_INV_S_2)    0.03      4.70 f
+  core_i/id_stage_i/U814/X (SAEDRVT14_ND3_4)       0.04      4.74 r
+  core_i/id_stage_i/PLACE_HFSINV_471_218/X (SAEDRVT14_INV_S_7)
+                                                   0.02      4.76 f
+  core_i/id_stage_i/U815/X (SAEDRVT14_AN2_MM_2)    0.04      4.80 f
+  core_i/id_stage_i/PLACE_HFSBUF_973_215/X (SAEDRVT14_BUF_20)
+                                                   0.03      4.82 f
+  core_i/id_stage_i/U1320/X (SAEDRVT14_AOI21_V1_8)
+                                                   0.06      4.88 r
+  core_i/id_stage_i/U816/X (SAEDRVT14_OR2_2)       0.06      4.94 r
+  core_i/id_stage_i/U813/X (SAEDRVT14_OAI22_4)     0.09      5.03 f
+  core_i/id_stage_i/U792/X (SAEDRVT14_BUF_S_2)     0.07      5.10 f
+  core_i/id_stage_i/U1383/X (SAEDRVT14_AO22_2)     0.04      5.14 f
+  core_i/id_stage_i/U1382/X (SAEDRVT14_OR2_2)      0.02      5.16 f
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[8]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.16 f
+  data arrival time                                          5.16
+
+  clock clk_i (rise edge)                          5.00      5.00
+  clock network delay (propagated)                 0.18      5.18
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[8]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.18 r
+  library setup time                               0.01      5.20
+  data required time                                         5.20
+  ------------------------------------------------------------------------
+  data required time                                         5.20
+  data arrival time                                         -5.16
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.03
+
+
+
+  Startpoint: data_rvalid_i (input port clocked by clk_i)
+  Endpoint: core_i/id_stage_i/alu_operand_a_ex_o_reg[9] (rising edge-triggered flip-flop clocked by clk_i)
+  Mode: func
+  Corner: slow_Cmax
+  Scenario: func_slow_Cmax
+  Path Group: clk_i
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk_i (rise edge)                          0.00      0.00
+  clock network delay (ideal)                      0.17      0.17
+  input external delay                             4.00      4.17
+
+  data_rvalid_i (in)                               0.04      4.21 f
+  core_i/load_store_unit_i/PLACE_HFSINV_2703_270/X (SAEDRVT14_INV_S_7)
+                                                   0.06      4.28 r
+  core_i/load_store_unit_i/U17/X (SAEDRVT14_OAI21_V1_8)
+                                                   0.04      4.32 f
+  core_i/load_store_unit_i/U292/X (SAEDRVT14_AO22_2)
+                                                   0.04      4.36 f
+  core_i/load_store_unit_i/U288/X (SAEDRVT14_OR2_2)
+                                                   0.03      4.39 f
+  core_i/ex_stage_i/U88/X (SAEDRVT14_AN4_2)        0.05      4.44 f
+  core_i/ex_stage_i/U199/X (SAEDRVT14_OR2_MM_6)    0.05      4.49 f
+  core_i/id_stage_i/U1337/X (SAEDRVT14_AN4_2)      0.10      4.59 f
+  core_i/id_stage_i/PLACE_HFSINV_368_251/X (SAEDRVT14_INV_S_7)
+                                                   0.04      4.63 r
+  core_i/id_stage_i/U938/X (SAEDRVT14_OR2_2)       0.04      4.67 r
+  core_i/id_stage_i/U1334/X (SAEDRVT14_INV_S_2)    0.03      4.70 f
+  core_i/id_stage_i/U814/X (SAEDRVT14_ND3_4)       0.04      4.74 r
+  core_i/id_stage_i/PLACE_HFSINV_471_218/X (SAEDRVT14_INV_S_7)
+                                                   0.02      4.76 f
+  core_i/id_stage_i/U815/X (SAEDRVT14_AN2_MM_2)    0.04      4.80 f
+  core_i/id_stage_i/PLACE_HFSBUF_973_215/X (SAEDRVT14_BUF_20)
+                                                   0.03      4.82 f
+  core_i/id_stage_i/U1320/X (SAEDRVT14_AOI21_V1_8)
+                                                   0.06      4.88 r
+  core_i/id_stage_i/U816/X (SAEDRVT14_OR2_2)       0.06      4.94 r
+  core_i/id_stage_i/U813/X (SAEDRVT14_OAI22_4)     0.09      5.03 f
+  core_i/id_stage_i/U792/X (SAEDRVT14_BUF_S_2)     0.07      5.10 f
+  core_i/id_stage_i/U1381/X (SAEDRVT14_AO22_2)     0.04      5.14 f
+  core_i/id_stage_i/U1380/X (SAEDRVT14_OR2_4)      0.02      5.16 f
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[9]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.16 f
+  data arrival time                                          5.16
+
+  clock clk_i (rise edge)                          5.00      5.00
+  clock network delay (propagated)                 0.18      5.18
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[9]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.18 r
+  library setup time                               0.01      5.19
+  data required time                                         5.19
+  ------------------------------------------------------------------------
+  data required time                                         5.19
+  data arrival time                                         -5.16
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.03
+
+
+
+  Startpoint: data_rvalid_i (input port clocked by clk_i)
+  Endpoint: core_i/id_stage_i/alu_operand_a_ex_o_reg[7] (rising edge-triggered flip-flop clocked by clk_i)
+  Mode: func
+  Corner: slow_Cmax
+  Scenario: func_slow_Cmax
+  Path Group: clk_i
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk_i (rise edge)                          0.00      0.00
+  clock network delay (ideal)                      0.17      0.17
+  input external delay                             4.00      4.17
+
+  data_rvalid_i (in)                               0.04      4.21 f
+  core_i/load_store_unit_i/PLACE_HFSINV_2703_270/X (SAEDRVT14_INV_S_7)
+                                                   0.06      4.28 r
+  core_i/load_store_unit_i/U17/X (SAEDRVT14_OAI21_V1_8)
+                                                   0.04      4.32 f
+  core_i/load_store_unit_i/U292/X (SAEDRVT14_AO22_2)
+                                                   0.04      4.36 f
+  core_i/load_store_unit_i/U288/X (SAEDRVT14_OR2_2)
+                                                   0.03      4.39 f
+  core_i/ex_stage_i/U88/X (SAEDRVT14_AN4_2)        0.05      4.44 f
+  core_i/ex_stage_i/U199/X (SAEDRVT14_OR2_MM_6)    0.05      4.49 f
+  core_i/id_stage_i/U1337/X (SAEDRVT14_AN4_2)      0.10      4.59 f
+  core_i/id_stage_i/PLACE_HFSINV_368_251/X (SAEDRVT14_INV_S_7)
+                                                   0.04      4.63 r
+  core_i/id_stage_i/U938/X (SAEDRVT14_OR2_2)       0.04      4.67 r
+  core_i/id_stage_i/U1334/X (SAEDRVT14_INV_S_2)    0.03      4.70 f
+  core_i/id_stage_i/U814/X (SAEDRVT14_ND3_4)       0.04      4.74 r
+  core_i/id_stage_i/PLACE_HFSINV_471_218/X (SAEDRVT14_INV_S_7)
+                                                   0.02      4.76 f
+  core_i/id_stage_i/U815/X (SAEDRVT14_AN2_MM_2)    0.04      4.80 f
+  core_i/id_stage_i/PLACE_HFSBUF_973_215/X (SAEDRVT14_BUF_20)
+                                                   0.03      4.82 f
+  core_i/id_stage_i/U1320/X (SAEDRVT14_AOI21_V1_8)
+                                                   0.06      4.88 r
+  core_i/id_stage_i/U816/X (SAEDRVT14_OR2_2)       0.06      4.94 r
+  core_i/id_stage_i/U813/X (SAEDRVT14_OAI22_4)     0.09      5.03 f
+  core_i/id_stage_i/U792/X (SAEDRVT14_BUF_S_2)     0.07      5.10 f
+  core_i/id_stage_i/U1385/X (SAEDRVT14_AO22_2)     0.04      5.14 f
+  core_i/id_stage_i/U1384/X (SAEDRVT14_OR2_2)      0.02      5.16 f
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[7]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.16 f
+  data arrival time                                          5.16
+
+  clock clk_i (rise edge)                          5.00      5.00
+  clock network delay (propagated)                 0.18      5.18
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[7]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.18 r
+  library setup time                               0.01      5.19
+  data required time                                         5.19
+  ------------------------------------------------------------------------
+  data required time                                         5.19
+  data arrival time                                         -5.16
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.03
+
+
+
+  Startpoint: data_rvalid_i (input port clocked by clk_i)
+  Endpoint: core_i/id_stage_i/alu_operand_a_ex_o_reg[1] (rising edge-triggered flip-flop clocked by clk_i)
+  Mode: func
+  Corner: slow_Cmax
+  Scenario: func_slow_Cmax
+  Path Group: clk_i
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk_i (rise edge)                          0.00      0.00
+  clock network delay (ideal)                      0.17      0.17
+  input external delay                             4.00      4.17
+
+  data_rvalid_i (in)                               0.04      4.21 f
+  core_i/load_store_unit_i/PLACE_HFSINV_2703_270/X (SAEDRVT14_INV_S_7)
+                                                   0.06      4.28 r
+  core_i/load_store_unit_i/U17/X (SAEDRVT14_OAI21_V1_8)
+                                                   0.04      4.32 f
+  core_i/load_store_unit_i/U292/X (SAEDRVT14_AO22_2)
+                                                   0.04      4.36 f
+  core_i/load_store_unit_i/U288/X (SAEDRVT14_OR2_2)
+                                                   0.03      4.39 f
+  core_i/ex_stage_i/U88/X (SAEDRVT14_AN4_2)        0.05      4.44 f
+  core_i/ex_stage_i/U199/X (SAEDRVT14_OR2_MM_6)    0.05      4.49 f
+  core_i/id_stage_i/U1337/X (SAEDRVT14_AN4_2)      0.10      4.59 f
+  core_i/id_stage_i/PLACE_HFSINV_368_251/X (SAEDRVT14_INV_S_7)
+                                                   0.04      4.63 r
+  core_i/id_stage_i/U938/X (SAEDRVT14_OR2_2)       0.04      4.67 r
+  core_i/id_stage_i/U1334/X (SAEDRVT14_INV_S_2)    0.03      4.70 f
+  core_i/id_stage_i/U814/X (SAEDRVT14_ND3_4)       0.04      4.74 r
+  core_i/id_stage_i/PLACE_HFSINV_471_218/X (SAEDRVT14_INV_S_7)
+                                                   0.02      4.76 f
+  core_i/id_stage_i/U815/X (SAEDRVT14_AN2_MM_2)    0.04      4.80 f
+  core_i/id_stage_i/PLACE_HFSBUF_973_215/X (SAEDRVT14_BUF_20)
+                                                   0.03      4.82 f
+  core_i/id_stage_i/U1320/X (SAEDRVT14_AOI21_V1_8)
+                                                   0.06      4.88 r
+  core_i/id_stage_i/U816/X (SAEDRVT14_OR2_2)       0.06      4.94 r
+  core_i/id_stage_i/U813/X (SAEDRVT14_OAI22_4)     0.09      5.03 f
+  core_i/id_stage_i/U792/X (SAEDRVT14_BUF_S_2)     0.07      5.10 f
+  core_i/id_stage_i/U1761/X (SAEDRVT14_ND2_MM_2)   0.02      5.11 r
+  core_i/id_stage_i/U1359/X (SAEDRVT14_AN2_MM_2)   0.02      5.14 r
+  core_i/id_stage_i/U1174/X (SAEDRVT14_ND2_CDC_4)
+                                                   0.01      5.15 f
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[1]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.15 f
+  data arrival time                                          5.15
+
+  clock clk_i (rise edge)                          5.00      5.00
+  clock network delay (propagated)                 0.18      5.18
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[1]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.18 r
+  library setup time                               0.01      5.18
+  data required time                                         5.18
+  ------------------------------------------------------------------------
+  data required time                                         5.18
+  data arrival time                                         -5.15
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: data_rvalid_i (input port clocked by clk_i)
+  Endpoint: core_i/id_stage_i/alu_operand_a_ex_o_reg[2] (rising edge-triggered flip-flop clocked by clk_i)
+  Mode: func
+  Corner: slow_Cmax
+  Scenario: func_slow_Cmax
+  Path Group: clk_i
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk_i (rise edge)                          0.00      0.00
+  clock network delay (ideal)                      0.17      0.17
+  input external delay                             4.00      4.17
+
+  data_rvalid_i (in)                               0.04      4.21 f
+  core_i/load_store_unit_i/PLACE_HFSINV_2703_270/X (SAEDRVT14_INV_S_7)
+                                                   0.06      4.28 r
+  core_i/load_store_unit_i/U17/X (SAEDRVT14_OAI21_V1_8)
+                                                   0.04      4.32 f
+  core_i/load_store_unit_i/U292/X (SAEDRVT14_AO22_2)
+                                                   0.04      4.36 f
+  core_i/load_store_unit_i/U288/X (SAEDRVT14_OR2_2)
+                                                   0.03      4.39 f
+  core_i/ex_stage_i/U88/X (SAEDRVT14_AN4_2)        0.05      4.44 f
+  core_i/ex_stage_i/U199/X (SAEDRVT14_OR2_MM_6)    0.05      4.49 f
+  core_i/id_stage_i/U1337/X (SAEDRVT14_AN4_2)      0.10      4.59 f
+  core_i/id_stage_i/PLACE_HFSINV_368_251/X (SAEDRVT14_INV_S_7)
+                                                   0.04      4.63 r
+  core_i/id_stage_i/U938/X (SAEDRVT14_OR2_2)       0.04      4.67 r
+  core_i/id_stage_i/U1334/X (SAEDRVT14_INV_S_2)    0.03      4.70 f
+  core_i/id_stage_i/U814/X (SAEDRVT14_ND3_4)       0.04      4.74 r
+  core_i/id_stage_i/PLACE_HFSINV_471_218/X (SAEDRVT14_INV_S_7)
+                                                   0.02      4.76 f
+  core_i/id_stage_i/U815/X (SAEDRVT14_AN2_MM_2)    0.04      4.80 f
+  core_i/id_stage_i/PLACE_HFSBUF_973_215/X (SAEDRVT14_BUF_20)
+                                                   0.03      4.82 f
+  core_i/id_stage_i/U1320/X (SAEDRVT14_AOI21_V1_8)
+                                                   0.06      4.88 r
+  core_i/id_stage_i/U816/X (SAEDRVT14_OR2_2)       0.06      4.94 r
+  core_i/id_stage_i/U813/X (SAEDRVT14_OAI22_4)     0.09      5.03 f
+  core_i/id_stage_i/U792/X (SAEDRVT14_BUF_S_2)     0.07      5.10 f
+  core_i/id_stage_i/U1749/X (SAEDRVT14_ND2_MM_2)   0.02      5.11 r
+  core_i/id_stage_i/U1358/X (SAEDRVT14_AN2_MM_2)   0.02      5.14 r
+  core_i/id_stage_i/U1065/X (SAEDRVT14_ND2_CDC_4)
+                                                   0.01      5.15 f
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[2]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.15 f
+  data arrival time                                          5.15
+
+  clock clk_i (rise edge)                          5.00      5.00
+  clock network delay (propagated)                 0.18      5.18
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[2]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.18 r
+  library setup time                               0.01      5.18
+  data required time                                         5.18
+  ------------------------------------------------------------------------
+  data required time                                         5.18
+  data arrival time                                         -5.15
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: data_rvalid_i (input port clocked by clk_i)
+  Endpoint: core_i/id_stage_i/alu_operand_a_ex_o_reg[4] (rising edge-triggered flip-flop clocked by clk_i)
+  Mode: func
+  Corner: slow_Cmax
+  Scenario: func_slow_Cmax
+  Path Group: clk_i
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk_i (rise edge)                          0.00      0.00
+  clock network delay (ideal)                      0.17      0.17
+  input external delay                             4.00      4.17
+
+  data_rvalid_i (in)                               0.04      4.21 f
+  core_i/load_store_unit_i/PLACE_HFSINV_2703_270/X (SAEDRVT14_INV_S_7)
+                                                   0.06      4.28 r
+  core_i/load_store_unit_i/U17/X (SAEDRVT14_OAI21_V1_8)
+                                                   0.04      4.32 f
+  core_i/load_store_unit_i/U292/X (SAEDRVT14_AO22_2)
+                                                   0.04      4.36 f
+  core_i/load_store_unit_i/U288/X (SAEDRVT14_OR2_2)
+                                                   0.03      4.39 f
+  core_i/ex_stage_i/U88/X (SAEDRVT14_AN4_2)        0.05      4.44 f
+  core_i/ex_stage_i/U199/X (SAEDRVT14_OR2_MM_6)    0.05      4.49 f
+  core_i/id_stage_i/U1337/X (SAEDRVT14_AN4_2)      0.10      4.59 f
+  core_i/id_stage_i/PLACE_HFSINV_368_251/X (SAEDRVT14_INV_S_7)
+                                                   0.04      4.63 r
+  core_i/id_stage_i/U938/X (SAEDRVT14_OR2_2)       0.04      4.67 r
+  core_i/id_stage_i/U1334/X (SAEDRVT14_INV_S_2)    0.03      4.70 f
+  core_i/id_stage_i/U814/X (SAEDRVT14_ND3_4)       0.04      4.74 r
+  core_i/id_stage_i/PLACE_HFSINV_471_218/X (SAEDRVT14_INV_S_7)
+                                                   0.02      4.76 f
+  core_i/id_stage_i/U815/X (SAEDRVT14_AN2_MM_2)    0.04      4.80 f
+  core_i/id_stage_i/PLACE_HFSBUF_973_215/X (SAEDRVT14_BUF_20)
+                                                   0.03      4.82 f
+  core_i/id_stage_i/U1320/X (SAEDRVT14_AOI21_V1_8)
+                                                   0.06      4.88 r
+  core_i/id_stage_i/U816/X (SAEDRVT14_OR2_2)       0.06      4.94 r
+  core_i/id_stage_i/U813/X (SAEDRVT14_OAI22_4)     0.09      5.03 f
+  core_i/id_stage_i/U792/X (SAEDRVT14_BUF_S_2)     0.07      5.10 f
+  core_i/id_stage_i/U1743/X (SAEDRVT14_ND2_MM_2)   0.02      5.11 r
+  core_i/id_stage_i/U1368/X (SAEDRVT14_AN2_MM_2)   0.02      5.14 r
+  core_i/id_stage_i/U1027/X (SAEDRVT14_ND2_CDC_4)
+                                                   0.01      5.15 f
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[4]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.15 f
+  data arrival time                                          5.15
+
+  clock clk_i (rise edge)                          5.00      5.00
+  clock network delay (propagated)                 0.18      5.18
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[4]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.18 r
+  library setup time                               0.01      5.18
+  data required time                                         5.18
+  ------------------------------------------------------------------------
+  data required time                                         5.18
+  data arrival time                                         -5.15
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.04
+
+
+
+  Startpoint: data_rvalid_i (input port clocked by clk_i)
+  Endpoint: core_i/id_stage_i/alu_operand_a_ex_o_reg[11] (rising edge-triggered flip-flop clocked by clk_i)
+  Mode: func
+  Corner: slow_Cmax
+  Scenario: func_slow_Cmax
+  Path Group: clk_i
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk_i (rise edge)                          0.00      0.00
+  clock network delay (ideal)                      0.17      0.17
+  input external delay                             4.00      4.17
+
+  data_rvalid_i (in)                               0.04      4.21 f
+  core_i/load_store_unit_i/PLACE_HFSINV_2703_270/X (SAEDRVT14_INV_S_7)
+                                                   0.06      4.28 r
+  core_i/load_store_unit_i/U17/X (SAEDRVT14_OAI21_V1_8)
+                                                   0.04      4.32 f
+  core_i/load_store_unit_i/U292/X (SAEDRVT14_AO22_2)
+                                                   0.04      4.36 f
+  core_i/load_store_unit_i/U288/X (SAEDRVT14_OR2_2)
+                                                   0.03      4.39 f
+  core_i/ex_stage_i/U88/X (SAEDRVT14_AN4_2)        0.05      4.44 f
+  core_i/ex_stage_i/U199/X (SAEDRVT14_OR2_MM_6)    0.05      4.49 f
+  core_i/id_stage_i/U1337/X (SAEDRVT14_AN4_2)      0.10      4.59 f
+  core_i/id_stage_i/PLACE_HFSINV_368_251/X (SAEDRVT14_INV_S_7)
+                                                   0.04      4.63 r
+  core_i/id_stage_i/U938/X (SAEDRVT14_OR2_2)       0.04      4.67 r
+  core_i/id_stage_i/U1334/X (SAEDRVT14_INV_S_2)    0.03      4.70 f
+  core_i/id_stage_i/U814/X (SAEDRVT14_ND3_4)       0.04      4.74 r
+  core_i/id_stage_i/PLACE_HFSINV_471_218/X (SAEDRVT14_INV_S_7)
+                                                   0.02      4.76 f
+  core_i/id_stage_i/U815/X (SAEDRVT14_AN2_MM_2)    0.04      4.80 f
+  core_i/id_stage_i/PLACE_HFSBUF_973_215/X (SAEDRVT14_BUF_20)
+                                                   0.03      4.82 f
+  core_i/id_stage_i/U1320/X (SAEDRVT14_AOI21_V1_8)
+                                                   0.06      4.88 r
+  core_i/id_stage_i/U816/X (SAEDRVT14_OR2_2)       0.06      4.94 r
+  core_i/id_stage_i/U813/X (SAEDRVT14_OAI22_4)     0.09      5.03 f
+  core_i/id_stage_i/U1390/X (SAEDRVT14_AO22_2)     0.07      5.10 f
+  core_i/id_stage_i/U1389/X (SAEDRVT14_OR2_2)      0.02      5.13 f
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[11]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.13 f
+  data arrival time                                          5.13
+
+  clock clk_i (rise edge)                          5.00      5.00
+  clock network delay (propagated)                 0.17      5.17
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[11]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.17 r
+  library setup time                               0.00      5.17
+  data required time                                         5.17
+  ------------------------------------------------------------------------
+  data required time                                         5.17
+  data arrival time                                         -5.13
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.05
+
+
+
+  Startpoint: data_rvalid_i (input port clocked by clk_i)
+  Endpoint: core_i/id_stage_i/alu_operand_a_ex_o_reg[22] (rising edge-triggered flip-flop clocked by clk_i)
+  Mode: func
+  Corner: slow_Cmax
+  Scenario: func_slow_Cmax
+  Path Group: clk_i
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk_i (rise edge)                          0.00      0.00
+  clock network delay (ideal)                      0.17      0.17
+  input external delay                             4.00      4.17
+
+  data_rvalid_i (in)                               0.04      4.21 f
+  core_i/load_store_unit_i/PLACE_HFSINV_2703_270/X (SAEDRVT14_INV_S_7)
+                                                   0.06      4.28 r
+  core_i/load_store_unit_i/U17/X (SAEDRVT14_OAI21_V1_8)
+                                                   0.04      4.32 f
+  core_i/load_store_unit_i/U292/X (SAEDRVT14_AO22_2)
+                                                   0.04      4.36 f
+  core_i/load_store_unit_i/U288/X (SAEDRVT14_OR2_2)
+                                                   0.03      4.39 f
+  core_i/ex_stage_i/U88/X (SAEDRVT14_AN4_2)        0.05      4.44 f
+  core_i/ex_stage_i/U199/X (SAEDRVT14_OR2_MM_6)    0.05      4.49 f
+  core_i/id_stage_i/U1337/X (SAEDRVT14_AN4_2)      0.10      4.59 f
+  core_i/id_stage_i/PLACE_HFSINV_368_251/X (SAEDRVT14_INV_S_7)
+                                                   0.04      4.63 r
+  core_i/id_stage_i/U938/X (SAEDRVT14_OR2_2)       0.04      4.67 r
+  core_i/id_stage_i/U1334/X (SAEDRVT14_INV_S_2)    0.03      4.70 f
+  core_i/id_stage_i/U814/X (SAEDRVT14_ND3_4)       0.04      4.74 r
+  core_i/id_stage_i/PLACE_HFSINV_471_218/X (SAEDRVT14_INV_S_7)
+                                                   0.02      4.76 f
+  core_i/id_stage_i/U815/X (SAEDRVT14_AN2_MM_2)    0.04      4.80 f
+  core_i/id_stage_i/PLACE_HFSBUF_973_215/X (SAEDRVT14_BUF_20)
+                                                   0.03      4.82 f
+  core_i/id_stage_i/U1320/X (SAEDRVT14_AOI21_V1_8)
+                                                   0.06      4.88 r
+  core_i/id_stage_i/U816/X (SAEDRVT14_OR2_2)       0.06      4.94 r
+  core_i/id_stage_i/U813/X (SAEDRVT14_OAI22_4)     0.09      5.03 f
+  core_i/id_stage_i/U1424/X (SAEDRVT14_AO22_2)     0.07      5.10 f
+  core_i/id_stage_i/U1423/X (SAEDRVT14_OR2_2)      0.02      5.12 f
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[22]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.12 f
+  data arrival time                                          5.12
+
+  clock clk_i (rise edge)                          5.00      5.00
+  clock network delay (propagated)                 0.17      5.17
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[22]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.17 r
+  library setup time                               0.01      5.17
+  data required time                                         5.17
+  ------------------------------------------------------------------------
+  data required time                                         5.17
+  data arrival time                                         -5.12
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.05
+
+
+
+  Startpoint: data_rvalid_i (input port clocked by clk_i)
+  Endpoint: core_i/id_stage_i/alu_operand_a_ex_o_reg[19] (rising edge-triggered flip-flop clocked by clk_i)
+  Mode: func
+  Corner: slow_Cmax
+  Scenario: func_slow_Cmax
+  Path Group: clk_i
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk_i (rise edge)                          0.00      0.00
+  clock network delay (ideal)                      0.17      0.17
+  input external delay                             4.00      4.17
+
+  data_rvalid_i (in)                               0.04      4.21 f
+  core_i/load_store_unit_i/PLACE_HFSINV_2703_270/X (SAEDRVT14_INV_S_7)
+                                                   0.06      4.28 r
+  core_i/load_store_unit_i/U17/X (SAEDRVT14_OAI21_V1_8)
+                                                   0.04      4.32 f
+  core_i/load_store_unit_i/U292/X (SAEDRVT14_AO22_2)
+                                                   0.04      4.36 f
+  core_i/load_store_unit_i/U288/X (SAEDRVT14_OR2_2)
+                                                   0.03      4.39 f
+  core_i/ex_stage_i/U88/X (SAEDRVT14_AN4_2)        0.05      4.44 f
+  core_i/ex_stage_i/U199/X (SAEDRVT14_OR2_MM_6)    0.05      4.49 f
+  core_i/id_stage_i/U1337/X (SAEDRVT14_AN4_2)      0.10      4.59 f
+  core_i/id_stage_i/PLACE_HFSINV_368_251/X (SAEDRVT14_INV_S_7)
+                                                   0.04      4.63 r
+  core_i/id_stage_i/U938/X (SAEDRVT14_OR2_2)       0.04      4.67 r
+  core_i/id_stage_i/U1334/X (SAEDRVT14_INV_S_2)    0.03      4.70 f
+  core_i/id_stage_i/U814/X (SAEDRVT14_ND3_4)       0.04      4.74 r
+  core_i/id_stage_i/PLACE_HFSINV_471_218/X (SAEDRVT14_INV_S_7)
+                                                   0.02      4.76 f
+  core_i/id_stage_i/U815/X (SAEDRVT14_AN2_MM_2)    0.04      4.80 f
+  core_i/id_stage_i/PLACE_HFSBUF_973_215/X (SAEDRVT14_BUF_20)
+                                                   0.03      4.82 f
+  core_i/id_stage_i/U1320/X (SAEDRVT14_AOI21_V1_8)
+                                                   0.06      4.88 r
+  core_i/id_stage_i/U816/X (SAEDRVT14_OR2_2)       0.06      4.94 r
+  core_i/id_stage_i/U813/X (SAEDRVT14_OAI22_4)     0.09      5.03 f
+  core_i/id_stage_i/U1400/X (SAEDRVT14_AO22_2)     0.07      5.10 f
+  core_i/id_stage_i/U1399/X (SAEDRVT14_OR2_2)      0.02      5.12 f
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[19]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.12 f
+  data arrival time                                          5.12
+
+  clock clk_i (rise edge)                          5.00      5.00
+  clock network delay (propagated)                 0.17      5.17
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[19]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.17 r
+  library setup time                               0.00      5.17
+  data required time                                         5.17
+  ------------------------------------------------------------------------
+  data required time                                         5.17
+  data arrival time                                         -5.12
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.05
+
+
+
+  Startpoint: data_rvalid_i (input port clocked by clk_i)
+  Endpoint: core_i/id_stage_i/alu_operand_a_ex_o_reg[16] (rising edge-triggered flip-flop clocked by clk_i)
+  Mode: func
+  Corner: slow_Cmax
+  Scenario: func_slow_Cmax
+  Path Group: clk_i
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk_i (rise edge)                          0.00      0.00
+  clock network delay (ideal)                      0.17      0.17
+  input external delay                             4.00      4.17
+
+  data_rvalid_i (in)                               0.04      4.21 f
+  core_i/load_store_unit_i/PLACE_HFSINV_2703_270/X (SAEDRVT14_INV_S_7)
+                                                   0.06      4.28 r
+  core_i/load_store_unit_i/U17/X (SAEDRVT14_OAI21_V1_8)
+                                                   0.04      4.32 f
+  core_i/load_store_unit_i/U292/X (SAEDRVT14_AO22_2)
+                                                   0.04      4.36 f
+  core_i/load_store_unit_i/U288/X (SAEDRVT14_OR2_2)
+                                                   0.03      4.39 f
+  core_i/ex_stage_i/U88/X (SAEDRVT14_AN4_2)        0.05      4.44 f
+  core_i/ex_stage_i/U199/X (SAEDRVT14_OR2_MM_6)    0.05      4.49 f
+  core_i/id_stage_i/U1337/X (SAEDRVT14_AN4_2)      0.10      4.59 f
+  core_i/id_stage_i/PLACE_HFSINV_368_251/X (SAEDRVT14_INV_S_7)
+                                                   0.04      4.63 r
+  core_i/id_stage_i/U938/X (SAEDRVT14_OR2_2)       0.04      4.67 r
+  core_i/id_stage_i/U1334/X (SAEDRVT14_INV_S_2)    0.03      4.70 f
+  core_i/id_stage_i/U814/X (SAEDRVT14_ND3_4)       0.04      4.74 r
+  core_i/id_stage_i/PLACE_HFSINV_471_218/X (SAEDRVT14_INV_S_7)
+                                                   0.02      4.76 f
+  core_i/id_stage_i/U815/X (SAEDRVT14_AN2_MM_2)    0.04      4.80 f
+  core_i/id_stage_i/PLACE_HFSBUF_973_215/X (SAEDRVT14_BUF_20)
+                                                   0.03      4.82 f
+  core_i/id_stage_i/U1320/X (SAEDRVT14_AOI21_V1_8)
+                                                   0.06      4.88 r
+  core_i/id_stage_i/U816/X (SAEDRVT14_OR2_2)       0.06      4.94 r
+  core_i/id_stage_i/U813/X (SAEDRVT14_OAI22_4)     0.09      5.03 f
+  core_i/id_stage_i/U1404/X (SAEDRVT14_AO22_2)     0.07      5.10 f
+  core_i/id_stage_i/U1403/X (SAEDRVT14_OR2_2)      0.02      5.12 f
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[16]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.12 f
+  data arrival time                                          5.12
+
+  clock clk_i (rise edge)                          5.00      5.00
+  clock network delay (propagated)                 0.17      5.17
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[16]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.17 r
+  library setup time                               0.00      5.17
+  data required time                                         5.17
+  ------------------------------------------------------------------------
+  data required time                                         5.17
+  data arrival time                                         -5.12
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.05
+
+
+
+  Startpoint: data_rvalid_i (input port clocked by clk_i)
+  Endpoint: core_i/id_stage_i/alu_operand_a_ex_o_reg[6] (rising edge-triggered flip-flop clocked by clk_i)
+  Mode: func
+  Corner: slow_Cmax
+  Scenario: func_slow_Cmax
+  Path Group: clk_i
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk_i (rise edge)                          0.00      0.00
+  clock network delay (ideal)                      0.17      0.17
+  input external delay                             4.00      4.17
+
+  data_rvalid_i (in)                               0.04      4.21 f
+  core_i/load_store_unit_i/PLACE_HFSINV_2703_270/X (SAEDRVT14_INV_S_7)
+                                                   0.06      4.28 r
+  core_i/load_store_unit_i/U17/X (SAEDRVT14_OAI21_V1_8)
+                                                   0.04      4.32 f
+  core_i/load_store_unit_i/U292/X (SAEDRVT14_AO22_2)
+                                                   0.04      4.36 f
+  core_i/load_store_unit_i/U288/X (SAEDRVT14_OR2_2)
+                                                   0.03      4.39 f
+  core_i/ex_stage_i/U88/X (SAEDRVT14_AN4_2)        0.05      4.44 f
+  core_i/ex_stage_i/U199/X (SAEDRVT14_OR2_MM_6)    0.05      4.49 f
+  core_i/id_stage_i/U1337/X (SAEDRVT14_AN4_2)      0.10      4.59 f
+  core_i/id_stage_i/PLACE_HFSINV_368_251/X (SAEDRVT14_INV_S_7)
+                                                   0.04      4.63 r
+  core_i/id_stage_i/U938/X (SAEDRVT14_OR2_2)       0.04      4.67 r
+  core_i/id_stage_i/U1334/X (SAEDRVT14_INV_S_2)    0.03      4.70 f
+  core_i/id_stage_i/U814/X (SAEDRVT14_ND3_4)       0.04      4.74 r
+  core_i/id_stage_i/PLACE_HFSINV_471_218/X (SAEDRVT14_INV_S_7)
+                                                   0.02      4.76 f
+  core_i/id_stage_i/U815/X (SAEDRVT14_AN2_MM_2)    0.04      4.80 f
+  core_i/id_stage_i/PLACE_HFSBUF_973_215/X (SAEDRVT14_BUF_20)
+                                                   0.03      4.82 f
+  core_i/id_stage_i/U1320/X (SAEDRVT14_AOI21_V1_8)
+                                                   0.06      4.88 r
+  core_i/id_stage_i/U816/X (SAEDRVT14_OR2_2)       0.06      4.94 r
+  core_i/id_stage_i/U813/X (SAEDRVT14_OAI22_4)     0.09      5.03 f
+  core_i/id_stage_i/U1473/X (SAEDRVT14_AO22_2)     0.07      5.10 f
+  core_i/id_stage_i/U1386/X (SAEDRVT14_OR2_2)      0.02      5.12 f
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[6]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.12 f
+  data arrival time                                          5.12
+
+  clock clk_i (rise edge)                          5.00      5.00
+  clock network delay (propagated)                 0.17      5.17
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[6]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.17 r
+  library setup time                               0.01      5.17
+  data required time                                         5.17
+  ------------------------------------------------------------------------
+  data required time                                         5.17
+  data arrival time                                         -5.12
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.05
+
+
+
+  Startpoint: data_rvalid_i (input port clocked by clk_i)
+  Endpoint: core_i/id_stage_i/alu_operand_a_ex_o_reg[20] (rising edge-triggered flip-flop clocked by clk_i)
+  Mode: func
+  Corner: slow_Cmax
+  Scenario: func_slow_Cmax
+  Path Group: clk_i
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk_i (rise edge)                          0.00      0.00
+  clock network delay (ideal)                      0.17      0.17
+  input external delay                             4.00      4.17
+
+  data_rvalid_i (in)                               0.04      4.21 f
+  core_i/load_store_unit_i/PLACE_HFSINV_2703_270/X (SAEDRVT14_INV_S_7)
+                                                   0.06      4.28 r
+  core_i/load_store_unit_i/U17/X (SAEDRVT14_OAI21_V1_8)
+                                                   0.04      4.32 f
+  core_i/load_store_unit_i/U292/X (SAEDRVT14_AO22_2)
+                                                   0.04      4.36 f
+  core_i/load_store_unit_i/U288/X (SAEDRVT14_OR2_2)
+                                                   0.03      4.39 f
+  core_i/ex_stage_i/U88/X (SAEDRVT14_AN4_2)        0.05      4.44 f
+  core_i/ex_stage_i/U199/X (SAEDRVT14_OR2_MM_6)    0.05      4.49 f
+  core_i/id_stage_i/U1337/X (SAEDRVT14_AN4_2)      0.10      4.59 f
+  core_i/id_stage_i/PLACE_HFSINV_368_251/X (SAEDRVT14_INV_S_7)
+                                                   0.04      4.63 r
+  core_i/id_stage_i/U938/X (SAEDRVT14_OR2_2)       0.04      4.67 r
+  core_i/id_stage_i/U1334/X (SAEDRVT14_INV_S_2)    0.03      4.70 f
+  core_i/id_stage_i/U814/X (SAEDRVT14_ND3_4)       0.04      4.74 r
+  core_i/id_stage_i/PLACE_HFSINV_471_218/X (SAEDRVT14_INV_S_7)
+                                                   0.02      4.76 f
+  core_i/id_stage_i/U815/X (SAEDRVT14_AN2_MM_2)    0.04      4.80 f
+  core_i/id_stage_i/PLACE_HFSBUF_973_215/X (SAEDRVT14_BUF_20)
+                                                   0.03      4.82 f
+  core_i/id_stage_i/U1320/X (SAEDRVT14_AOI21_V1_8)
+                                                   0.06      4.88 r
+  core_i/id_stage_i/U816/X (SAEDRVT14_OR2_2)       0.06      4.94 r
+  core_i/id_stage_i/U813/X (SAEDRVT14_OAI22_4)     0.09      5.03 f
+  core_i/id_stage_i/U1398/X (SAEDRVT14_AO22_2)     0.07      5.10 f
+  core_i/id_stage_i/U1397/X (SAEDRVT14_OR2_2)      0.02      5.12 f
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[20]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.12 f
+  data arrival time                                          5.12
+
+  clock clk_i (rise edge)                          5.00      5.00
+  clock network delay (propagated)                 0.17      5.17
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[20]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.17 r
+  library setup time                               0.00      5.17
+  data required time                                         5.17
+  ------------------------------------------------------------------------
+  data required time                                         5.17
+  data arrival time                                         -5.12
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.05
+
+
+
+  Startpoint: data_rvalid_i (input port clocked by clk_i)
+  Endpoint: core_i/id_stage_i/alu_operand_a_ex_o_reg[21] (rising edge-triggered flip-flop clocked by clk_i)
+  Mode: func
+  Corner: slow_Cmax
+  Scenario: func_slow_Cmax
+  Path Group: clk_i
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk_i (rise edge)                          0.00      0.00
+  clock network delay (ideal)                      0.17      0.17
+  input external delay                             4.00      4.17
+
+  data_rvalid_i (in)                               0.04      4.21 f
+  core_i/load_store_unit_i/PLACE_HFSINV_2703_270/X (SAEDRVT14_INV_S_7)
+                                                   0.06      4.28 r
+  core_i/load_store_unit_i/U17/X (SAEDRVT14_OAI21_V1_8)
+                                                   0.04      4.32 f
+  core_i/load_store_unit_i/U292/X (SAEDRVT14_AO22_2)
+                                                   0.04      4.36 f
+  core_i/load_store_unit_i/U288/X (SAEDRVT14_OR2_2)
+                                                   0.03      4.39 f
+  core_i/ex_stage_i/U88/X (SAEDRVT14_AN4_2)        0.05      4.44 f
+  core_i/ex_stage_i/U199/X (SAEDRVT14_OR2_MM_6)    0.05      4.49 f
+  core_i/id_stage_i/U1337/X (SAEDRVT14_AN4_2)      0.10      4.59 f
+  core_i/id_stage_i/PLACE_HFSINV_368_251/X (SAEDRVT14_INV_S_7)
+                                                   0.04      4.63 r
+  core_i/id_stage_i/U938/X (SAEDRVT14_OR2_2)       0.04      4.67 r
+  core_i/id_stage_i/U1334/X (SAEDRVT14_INV_S_2)    0.03      4.70 f
+  core_i/id_stage_i/U814/X (SAEDRVT14_ND3_4)       0.04      4.74 r
+  core_i/id_stage_i/PLACE_HFSINV_471_218/X (SAEDRVT14_INV_S_7)
+                                                   0.02      4.76 f
+  core_i/id_stage_i/U815/X (SAEDRVT14_AN2_MM_2)    0.04      4.80 f
+  core_i/id_stage_i/PLACE_HFSBUF_973_215/X (SAEDRVT14_BUF_20)
+                                                   0.03      4.82 f
+  core_i/id_stage_i/U1320/X (SAEDRVT14_AOI21_V1_8)
+                                                   0.06      4.88 r
+  core_i/id_stage_i/U816/X (SAEDRVT14_OR2_2)       0.06      4.94 r
+  core_i/id_stage_i/U813/X (SAEDRVT14_OAI22_4)     0.09      5.03 f
+  core_i/id_stage_i/U1392/X (SAEDRVT14_AO22_2)     0.07      5.10 f
+  core_i/id_stage_i/U1391/X (SAEDRVT14_OR2_2)      0.02      5.12 f
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[21]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.12 f
+  data arrival time                                          5.12
+
+  clock clk_i (rise edge)                          5.00      5.00
+  clock network delay (propagated)                 0.17      5.17
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[21]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.17 r
+  library setup time                               0.01      5.17
+  data required time                                         5.17
+  ------------------------------------------------------------------------
+  data required time                                         5.17
+  data arrival time                                         -5.12
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.05
+
+
+
+  Startpoint: data_rvalid_i (input port clocked by clk_i)
+  Endpoint: core_i/id_stage_i/alu_operand_a_ex_o_reg[18] (rising edge-triggered flip-flop clocked by clk_i)
+  Mode: func
+  Corner: slow_Cmax
+  Scenario: func_slow_Cmax
+  Path Group: clk_i
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk_i (rise edge)                          0.00      0.00
+  clock network delay (ideal)                      0.17      0.17
+  input external delay                             4.00      4.17
+
+  data_rvalid_i (in)                               0.04      4.21 f
+  core_i/load_store_unit_i/PLACE_HFSINV_2703_270/X (SAEDRVT14_INV_S_7)
+                                                   0.06      4.28 r
+  core_i/load_store_unit_i/U17/X (SAEDRVT14_OAI21_V1_8)
+                                                   0.04      4.32 f
+  core_i/load_store_unit_i/U292/X (SAEDRVT14_AO22_2)
+                                                   0.04      4.36 f
+  core_i/load_store_unit_i/U288/X (SAEDRVT14_OR2_2)
+                                                   0.03      4.39 f
+  core_i/ex_stage_i/U88/X (SAEDRVT14_AN4_2)        0.05      4.44 f
+  core_i/ex_stage_i/U199/X (SAEDRVT14_OR2_MM_6)    0.05      4.49 f
+  core_i/id_stage_i/U1337/X (SAEDRVT14_AN4_2)      0.10      4.59 f
+  core_i/id_stage_i/PLACE_HFSINV_368_251/X (SAEDRVT14_INV_S_7)
+                                                   0.04      4.63 r
+  core_i/id_stage_i/U938/X (SAEDRVT14_OR2_2)       0.04      4.67 r
+  core_i/id_stage_i/U1334/X (SAEDRVT14_INV_S_2)    0.03      4.70 f
+  core_i/id_stage_i/U814/X (SAEDRVT14_ND3_4)       0.04      4.74 r
+  core_i/id_stage_i/PLACE_HFSINV_471_218/X (SAEDRVT14_INV_S_7)
+                                                   0.02      4.76 f
+  core_i/id_stage_i/U815/X (SAEDRVT14_AN2_MM_2)    0.04      4.80 f
+  core_i/id_stage_i/PLACE_HFSBUF_973_215/X (SAEDRVT14_BUF_20)
+                                                   0.03      4.82 f
+  core_i/id_stage_i/U1320/X (SAEDRVT14_AOI21_V1_8)
+                                                   0.06      4.88 r
+  core_i/id_stage_i/U816/X (SAEDRVT14_OR2_2)       0.06      4.94 r
+  core_i/id_stage_i/U813/X (SAEDRVT14_OAI22_4)     0.09      5.03 f
+  core_i/id_stage_i/U1410/X (SAEDRVT14_AO22_2)     0.07      5.10 f
+  core_i/id_stage_i/U1409/X (SAEDRVT14_OR2_2)      0.02      5.12 f
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[18]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.12 f
+  data arrival time                                          5.12
+
+  clock clk_i (rise edge)                          5.00      5.00
+  clock network delay (propagated)                 0.17      5.17
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[18]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.17 r
+  library setup time                               0.00      5.17
+  data required time                                         5.17
+  ------------------------------------------------------------------------
+  data required time                                         5.17
+  data arrival time                                         -5.12
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.05
+
+
+
+  Startpoint: data_rvalid_i (input port clocked by clk_i)
+  Endpoint: core_i/id_stage_i/alu_operand_a_ex_o_reg[23] (rising edge-triggered flip-flop clocked by clk_i)
+  Mode: func
+  Corner: slow_Cmax
+  Scenario: func_slow_Cmax
+  Path Group: clk_i
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk_i (rise edge)                          0.00      0.00
+  clock network delay (ideal)                      0.17      0.17
+  input external delay                             4.00      4.17
+
+  data_rvalid_i (in)                               0.04      4.21 f
+  core_i/load_store_unit_i/PLACE_HFSINV_2703_270/X (SAEDRVT14_INV_S_7)
+                                                   0.06      4.28 r
+  core_i/load_store_unit_i/U17/X (SAEDRVT14_OAI21_V1_8)
+                                                   0.04      4.32 f
+  core_i/load_store_unit_i/U292/X (SAEDRVT14_AO22_2)
+                                                   0.04      4.36 f
+  core_i/load_store_unit_i/U288/X (SAEDRVT14_OR2_2)
+                                                   0.03      4.39 f
+  core_i/ex_stage_i/U88/X (SAEDRVT14_AN4_2)        0.05      4.44 f
+  core_i/ex_stage_i/U199/X (SAEDRVT14_OR2_MM_6)    0.05      4.49 f
+  core_i/id_stage_i/U1337/X (SAEDRVT14_AN4_2)      0.10      4.59 f
+  core_i/id_stage_i/PLACE_HFSINV_368_251/X (SAEDRVT14_INV_S_7)
+                                                   0.04      4.63 r
+  core_i/id_stage_i/U938/X (SAEDRVT14_OR2_2)       0.04      4.67 r
+  core_i/id_stage_i/U1334/X (SAEDRVT14_INV_S_2)    0.03      4.70 f
+  core_i/id_stage_i/U814/X (SAEDRVT14_ND3_4)       0.04      4.74 r
+  core_i/id_stage_i/PLACE_HFSINV_471_218/X (SAEDRVT14_INV_S_7)
+                                                   0.02      4.76 f
+  core_i/id_stage_i/U815/X (SAEDRVT14_AN2_MM_2)    0.04      4.80 f
+  core_i/id_stage_i/PLACE_HFSBUF_973_215/X (SAEDRVT14_BUF_20)
+                                                   0.03      4.82 f
+  core_i/id_stage_i/U1320/X (SAEDRVT14_AOI21_V1_8)
+                                                   0.06      4.88 r
+  core_i/id_stage_i/U816/X (SAEDRVT14_OR2_2)       0.06      4.94 r
+  core_i/id_stage_i/U813/X (SAEDRVT14_OAI22_4)     0.09      5.03 f
+  core_i/id_stage_i/U953/X (SAEDRVT14_AO22_2)      0.07      5.10 f
+  core_i/id_stage_i/U952/X (SAEDRVT14_OR2_2)       0.02      5.12 f
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[23]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.12 f
+  data arrival time                                          5.12
+
+  clock clk_i (rise edge)                          5.00      5.00
+  clock network delay (propagated)                 0.17      5.17
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[23]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.17 r
+  library setup time                               0.01      5.17
+  data required time                                         5.17
+  ------------------------------------------------------------------------
+  data required time                                         5.17
+  data arrival time                                         -5.12
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.05
+
+
+
+  Startpoint: data_rvalid_i (input port clocked by clk_i)
+  Endpoint: core_i/id_stage_i/alu_operand_a_ex_o_reg[17] (rising edge-triggered flip-flop clocked by clk_i)
+  Mode: func
+  Corner: slow_Cmax
+  Scenario: func_slow_Cmax
+  Path Group: clk_i
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk_i (rise edge)                          0.00      0.00
+  clock network delay (ideal)                      0.17      0.17
+  input external delay                             4.00      4.17
+
+  data_rvalid_i (in)                               0.04      4.21 f
+  core_i/load_store_unit_i/PLACE_HFSINV_2703_270/X (SAEDRVT14_INV_S_7)
+                                                   0.06      4.28 r
+  core_i/load_store_unit_i/U17/X (SAEDRVT14_OAI21_V1_8)
+                                                   0.04      4.32 f
+  core_i/load_store_unit_i/U292/X (SAEDRVT14_AO22_2)
+                                                   0.04      4.36 f
+  core_i/load_store_unit_i/U288/X (SAEDRVT14_OR2_2)
+                                                   0.03      4.39 f
+  core_i/ex_stage_i/U88/X (SAEDRVT14_AN4_2)        0.05      4.44 f
+  core_i/ex_stage_i/U199/X (SAEDRVT14_OR2_MM_6)    0.05      4.49 f
+  core_i/id_stage_i/U1337/X (SAEDRVT14_AN4_2)      0.10      4.59 f
+  core_i/id_stage_i/PLACE_HFSINV_368_251/X (SAEDRVT14_INV_S_7)
+                                                   0.04      4.63 r
+  core_i/id_stage_i/U938/X (SAEDRVT14_OR2_2)       0.04      4.67 r
+  core_i/id_stage_i/U1334/X (SAEDRVT14_INV_S_2)    0.03      4.70 f
+  core_i/id_stage_i/U814/X (SAEDRVT14_ND3_4)       0.04      4.74 r
+  core_i/id_stage_i/PLACE_HFSINV_471_218/X (SAEDRVT14_INV_S_7)
+                                                   0.02      4.76 f
+  core_i/id_stage_i/U815/X (SAEDRVT14_AN2_MM_2)    0.04      4.80 f
+  core_i/id_stage_i/PLACE_HFSBUF_973_215/X (SAEDRVT14_BUF_20)
+                                                   0.03      4.82 f
+  core_i/id_stage_i/U1320/X (SAEDRVT14_AOI21_V1_8)
+                                                   0.06      4.88 r
+  core_i/id_stage_i/U816/X (SAEDRVT14_OR2_2)       0.06      4.94 r
+  core_i/id_stage_i/U813/X (SAEDRVT14_OAI22_4)     0.09      5.03 f
+  core_i/id_stage_i/U1402/X (SAEDRVT14_AO22_2)     0.07      5.10 f
+  core_i/id_stage_i/U1401/X (SAEDRVT14_OR2_2)      0.02      5.12 f
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[17]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.12 f
+  data arrival time                                          5.12
+
+  clock clk_i (rise edge)                          5.00      5.00
+  clock network delay (propagated)                 0.17      5.17
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[17]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.17 r
+  library setup time                               0.01      5.18
+  data required time                                         5.18
+  ------------------------------------------------------------------------
+  data required time                                         5.18
+  data arrival time                                         -5.12
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.06
+
+
+
+  Startpoint: data_rvalid_i (input port clocked by clk_i)
+  Endpoint: core_i/id_stage_i/alu_operand_a_ex_o_reg[30] (rising edge-triggered flip-flop clocked by clk_i)
+  Mode: func
+  Corner: slow_Cmax
+  Scenario: func_slow_Cmax
+  Path Group: clk_i
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk_i (rise edge)                          0.00      0.00
+  clock network delay (ideal)                      0.17      0.17
+  input external delay                             4.00      4.17
+
+  data_rvalid_i (in)                               0.04      4.21 f
+  core_i/load_store_unit_i/PLACE_HFSINV_2703_270/X (SAEDRVT14_INV_S_7)
+                                                   0.06      4.28 r
+  core_i/load_store_unit_i/U17/X (SAEDRVT14_OAI21_V1_8)
+                                                   0.04      4.32 f
+  core_i/load_store_unit_i/U292/X (SAEDRVT14_AO22_2)
+                                                   0.04      4.36 f
+  core_i/load_store_unit_i/U288/X (SAEDRVT14_OR2_2)
+                                                   0.03      4.39 f
+  core_i/ex_stage_i/U88/X (SAEDRVT14_AN4_2)        0.05      4.44 f
+  core_i/ex_stage_i/U199/X (SAEDRVT14_OR2_MM_6)    0.05      4.49 f
+  core_i/id_stage_i/U1337/X (SAEDRVT14_AN4_2)      0.10      4.59 f
+  core_i/id_stage_i/PLACE_HFSINV_368_251/X (SAEDRVT14_INV_S_7)
+                                                   0.04      4.63 r
+  core_i/id_stage_i/U938/X (SAEDRVT14_OR2_2)       0.04      4.67 r
+  core_i/id_stage_i/U1334/X (SAEDRVT14_INV_S_2)    0.03      4.70 f
+  core_i/id_stage_i/U814/X (SAEDRVT14_ND3_4)       0.04      4.74 r
+  core_i/id_stage_i/PLACE_HFSINV_471_218/X (SAEDRVT14_INV_S_7)
+                                                   0.02      4.76 f
+  core_i/id_stage_i/U815/X (SAEDRVT14_AN2_MM_2)    0.04      4.80 f
+  core_i/id_stage_i/PLACE_HFSBUF_973_215/X (SAEDRVT14_BUF_20)
+                                                   0.03      4.82 f
+  core_i/id_stage_i/U1320/X (SAEDRVT14_AOI21_V1_8)
+                                                   0.06      4.88 r
+  core_i/id_stage_i/U816/X (SAEDRVT14_OR2_2)       0.06      4.94 r
+  core_i/id_stage_i/U813/X (SAEDRVT14_OAI22_4)     0.09      5.03 f
+  core_i/id_stage_i/U1428/X (SAEDRVT14_AO22_2)     0.07      5.10 f
+  core_i/id_stage_i/U1427/X (SAEDRVT14_OR2_2)      0.02      5.12 f
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[30]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.12 f
+  data arrival time                                          5.12
+
+  clock clk_i (rise edge)                          5.00      5.00
+  clock network delay (propagated)                 0.17      5.17
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[30]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.17 r
+  library setup time                               0.01      5.18
+  data required time                                         5.18
+  ------------------------------------------------------------------------
+  data required time                                         5.18
+  data arrival time                                         -5.12
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.06
+
+
+
+  Startpoint: data_rvalid_i (input port clocked by clk_i)
+  Endpoint: core_i/id_stage_i/alu_operand_a_ex_o_reg[24] (rising edge-triggered flip-flop clocked by clk_i)
+  Mode: func
+  Corner: slow_Cmax
+  Scenario: func_slow_Cmax
+  Path Group: clk_i
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk_i (rise edge)                          0.00      0.00
+  clock network delay (ideal)                      0.17      0.17
+  input external delay                             4.00      4.17
+
+  data_rvalid_i (in)                               0.04      4.21 f
+  core_i/load_store_unit_i/PLACE_HFSINV_2703_270/X (SAEDRVT14_INV_S_7)
+                                                   0.06      4.28 r
+  core_i/load_store_unit_i/U17/X (SAEDRVT14_OAI21_V1_8)
+                                                   0.04      4.32 f
+  core_i/load_store_unit_i/U292/X (SAEDRVT14_AO22_2)
+                                                   0.04      4.36 f
+  core_i/load_store_unit_i/U288/X (SAEDRVT14_OR2_2)
+                                                   0.03      4.39 f
+  core_i/ex_stage_i/U88/X (SAEDRVT14_AN4_2)        0.05      4.44 f
+  core_i/ex_stage_i/U199/X (SAEDRVT14_OR2_MM_6)    0.05      4.49 f
+  core_i/id_stage_i/U1337/X (SAEDRVT14_AN4_2)      0.10      4.59 f
+  core_i/id_stage_i/PLACE_HFSINV_368_251/X (SAEDRVT14_INV_S_7)
+                                                   0.04      4.63 r
+  core_i/id_stage_i/U938/X (SAEDRVT14_OR2_2)       0.04      4.67 r
+  core_i/id_stage_i/U1334/X (SAEDRVT14_INV_S_2)    0.03      4.70 f
+  core_i/id_stage_i/U814/X (SAEDRVT14_ND3_4)       0.04      4.74 r
+  core_i/id_stage_i/PLACE_HFSINV_471_218/X (SAEDRVT14_INV_S_7)
+                                                   0.02      4.76 f
+  core_i/id_stage_i/U815/X (SAEDRVT14_AN2_MM_2)    0.04      4.80 f
+  core_i/id_stage_i/PLACE_HFSBUF_973_215/X (SAEDRVT14_BUF_20)
+                                                   0.03      4.82 f
+  core_i/id_stage_i/U1320/X (SAEDRVT14_AOI21_V1_8)
+                                                   0.06      4.88 r
+  core_i/id_stage_i/U816/X (SAEDRVT14_OR2_2)       0.06      4.94 r
+  core_i/id_stage_i/U813/X (SAEDRVT14_OAI22_4)     0.09      5.03 f
+  core_i/id_stage_i/U1416/X (SAEDRVT14_AO22_2)     0.07      5.10 f
+  core_i/id_stage_i/U1415/X (SAEDRVT14_OR2_2)      0.02      5.12 f
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[24]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.12 f
+  data arrival time                                          5.12
+
+  clock clk_i (rise edge)                          5.00      5.00
+  clock network delay (propagated)                 0.17      5.17
+  core_i/id_stage_i/alu_operand_a_ex_o_reg[24]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                   0.00      5.17 r
+  library setup time                               0.01      5.18
+  data required time                                         5.18
+  ------------------------------------------------------------------------
+  data required time                                         5.18
+  data arrival time                                         -5.12
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.06
+
+
+1

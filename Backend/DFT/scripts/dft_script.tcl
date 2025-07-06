@@ -1,4 +1,6 @@
 
+set_host_options -max_cores 12
+
 ########################### Define Top Module ############################
                                                    
 set top_module cv32e40p_top
@@ -29,8 +31,8 @@ lappend search_path "/home/ICer/ITI/PnR_Grad/rtl/dft_top"
 lappend search_path "/home/ICer/ITI/PnR_Grad/rtl/vendor/pulp_platform_fpnew/src"
 
 set SSLIB "saed14rvt_ss0p6v125c.db" 
-set TTLIB "saed14rvt_tt0p6v25c.db"
-set FFLIB "saed14rvt_ff0p88v125c.db" 
+set TTLIB "saed14rvt_tt0p8v25c.db"
+set FFLIB "saed14rvt_ff0p88vm40c.db" 
 
 ## Standard Cell libraries 
 set target_library [list $SSLIB $TTLIB $FFLIB]
@@ -108,8 +110,8 @@ puts "###############################################"
 puts "############ Design Constraints #### ##########"
 puts "###############################################"
 
+source -echo -v /home/ICer/ITI/PnR_Grad/Backend/PnR_dft/scripts/import/dont_use.tcl
 source -echo -v cons/cv32e40p_core.sdc
-source -echo -v cons/cons.tcl
 
 
 #################### Archirecture Scan Chains #########################

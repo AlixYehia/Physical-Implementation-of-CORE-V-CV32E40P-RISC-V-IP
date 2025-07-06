@@ -1,0 +1,228 @@
+****************************************
+Report : corner
+Design : cv32e40p_top
+Version: O-2018.06-SP1
+Date   : Tue Jul  1 12:10:05 2025
+****************************************
+
+--------------------------------------------------------------------------------
+Corner fast_Cmax
+--------------------------------------------------------------------------------
+
+Current: false  Default: false  Empty: false
+
+Scenarios associated with this corner:
+
+                                                         Leakage   Dynamic
+Scenario            Mode            Active  Setup  Hold  Power     Power     Max_tran  Max_cap  Min_cap  Cell_em  Signal_em
+-------------------------------------------------------------------------------------------------------------------------
+func_fast_Cmax      func            true    true   true  false     false     true      true     true     false    false
+test_fast_Cmax      test            true    true   true  false     false     true      true     true     false    false
+
+
+Top-Level PVT Settings:
+  early process label             ff
+  early process number            1
+  early voltage                   0.88
+    source                        hierarchical setting
+    file/line                     /home/ICer/ITI/PnR_Grad/Backend/PnR/scripts/import/MCMM.tcl, line 34
+  early temperature               -40.00
+    source                        hierarchical setting
+    file/line                     /home/ICer/ITI/PnR_Grad/Backend/PnR/scripts/import/MCMM.tcl, line 33
+
+  late process label              ff
+  late process number             1
+  late voltage                    0.88
+    source                        hierarchical setting
+    file/line                     /home/ICer/ITI/PnR_Grad/Backend/PnR/scripts/import/MCMM.tcl, line 34
+  late temperature                -40.00
+    source                        hierarchical setting
+    file/line                     /home/ICer/ITI/PnR_Grad/Backend/PnR/scripts/import/MCMM.tcl, line 33
+
+
+
+
+0 objects with explicit PVT settings.
+
+
+Top-level cell timing derates:
+ data_cell derate early:   rise: 1.00    fall: 1.00  
+ clk_cell derate early:   rise: 1.00    fall: 1.00  
+ cell_check derate early:   rise: 1.00    fall: 1.00  
+ data_cell derate  late:   rise: 1.00    fall: 1.00  
+ clk_cell derate  late:   rise: 1.00    fall: 1.00  
+ cell_check derate  late:   rise: 1.00    fall: 1.00  
+
+Global net timing derates:
+ net_data, early:   rise: 1.00    fall: 1.00  
+ net_data, late:   rise: 1.00    fall: 1.00  
+ net_clock, early:   rise: 1.00    fall: 1.00  
+ net_clock, late:   rise: 1.00    fall: 1.00  
+
+
+--------------------------------------------------------------------------------
+Corner fast_Cmin
+--------------------------------------------------------------------------------
+
+Current: false  Default: false  Empty: false
+
+Scenarios associated with this corner:
+
+                                                         Leakage   Dynamic
+Scenario            Mode            Active  Setup  Hold  Power     Power     Max_tran  Max_cap  Min_cap  Cell_em  Signal_em
+-------------------------------------------------------------------------------------------------------------------------
+func_fast_Cmin      func            true    true   true  false     false     true      true     true     false    false
+test_fast_Cmin      test            true    true   true  false     false     true      true     true     false    false
+
+
+Top-Level PVT Settings:
+  early process label             ff
+  early process number            1
+  early voltage                   0.88
+    source                        hierarchical setting
+    file/line                     /home/ICer/ITI/PnR_Grad/Backend/PnR/scripts/import/MCMM.tcl, line 34
+  early temperature               -40.00
+    source                        hierarchical setting
+    file/line                     /home/ICer/ITI/PnR_Grad/Backend/PnR/scripts/import/MCMM.tcl, line 33
+
+  late process label              ff
+  late process number             1
+  late voltage                    0.88
+    source                        hierarchical setting
+    file/line                     /home/ICer/ITI/PnR_Grad/Backend/PnR/scripts/import/MCMM.tcl, line 34
+  late temperature                -40.00
+    source                        hierarchical setting
+    file/line                     /home/ICer/ITI/PnR_Grad/Backend/PnR/scripts/import/MCMM.tcl, line 33
+
+
+
+
+0 objects with explicit PVT settings.
+
+
+Top-level cell timing derates:
+ data_cell derate early:   rise: 1.00    fall: 1.00  
+ clk_cell derate early:   rise: 1.00    fall: 1.00  
+ cell_check derate early:   rise: 1.00    fall: 1.00  
+ data_cell derate  late:   rise: 1.00    fall: 1.00  
+ clk_cell derate  late:   rise: 1.00    fall: 1.00  
+ cell_check derate  late:   rise: 1.00    fall: 1.00  
+
+Global net timing derates:
+ net_data, early:   rise: 1.00    fall: 1.00  
+ net_data, late:   rise: 1.00    fall: 1.00  
+ net_clock, early:   rise: 1.00    fall: 1.00  
+ net_clock, late:   rise: 1.00    fall: 1.00  
+
+
+--------------------------------------------------------------------------------
+Corner slow_Cmax
+--------------------------------------------------------------------------------
+
+Current: true  Default: false  Empty: false
+
+Scenarios associated with this corner:
+
+                                                         Leakage   Dynamic
+Scenario            Mode            Active  Setup  Hold  Power     Power     Max_tran  Max_cap  Min_cap  Cell_em  Signal_em
+-------------------------------------------------------------------------------------------------------------------------
+func_slow_Cmax      func            true    true   true  false     false     true      true     true     false    false
+test_slow_Cmax      test            true    true   true  false     false     true      true     true     false    false
+
+
+Top-Level PVT Settings:
+  early process label             ss
+  early process number            1
+  early voltage                   0.60
+    source                        hierarchical setting
+    file/line                     /home/ICer/ITI/PnR_Grad/Backend/PnR/scripts/import/MCMM.tcl, line 38
+  early temperature               125.00
+    source                        hierarchical setting
+    file/line                     /home/ICer/ITI/PnR_Grad/Backend/PnR/scripts/import/MCMM.tcl, line 37
+
+  late process label              ss
+  late process number             1
+  late voltage                    0.60
+    source                        hierarchical setting
+    file/line                     /home/ICer/ITI/PnR_Grad/Backend/PnR/scripts/import/MCMM.tcl, line 38
+  late temperature                125.00
+    source                        hierarchical setting
+    file/line                     /home/ICer/ITI/PnR_Grad/Backend/PnR/scripts/import/MCMM.tcl, line 37
+
+
+
+
+0 objects with explicit PVT settings.
+
+
+Top-level cell timing derates:
+ data_cell derate early:   rise: 1.00    fall: 1.00  
+ clk_cell derate early:   rise: 1.00    fall: 1.00  
+ cell_check derate early:   rise: 1.00    fall: 1.00  
+ data_cell derate  late:   rise: 1.00    fall: 1.00  
+ clk_cell derate  late:   rise: 1.00    fall: 1.00  
+ cell_check derate  late:   rise: 1.00    fall: 1.00  
+
+Global net timing derates:
+ net_data, early:   rise: 1.00    fall: 1.00  
+ net_data, late:   rise: 1.00    fall: 1.00  
+ net_clock, early:   rise: 1.00    fall: 1.00  
+ net_clock, late:   rise: 1.00    fall: 1.00  
+
+
+--------------------------------------------------------------------------------
+Corner slow_Cmin
+--------------------------------------------------------------------------------
+
+Current: false  Default: false  Empty: false
+
+Scenarios associated with this corner:
+
+                                                         Leakage   Dynamic
+Scenario            Mode            Active  Setup  Hold  Power     Power     Max_tran  Max_cap  Min_cap  Cell_em  Signal_em
+-------------------------------------------------------------------------------------------------------------------------
+func_slow_Cmin      func            true    true   true  false     false     true      true     true     false    false
+test_slow_Cmin      test            true    true   true  false     false     true      true     true     false    false
+
+
+Top-Level PVT Settings:
+  early process label             ss
+  early process number            1
+  early voltage                   0.60
+    source                        hierarchical setting
+    file/line                     /home/ICer/ITI/PnR_Grad/Backend/PnR/scripts/import/MCMM.tcl, line 38
+  early temperature               125.00
+    source                        hierarchical setting
+    file/line                     /home/ICer/ITI/PnR_Grad/Backend/PnR/scripts/import/MCMM.tcl, line 37
+
+  late process label              ss
+  late process number             1
+  late voltage                    0.60
+    source                        hierarchical setting
+    file/line                     /home/ICer/ITI/PnR_Grad/Backend/PnR/scripts/import/MCMM.tcl, line 38
+  late temperature                125.00
+    source                        hierarchical setting
+    file/line                     /home/ICer/ITI/PnR_Grad/Backend/PnR/scripts/import/MCMM.tcl, line 37
+
+
+
+
+0 objects with explicit PVT settings.
+
+
+Top-level cell timing derates:
+ data_cell derate early:   rise: 1.00    fall: 1.00  
+ clk_cell derate early:   rise: 1.00    fall: 1.00  
+ cell_check derate early:   rise: 1.00    fall: 1.00  
+ data_cell derate  late:   rise: 1.00    fall: 1.00  
+ clk_cell derate  late:   rise: 1.00    fall: 1.00  
+ cell_check derate  late:   rise: 1.00    fall: 1.00  
+
+Global net timing derates:
+ net_data, early:   rise: 1.00    fall: 1.00  
+ net_data, late:   rise: 1.00    fall: 1.00  
+ net_clock, early:   rise: 1.00    fall: 1.00  
+ net_clock, late:   rise: 1.00    fall: 1.00  
+
+
+1

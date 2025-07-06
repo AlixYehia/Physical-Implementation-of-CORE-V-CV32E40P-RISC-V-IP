@@ -6,752 +6,966 @@ Report : timing
         -max_paths 10
 Design : cv32e40p_top
 Version: O-2018.06-SP1
-Date   : Sun May 25 00:58:10 2025
+Date   : Sun Jul  6 23:28:56 2025
 ****************************************
 
  # A fanout number of 1000 was used for high fanout net computations.
 
-Operating Conditions: ff0p88v125c   Library: saed14rvt_ff0p88v125c
+Operating Conditions: ss0p6v125c   Library: saed14rvt_ss0p6v125c
 Wire Load Model Mode: top
 
-  Startpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[1]
-              (rising edge-triggered flip-flop clocked by clk_i)
-  Endpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[2]
-            (rising edge-triggered flip-flop clocked by clk_i)
+  Startpoint: debug_req_i
+              (input port clocked by clk_i)
+  Endpoint: core_sleep_o
+            (output port clocked by clk_i)
   Path Group: clk_i
   Path Type: min
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
-  cv32e40p_top       16000                 saed14rvt_ss0p6v125c
+  cv32e40p_top       35000                 saed14rvt_ss0p6v125c
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock clk_i (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[1]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00 #     0.00 r
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[1]/Q (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                         -0.23      -0.23 f
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[2]/SI (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.01      -0.23 f
-  data arrival time                                                 -0.23
+  input external delay                                    0.50       0.50 r
+  debug_req_i (in)                                        0.00       0.50 r
+  core_i/debug_req_i (cv32e40p_core_COREV_PULP0_COREV_CLUSTER0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_NUM_MHPMCOUNTERS1_test_1)
+                                                          0.00       0.50 r
+  core_i/id_stage_i/debug_req_i (cv32e40p_id_stage_COREV_PULP0_COREV_CLUSTER0_N_HWLP2_PULP_SECURE0_USE_PMP0_A_EXTENSION0_APU0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_DEBUG_TRIGGER_EN1_test_1)
+                                                          0.00       0.50 r
+  core_i/id_stage_i/controller_i/debug_req_i (cv32e40p_controller_COREV_CLUSTER0_COREV_PULP0_FPU0_test_1)
+                                                          0.00       0.50 r
+  core_i/id_stage_i/controller_i/U167/X (SAEDRVT14_OR2_2)
+                                                          0.02       0.52 r
+  core_i/id_stage_i/controller_i/U77/X (SAEDRVT14_OR2_2)
+                                                          0.02       0.54 r
+  core_i/id_stage_i/controller_i/wake_from_sleep_o (cv32e40p_controller_COREV_CLUSTER0_COREV_PULP0_FPU0_test_1)
+                                                          0.00       0.54 r
+  core_i/id_stage_i/wake_from_sleep_o (cv32e40p_id_stage_COREV_PULP0_COREV_CLUSTER0_N_HWLP2_PULP_SECURE0_USE_PMP0_A_EXTENSION0_APU0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_DEBUG_TRIGGER_EN1_test_1)
+                                                          0.00       0.54 r
+  core_i/sleep_unit_i/wake_from_sleep_i (cv32e40p_sleep_unit_COREV_CLUSTER0_test_1)
+                                                          0.00       0.54 r
+  core_i/sleep_unit_i/U5/X (SAEDRVT14_NR2_4)              0.03       0.57 f
+  core_i/sleep_unit_i/U4/X (SAEDRVT14_AN2_MM_2)           0.02       0.59 f
+  core_i/sleep_unit_i/core_sleep_o (cv32e40p_sleep_unit_COREV_CLUSTER0_test_1)
+                                                          0.00       0.59 f
+  core_i/core_sleep_o (cv32e40p_core_COREV_PULP0_COREV_CLUSTER0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_NUM_MHPMCOUNTERS1_test_1)
+                                                          0.00       0.59 f
+  core_sleep_o (out)                                      0.01       0.60 f
+  data arrival time                                                  0.60
 
   clock clk_i (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   clock uncertainty                                       0.05       0.05
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[2]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00       0.05 r
-  library hold time                                       0.01       0.06
-  data required time                                                 0.06
+  output external delay                                  -1.25      -1.20
+  data required time                                                -1.20
   --------------------------------------------------------------------------
-  data required time                                                 0.06
-  data arrival time                                                  0.23
+  data required time                                                -1.20
+  data arrival time                                                 -0.60
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.29
+  slack (MET)                                                        1.80
 
 
-  Startpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[2]
-              (rising edge-triggered flip-flop clocked by clk_i)
-  Endpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[3]
-            (rising edge-triggered flip-flop clocked by clk_i)
+  Startpoint: debug_req_i
+              (input port clocked by clk_i)
+  Endpoint: irq_ack_o (output port clocked by clk_i)
   Path Group: clk_i
   Path Type: min
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
-  cv32e40p_top       16000                 saed14rvt_ss0p6v125c
+  cv32e40p_top       35000                 saed14rvt_ss0p6v125c
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock clk_i (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[2]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00 #     0.00 r
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[2]/Q (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                         -0.23      -0.23 f
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[3]/SI (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.01      -0.23 f
-  data arrival time                                                 -0.23
+  input external delay                                    0.50       0.50 r
+  debug_req_i (in)                                        0.00       0.50 r
+  core_i/debug_req_i (cv32e40p_core_COREV_PULP0_COREV_CLUSTER0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_NUM_MHPMCOUNTERS1_test_1)
+                                                          0.00       0.50 r
+  core_i/id_stage_i/debug_req_i (cv32e40p_id_stage_COREV_PULP0_COREV_CLUSTER0_N_HWLP2_PULP_SECURE0_USE_PMP0_A_EXTENSION0_APU0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_DEBUG_TRIGGER_EN1_test_1)
+                                                          0.00       0.50 r
+  core_i/id_stage_i/controller_i/debug_req_i (cv32e40p_controller_COREV_CLUSTER0_COREV_PULP0_FPU0_test_1)
+                                                          0.00       0.50 r
+  core_i/id_stage_i/controller_i/U167/X (SAEDRVT14_OR2_2)
+                                                          0.02       0.52 r
+  core_i/id_stage_i/controller_i/U514/X (SAEDRVT14_INV_S_2)
+                                                          0.02       0.54 f
+  core_i/id_stage_i/controller_i/U82/X (SAEDRVT14_ND3_2)
+                                                          0.03       0.57 r
+  core_i/id_stage_i/controller_i/U37/X (SAEDRVT14_OA21_MM_2)
+                                                          0.03       0.61 r
+  core_i/id_stage_i/controller_i/U468/X (SAEDRVT14_INV_S_2)
+                                                          0.02       0.63 f
+  core_i/id_stage_i/controller_i/U31/X (SAEDRVT14_AN2_MM_2)
+                                                          0.03       0.66 f
+  core_i/id_stage_i/controller_i/irq_ack_o (cv32e40p_controller_COREV_CLUSTER0_COREV_PULP0_FPU0_test_1)
+                                                          0.00       0.66 f
+  core_i/id_stage_i/irq_ack_o (cv32e40p_id_stage_COREV_PULP0_COREV_CLUSTER0_N_HWLP2_PULP_SECURE0_USE_PMP0_A_EXTENSION0_APU0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_DEBUG_TRIGGER_EN1_test_1)
+                                                          0.00       0.66 f
+  core_i/irq_ack_o (cv32e40p_core_COREV_PULP0_COREV_CLUSTER0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_NUM_MHPMCOUNTERS1_test_1)
+                                                          0.00       0.66 f
+  irq_ack_o (out)                                         0.02       0.68 f
+  data arrival time                                                  0.68
 
   clock clk_i (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   clock uncertainty                                       0.05       0.05
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[3]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00       0.05 r
-  library hold time                                       0.01       0.06
-  data required time                                                 0.06
+  output external delay                                  -1.25      -1.20
+  data required time                                                -1.20
   --------------------------------------------------------------------------
-  data required time                                                 0.06
-  data arrival time                                                  0.23
+  data required time                                                -1.20
+  data arrival time                                                 -0.68
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.29
+  slack (MET)                                                        1.88
 
 
-  Startpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[3]
-              (rising edge-triggered flip-flop clocked by clk_i)
-  Endpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[4]
-            (rising edge-triggered flip-flop clocked by clk_i)
+  Startpoint: debug_req_i
+              (input port clocked by clk_i)
+  Endpoint: irq_id_o[4]
+            (output port clocked by clk_i)
   Path Group: clk_i
   Path Type: min
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
-  cv32e40p_top       16000                 saed14rvt_ss0p6v125c
+  cv32e40p_top       35000                 saed14rvt_ss0p6v125c
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock clk_i (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[3]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00 #     0.00 r
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[3]/Q (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                         -0.23      -0.23 f
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[4]/SI (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.01      -0.23 f
-  data arrival time                                                 -0.23
+  input external delay                                    0.50       0.50 r
+  debug_req_i (in)                                        0.00       0.50 r
+  core_i/debug_req_i (cv32e40p_core_COREV_PULP0_COREV_CLUSTER0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_NUM_MHPMCOUNTERS1_test_1)
+                                                          0.00       0.50 r
+  core_i/id_stage_i/debug_req_i (cv32e40p_id_stage_COREV_PULP0_COREV_CLUSTER0_N_HWLP2_PULP_SECURE0_USE_PMP0_A_EXTENSION0_APU0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_DEBUG_TRIGGER_EN1_test_1)
+                                                          0.00       0.50 r
+  core_i/id_stage_i/controller_i/debug_req_i (cv32e40p_controller_COREV_CLUSTER0_COREV_PULP0_FPU0_test_1)
+                                                          0.00       0.50 r
+  core_i/id_stage_i/controller_i/U167/X (SAEDRVT14_OR2_2)
+                                                          0.02       0.52 r
+  core_i/id_stage_i/controller_i/U514/X (SAEDRVT14_INV_S_2)
+                                                          0.02       0.54 f
+  core_i/id_stage_i/controller_i/U82/X (SAEDRVT14_ND3_2)
+                                                          0.03       0.57 r
+  core_i/id_stage_i/controller_i/U37/X (SAEDRVT14_OA21_MM_2)
+                                                          0.03       0.61 r
+  core_i/id_stage_i/controller_i/U468/X (SAEDRVT14_INV_S_2)
+                                                          0.02       0.63 f
+  core_i/id_stage_i/controller_i/U36/X (SAEDRVT14_ND3_2)
+                                                          0.03       0.66 r
+  core_i/id_stage_i/controller_i/U22/X (SAEDRVT14_INV_S_2)
+                                                          0.02       0.68 f
+  core_i/id_stage_i/controller_i/irq_id_o[4] (cv32e40p_controller_COREV_CLUSTER0_COREV_PULP0_FPU0_test_1)
+                                                          0.00       0.68 f
+  core_i/id_stage_i/irq_id_o[4] (cv32e40p_id_stage_COREV_PULP0_COREV_CLUSTER0_N_HWLP2_PULP_SECURE0_USE_PMP0_A_EXTENSION0_APU0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_DEBUG_TRIGGER_EN1_test_1)
+                                                          0.00       0.68 f
+  core_i/irq_id_o[4] (cv32e40p_core_COREV_PULP0_COREV_CLUSTER0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_NUM_MHPMCOUNTERS1_test_1)
+                                                          0.00       0.68 f
+  irq_id_o[4] (out)                                       0.01       0.69 f
+  data arrival time                                                  0.69
 
   clock clk_i (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   clock uncertainty                                       0.05       0.05
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[4]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00       0.05 r
-  library hold time                                       0.01       0.06
-  data required time                                                 0.06
+  output external delay                                  -1.25      -1.20
+  data required time                                                -1.20
   --------------------------------------------------------------------------
-  data required time                                                 0.06
-  data arrival time                                                  0.23
+  data required time                                                -1.20
+  data arrival time                                                 -0.69
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.29
+  slack (MET)                                                        1.89
 
 
-  Startpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[4]
-              (rising edge-triggered flip-flop clocked by clk_i)
-  Endpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[5]
-            (rising edge-triggered flip-flop clocked by clk_i)
+  Startpoint: debug_req_i
+              (input port clocked by clk_i)
+  Endpoint: irq_id_o[0]
+            (output port clocked by clk_i)
   Path Group: clk_i
   Path Type: min
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
-  cv32e40p_top       16000                 saed14rvt_ss0p6v125c
+  cv32e40p_top       35000                 saed14rvt_ss0p6v125c
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock clk_i (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[4]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00 #     0.00 r
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[4]/Q (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                         -0.23      -0.23 f
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[5]/SI (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.01      -0.23 f
-  data arrival time                                                 -0.23
+  input external delay                                    0.50       0.50 r
+  debug_req_i (in)                                        0.00       0.50 r
+  core_i/debug_req_i (cv32e40p_core_COREV_PULP0_COREV_CLUSTER0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_NUM_MHPMCOUNTERS1_test_1)
+                                                          0.00       0.50 r
+  core_i/id_stage_i/debug_req_i (cv32e40p_id_stage_COREV_PULP0_COREV_CLUSTER0_N_HWLP2_PULP_SECURE0_USE_PMP0_A_EXTENSION0_APU0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_DEBUG_TRIGGER_EN1_test_1)
+                                                          0.00       0.50 r
+  core_i/id_stage_i/controller_i/debug_req_i (cv32e40p_controller_COREV_CLUSTER0_COREV_PULP0_FPU0_test_1)
+                                                          0.00       0.50 r
+  core_i/id_stage_i/controller_i/U167/X (SAEDRVT14_OR2_2)
+                                                          0.02       0.52 r
+  core_i/id_stage_i/controller_i/U514/X (SAEDRVT14_INV_S_2)
+                                                          0.02       0.54 f
+  core_i/id_stage_i/controller_i/U82/X (SAEDRVT14_ND3_2)
+                                                          0.03       0.57 r
+  core_i/id_stage_i/controller_i/U37/X (SAEDRVT14_OA21_MM_2)
+                                                          0.03       0.61 r
+  core_i/id_stage_i/controller_i/U468/X (SAEDRVT14_INV_S_2)
+                                                          0.02       0.63 f
+  core_i/id_stage_i/controller_i/U31/X (SAEDRVT14_AN2_MM_2)
+                                                          0.03       0.66 f
+  core_i/id_stage_i/controller_i/U39/X (SAEDRVT14_AN2_MM_2)
+                                                          0.02       0.68 f
+  core_i/id_stage_i/controller_i/irq_id_o[0] (cv32e40p_controller_COREV_CLUSTER0_COREV_PULP0_FPU0_test_1)
+                                                          0.00       0.68 f
+  core_i/id_stage_i/irq_id_o[0] (cv32e40p_id_stage_COREV_PULP0_COREV_CLUSTER0_N_HWLP2_PULP_SECURE0_USE_PMP0_A_EXTENSION0_APU0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_DEBUG_TRIGGER_EN1_test_1)
+                                                          0.00       0.68 f
+  core_i/irq_id_o[0] (cv32e40p_core_COREV_PULP0_COREV_CLUSTER0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_NUM_MHPMCOUNTERS1_test_1)
+                                                          0.00       0.68 f
+  irq_id_o[0] (out)                                       0.01       0.69 f
+  data arrival time                                                  0.69
 
   clock clk_i (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   clock uncertainty                                       0.05       0.05
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[5]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00       0.05 r
-  library hold time                                       0.01       0.06
-  data required time                                                 0.06
+  output external delay                                  -1.25      -1.20
+  data required time                                                -1.20
   --------------------------------------------------------------------------
-  data required time                                                 0.06
-  data arrival time                                                  0.23
+  data required time                                                -1.20
+  data arrival time                                                 -0.69
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.29
+  slack (MET)                                                        1.89
 
 
-  Startpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[5]
-              (rising edge-triggered flip-flop clocked by clk_i)
-  Endpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[6]
-            (rising edge-triggered flip-flop clocked by clk_i)
+  Startpoint: debug_req_i
+              (input port clocked by clk_i)
+  Endpoint: irq_id_o[1]
+            (output port clocked by clk_i)
   Path Group: clk_i
   Path Type: min
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
-  cv32e40p_top       16000                 saed14rvt_ss0p6v125c
+  cv32e40p_top       35000                 saed14rvt_ss0p6v125c
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock clk_i (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[5]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00 #     0.00 r
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[5]/Q (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                         -0.23      -0.23 f
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[6]/SI (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.01      -0.23 f
-  data arrival time                                                 -0.23
+  input external delay                                    0.50       0.50 r
+  debug_req_i (in)                                        0.00       0.50 r
+  core_i/debug_req_i (cv32e40p_core_COREV_PULP0_COREV_CLUSTER0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_NUM_MHPMCOUNTERS1_test_1)
+                                                          0.00       0.50 r
+  core_i/id_stage_i/debug_req_i (cv32e40p_id_stage_COREV_PULP0_COREV_CLUSTER0_N_HWLP2_PULP_SECURE0_USE_PMP0_A_EXTENSION0_APU0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_DEBUG_TRIGGER_EN1_test_1)
+                                                          0.00       0.50 r
+  core_i/id_stage_i/controller_i/debug_req_i (cv32e40p_controller_COREV_CLUSTER0_COREV_PULP0_FPU0_test_1)
+                                                          0.00       0.50 r
+  core_i/id_stage_i/controller_i/U167/X (SAEDRVT14_OR2_2)
+                                                          0.02       0.52 r
+  core_i/id_stage_i/controller_i/U514/X (SAEDRVT14_INV_S_2)
+                                                          0.02       0.54 f
+  core_i/id_stage_i/controller_i/U82/X (SAEDRVT14_ND3_2)
+                                                          0.03       0.57 r
+  core_i/id_stage_i/controller_i/U37/X (SAEDRVT14_OA21_MM_2)
+                                                          0.03       0.61 r
+  core_i/id_stage_i/controller_i/U468/X (SAEDRVT14_INV_S_2)
+                                                          0.02       0.63 f
+  core_i/id_stage_i/controller_i/U31/X (SAEDRVT14_AN2_MM_2)
+                                                          0.03       0.66 f
+  core_i/id_stage_i/controller_i/U23/X (SAEDRVT14_AN2_MM_2)
+                                                          0.02       0.68 f
+  core_i/id_stage_i/controller_i/irq_id_o[1] (cv32e40p_controller_COREV_CLUSTER0_COREV_PULP0_FPU0_test_1)
+                                                          0.00       0.68 f
+  core_i/id_stage_i/irq_id_o[1] (cv32e40p_id_stage_COREV_PULP0_COREV_CLUSTER0_N_HWLP2_PULP_SECURE0_USE_PMP0_A_EXTENSION0_APU0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_DEBUG_TRIGGER_EN1_test_1)
+                                                          0.00       0.68 f
+  core_i/irq_id_o[1] (cv32e40p_core_COREV_PULP0_COREV_CLUSTER0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_NUM_MHPMCOUNTERS1_test_1)
+                                                          0.00       0.68 f
+  irq_id_o[1] (out)                                       0.01       0.69 f
+  data arrival time                                                  0.69
 
   clock clk_i (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   clock uncertainty                                       0.05       0.05
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[6]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00       0.05 r
-  library hold time                                       0.01       0.06
-  data required time                                                 0.06
+  output external delay                                  -1.25      -1.20
+  data required time                                                -1.20
   --------------------------------------------------------------------------
-  data required time                                                 0.06
-  data arrival time                                                  0.23
+  data required time                                                -1.20
+  data arrival time                                                 -0.69
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.29
+  slack (MET)                                                        1.89
 
 
-  Startpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[6]
-              (rising edge-triggered flip-flop clocked by clk_i)
-  Endpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[7]
-            (rising edge-triggered flip-flop clocked by clk_i)
+  Startpoint: debug_req_i
+              (input port clocked by clk_i)
+  Endpoint: irq_id_o[2]
+            (output port clocked by clk_i)
   Path Group: clk_i
   Path Type: min
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
-  cv32e40p_top       16000                 saed14rvt_ss0p6v125c
+  cv32e40p_top       35000                 saed14rvt_ss0p6v125c
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock clk_i (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[6]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00 #     0.00 r
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[6]/Q (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                         -0.23      -0.23 f
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[7]/SI (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.01      -0.23 f
-  data arrival time                                                 -0.23
+  input external delay                                    0.50       0.50 r
+  debug_req_i (in)                                        0.00       0.50 r
+  core_i/debug_req_i (cv32e40p_core_COREV_PULP0_COREV_CLUSTER0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_NUM_MHPMCOUNTERS1_test_1)
+                                                          0.00       0.50 r
+  core_i/id_stage_i/debug_req_i (cv32e40p_id_stage_COREV_PULP0_COREV_CLUSTER0_N_HWLP2_PULP_SECURE0_USE_PMP0_A_EXTENSION0_APU0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_DEBUG_TRIGGER_EN1_test_1)
+                                                          0.00       0.50 r
+  core_i/id_stage_i/controller_i/debug_req_i (cv32e40p_controller_COREV_CLUSTER0_COREV_PULP0_FPU0_test_1)
+                                                          0.00       0.50 r
+  core_i/id_stage_i/controller_i/U167/X (SAEDRVT14_OR2_2)
+                                                          0.02       0.52 r
+  core_i/id_stage_i/controller_i/U514/X (SAEDRVT14_INV_S_2)
+                                                          0.02       0.54 f
+  core_i/id_stage_i/controller_i/U82/X (SAEDRVT14_ND3_2)
+                                                          0.03       0.57 r
+  core_i/id_stage_i/controller_i/U37/X (SAEDRVT14_OA21_MM_2)
+                                                          0.03       0.61 r
+  core_i/id_stage_i/controller_i/U468/X (SAEDRVT14_INV_S_2)
+                                                          0.02       0.63 f
+  core_i/id_stage_i/controller_i/U31/X (SAEDRVT14_AN2_MM_2)
+                                                          0.03       0.66 f
+  core_i/id_stage_i/controller_i/U38/X (SAEDRVT14_AN2_MM_2)
+                                                          0.03       0.69 f
+  core_i/id_stage_i/controller_i/irq_id_o[2] (cv32e40p_controller_COREV_CLUSTER0_COREV_PULP0_FPU0_test_1)
+                                                          0.00       0.69 f
+  core_i/id_stage_i/irq_id_o[2] (cv32e40p_id_stage_COREV_PULP0_COREV_CLUSTER0_N_HWLP2_PULP_SECURE0_USE_PMP0_A_EXTENSION0_APU0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_DEBUG_TRIGGER_EN1_test_1)
+                                                          0.00       0.69 f
+  core_i/irq_id_o[2] (cv32e40p_core_COREV_PULP0_COREV_CLUSTER0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_NUM_MHPMCOUNTERS1_test_1)
+                                                          0.00       0.69 f
+  irq_id_o[2] (out)                                       0.01       0.70 f
+  data arrival time                                                  0.70
 
   clock clk_i (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   clock uncertainty                                       0.05       0.05
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[7]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00       0.05 r
-  library hold time                                       0.01       0.06
-  data required time                                                 0.06
+  output external delay                                  -1.25      -1.20
+  data required time                                                -1.20
   --------------------------------------------------------------------------
-  data required time                                                 0.06
-  data arrival time                                                  0.23
+  data required time                                                -1.20
+  data arrival time                                                 -0.70
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.29
+  slack (MET)                                                        1.90
 
 
-  Startpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[7]
-              (rising edge-triggered flip-flop clocked by clk_i)
-  Endpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[8]
-            (rising edge-triggered flip-flop clocked by clk_i)
+  Startpoint: debug_req_i
+              (input port clocked by clk_i)
+  Endpoint: irq_id_o[3]
+            (output port clocked by clk_i)
   Path Group: clk_i
   Path Type: min
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
-  cv32e40p_top       16000                 saed14rvt_ss0p6v125c
+  cv32e40p_top       35000                 saed14rvt_ss0p6v125c
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock clk_i (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[7]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00 #     0.00 r
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[7]/Q (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                         -0.23      -0.23 f
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[8]/SI (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.01      -0.23 f
-  data arrival time                                                 -0.23
+  input external delay                                    0.50       0.50 r
+  debug_req_i (in)                                        0.00       0.50 r
+  core_i/debug_req_i (cv32e40p_core_COREV_PULP0_COREV_CLUSTER0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_NUM_MHPMCOUNTERS1_test_1)
+                                                          0.00       0.50 r
+  core_i/id_stage_i/debug_req_i (cv32e40p_id_stage_COREV_PULP0_COREV_CLUSTER0_N_HWLP2_PULP_SECURE0_USE_PMP0_A_EXTENSION0_APU0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_DEBUG_TRIGGER_EN1_test_1)
+                                                          0.00       0.50 r
+  core_i/id_stage_i/controller_i/debug_req_i (cv32e40p_controller_COREV_CLUSTER0_COREV_PULP0_FPU0_test_1)
+                                                          0.00       0.50 r
+  core_i/id_stage_i/controller_i/U167/X (SAEDRVT14_OR2_2)
+                                                          0.02       0.52 r
+  core_i/id_stage_i/controller_i/U514/X (SAEDRVT14_INV_S_2)
+                                                          0.02       0.54 f
+  core_i/id_stage_i/controller_i/U82/X (SAEDRVT14_ND3_2)
+                                                          0.03       0.57 r
+  core_i/id_stage_i/controller_i/U37/X (SAEDRVT14_OA21_MM_2)
+                                                          0.03       0.61 r
+  core_i/id_stage_i/controller_i/U468/X (SAEDRVT14_INV_S_2)
+                                                          0.02       0.63 f
+  core_i/id_stage_i/controller_i/U83/X (SAEDRVT14_ND3_2)
+                                                          0.03       0.66 r
+  core_i/id_stage_i/controller_i/U409/X (SAEDRVT14_INV_S_2)
+                                                          0.01       0.67 f
+  core_i/id_stage_i/controller_i/U24/X (SAEDRVT14_BUF_S_2)
+                                                          0.02       0.69 f
+  core_i/id_stage_i/controller_i/irq_id_o[3] (cv32e40p_controller_COREV_CLUSTER0_COREV_PULP0_FPU0_test_1)
+                                                          0.00       0.69 f
+  core_i/id_stage_i/irq_id_o[3] (cv32e40p_id_stage_COREV_PULP0_COREV_CLUSTER0_N_HWLP2_PULP_SECURE0_USE_PMP0_A_EXTENSION0_APU0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_DEBUG_TRIGGER_EN1_test_1)
+                                                          0.00       0.69 f
+  core_i/irq_id_o[3] (cv32e40p_core_COREV_PULP0_COREV_CLUSTER0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_NUM_MHPMCOUNTERS1_test_1)
+                                                          0.00       0.69 f
+  irq_id_o[3] (out)                                       0.01       0.70 f
+  data arrival time                                                  0.70
 
   clock clk_i (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   clock uncertainty                                       0.05       0.05
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[8]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00       0.05 r
-  library hold time                                       0.01       0.06
-  data required time                                                 0.06
+  output external delay                                  -1.25      -1.20
+  data required time                                                -1.20
   --------------------------------------------------------------------------
-  data required time                                                 0.06
-  data arrival time                                                  0.23
+  data required time                                                -1.20
+  data arrival time                                                 -0.70
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.29
+  slack (MET)                                                        1.90
 
 
-  Startpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[8]
-              (rising edge-triggered flip-flop clocked by clk_i)
-  Endpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[9]
-            (rising edge-triggered flip-flop clocked by clk_i)
+  Startpoint: dm_halt_addr_i[22]
+              (input port clocked by clk_i)
+  Endpoint: instr_addr_o[22]
+            (output port clocked by clk_i)
   Path Group: clk_i
   Path Type: min
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
-  cv32e40p_top       16000                 saed14rvt_ss0p6v125c
+  cv32e40p_top       35000                 saed14rvt_ss0p6v125c
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock clk_i (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[8]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00 #     0.00 r
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[8]/Q (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                         -0.23      -0.23 f
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[9]/SI (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.01      -0.23 f
-  data arrival time                                                 -0.23
+  input external delay                                    0.50       0.50 r
+  dm_halt_addr_i[22] (in)                                 0.00       0.50 r
+  core_i/dm_halt_addr_i[22] (cv32e40p_core_COREV_PULP0_COREV_CLUSTER0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_NUM_MHPMCOUNTERS1_test_1)
+                                                          0.00       0.50 r
+  core_i/if_stage_i/dm_halt_addr_i[22] (cv32e40p_if_stage_COREV_PULP0_PULP_OBI0_PULP_SECURE0_FPU0_ZFINX0_test_1)
+                                                          0.00       0.50 r
+  core_i/if_stage_i/U363/X (SAEDRVT14_AOI222_2)           0.03       0.53 f
+  core_i/if_stage_i/U362/X (SAEDRVT14_AN4_2)              0.03       0.56 f
+  core_i/if_stage_i/U233/X (SAEDRVT14_INV_S_2)            0.02       0.58 r
+  core_i/if_stage_i/prefetch_buffer_i/branch_addr_i[22] (cv32e40p_prefetch_buffer_PULP_OBI0_COREV_PULP0_test_1)
+                                                          0.00       0.58 r
+  core_i/if_stage_i/prefetch_buffer_i/prefetch_controller_i/branch_addr_i[22] (cv32e40p_prefetch_controller_PULP_OBI0_COREV_PULP0_DEPTH2_test_1)
+                                                          0.00       0.58 r
+  core_i/if_stage_i/prefetch_buffer_i/prefetch_controller_i/U64/X (SAEDRVT14_AO22_2)
+                                                          0.02       0.60 r
+  core_i/if_stage_i/prefetch_buffer_i/prefetch_controller_i/U62/X (SAEDRVT14_OR2_2)
+                                                          0.02       0.62 r
+  core_i/if_stage_i/prefetch_buffer_i/prefetch_controller_i/trans_addr_o[22] (cv32e40p_prefetch_controller_PULP_OBI0_COREV_PULP0_DEPTH2_test_1)
+                                                          0.00       0.62 r
+  core_i/if_stage_i/prefetch_buffer_i/instruction_obi_i/trans_addr_i[22] (cv32e40p_obi_interface_TRANS_STABLE0_test_1)
+                                                          0.00       0.62 r
+  core_i/if_stage_i/prefetch_buffer_i/instruction_obi_i/U85/X (SAEDRVT14_AO22_2)
+                                                          0.03       0.65 r
+  core_i/if_stage_i/prefetch_buffer_i/instruction_obi_i/obi_addr_o[22] (cv32e40p_obi_interface_TRANS_STABLE0_test_1)
+                                                          0.00       0.65 r
+  core_i/if_stage_i/prefetch_buffer_i/instr_addr_o[22] (cv32e40p_prefetch_buffer_PULP_OBI0_COREV_PULP0_test_1)
+                                                          0.00       0.65 r
+  core_i/if_stage_i/instr_addr_o[22] (cv32e40p_if_stage_COREV_PULP0_PULP_OBI0_PULP_SECURE0_FPU0_ZFINX0_test_1)
+                                                          0.00       0.65 r
+  core_i/instr_addr_o[22] (cv32e40p_core_COREV_PULP0_COREV_CLUSTER0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_NUM_MHPMCOUNTERS1_test_1)
+                                                          0.00       0.65 r
+  instr_addr_o[22] (out)                                  0.01       0.66 r
+  data arrival time                                                  0.66
 
   clock clk_i (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   clock uncertainty                                       0.05       0.05
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[9]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00       0.05 r
-  library hold time                                       0.01       0.06
-  data required time                                                 0.06
+  output external delay                                  -3.00      -2.95
+  data required time                                                -2.95
   --------------------------------------------------------------------------
-  data required time                                                 0.06
-  data arrival time                                                  0.23
+  data required time                                                -2.95
+  data arrival time                                                 -0.66
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.29
+  slack (MET)                                                        3.61
 
 
-  Startpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[9]
-              (rising edge-triggered flip-flop clocked by clk_i)
-  Endpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[10]
-            (rising edge-triggered flip-flop clocked by clk_i)
+  Startpoint: dm_halt_addr_i[26]
+              (input port clocked by clk_i)
+  Endpoint: instr_addr_o[26]
+            (output port clocked by clk_i)
   Path Group: clk_i
   Path Type: min
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
-  cv32e40p_top       16000                 saed14rvt_ss0p6v125c
+  cv32e40p_top       35000                 saed14rvt_ss0p6v125c
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock clk_i (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[9]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00 #     0.00 r
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[9]/Q (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                         -0.23      -0.23 f
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[10]/SI (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.01      -0.23 f
-  data arrival time                                                 -0.23
+  input external delay                                    0.50       0.50 r
+  dm_halt_addr_i[26] (in)                                 0.00       0.50 r
+  core_i/dm_halt_addr_i[26] (cv32e40p_core_COREV_PULP0_COREV_CLUSTER0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_NUM_MHPMCOUNTERS1_test_1)
+                                                          0.00       0.50 r
+  core_i/if_stage_i/dm_halt_addr_i[26] (cv32e40p_if_stage_COREV_PULP0_PULP_OBI0_PULP_SECURE0_FPU0_ZFINX0_test_1)
+                                                          0.00       0.50 r
+  core_i/if_stage_i/U343/X (SAEDRVT14_AOI222_2)           0.03       0.53 f
+  core_i/if_stage_i/U342/X (SAEDRVT14_AN4_2)              0.03       0.56 f
+  core_i/if_stage_i/U229/X (SAEDRVT14_INV_S_2)            0.02       0.58 r
+  core_i/if_stage_i/prefetch_buffer_i/branch_addr_i[26] (cv32e40p_prefetch_buffer_PULP_OBI0_COREV_PULP0_test_1)
+                                                          0.00       0.58 r
+  core_i/if_stage_i/prefetch_buffer_i/prefetch_controller_i/branch_addr_i[26] (cv32e40p_prefetch_controller_PULP_OBI0_COREV_PULP0_DEPTH2_test_1)
+                                                          0.00       0.58 r
+  core_i/if_stage_i/prefetch_buffer_i/prefetch_controller_i/U52/X (SAEDRVT14_AO22_2)
+                                                          0.02       0.60 r
+  core_i/if_stage_i/prefetch_buffer_i/prefetch_controller_i/U50/X (SAEDRVT14_OR2_2)
+                                                          0.02       0.62 r
+  core_i/if_stage_i/prefetch_buffer_i/prefetch_controller_i/trans_addr_o[26] (cv32e40p_prefetch_controller_PULP_OBI0_COREV_PULP0_DEPTH2_test_1)
+                                                          0.00       0.62 r
+  core_i/if_stage_i/prefetch_buffer_i/instruction_obi_i/trans_addr_i[26] (cv32e40p_obi_interface_TRANS_STABLE0_test_1)
+                                                          0.00       0.62 r
+  core_i/if_stage_i/prefetch_buffer_i/instruction_obi_i/U89/X (SAEDRVT14_AO22_2)
+                                                          0.03       0.65 r
+  core_i/if_stage_i/prefetch_buffer_i/instruction_obi_i/obi_addr_o[26] (cv32e40p_obi_interface_TRANS_STABLE0_test_1)
+                                                          0.00       0.65 r
+  core_i/if_stage_i/prefetch_buffer_i/instr_addr_o[26] (cv32e40p_prefetch_buffer_PULP_OBI0_COREV_PULP0_test_1)
+                                                          0.00       0.65 r
+  core_i/if_stage_i/instr_addr_o[26] (cv32e40p_if_stage_COREV_PULP0_PULP_OBI0_PULP_SECURE0_FPU0_ZFINX0_test_1)
+                                                          0.00       0.65 r
+  core_i/instr_addr_o[26] (cv32e40p_core_COREV_PULP0_COREV_CLUSTER0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_NUM_MHPMCOUNTERS1_test_1)
+                                                          0.00       0.65 r
+  instr_addr_o[26] (out)                                  0.01       0.66 r
+  data arrival time                                                  0.66
 
   clock clk_i (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   clock uncertainty                                       0.05       0.05
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[10]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00       0.05 r
-  library hold time                                       0.01       0.06
-  data required time                                                 0.06
+  output external delay                                  -3.00      -2.95
+  data required time                                                -2.95
   --------------------------------------------------------------------------
-  data required time                                                 0.06
-  data arrival time                                                  0.23
+  data required time                                                -2.95
+  data arrival time                                                 -0.66
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.29
+  slack (MET)                                                        3.61
 
 
-  Startpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[10]
-              (rising edge-triggered flip-flop clocked by clk_i)
-  Endpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[11]
-            (rising edge-triggered flip-flop clocked by clk_i)
+  Startpoint: dm_halt_addr_i[24]
+              (input port clocked by clk_i)
+  Endpoint: instr_addr_o[24]
+            (output port clocked by clk_i)
   Path Group: clk_i
   Path Type: min
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
-  cv32e40p_top       16000                 saed14rvt_ss0p6v125c
+  cv32e40p_top       35000                 saed14rvt_ss0p6v125c
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock clk_i (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[10]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00 #     0.00 r
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[10]/Q (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                         -0.23      -0.23 f
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[11]/SI (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.01      -0.23 f
-  data arrival time                                                 -0.23
+  input external delay                                    0.50       0.50 r
+  dm_halt_addr_i[24] (in)                                 0.00       0.50 r
+  core_i/dm_halt_addr_i[24] (cv32e40p_core_COREV_PULP0_COREV_CLUSTER0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_NUM_MHPMCOUNTERS1_test_1)
+                                                          0.00       0.50 r
+  core_i/if_stage_i/dm_halt_addr_i[24] (cv32e40p_if_stage_COREV_PULP0_PULP_OBI0_PULP_SECURE0_FPU0_ZFINX0_test_1)
+                                                          0.00       0.50 r
+  core_i/if_stage_i/U353/X (SAEDRVT14_AOI222_2)           0.03       0.53 f
+  core_i/if_stage_i/U352/X (SAEDRVT14_AN4_2)              0.03       0.56 f
+  core_i/if_stage_i/U231/X (SAEDRVT14_INV_S_2)            0.02       0.58 r
+  core_i/if_stage_i/prefetch_buffer_i/branch_addr_i[24] (cv32e40p_prefetch_buffer_PULP_OBI0_COREV_PULP0_test_1)
+                                                          0.00       0.58 r
+  core_i/if_stage_i/prefetch_buffer_i/prefetch_controller_i/branch_addr_i[24] (cv32e40p_prefetch_controller_PULP_OBI0_COREV_PULP0_DEPTH2_test_1)
+                                                          0.00       0.58 r
+  core_i/if_stage_i/prefetch_buffer_i/prefetch_controller_i/U58/X (SAEDRVT14_AO22_2)
+                                                          0.02       0.60 r
+  core_i/if_stage_i/prefetch_buffer_i/prefetch_controller_i/U56/X (SAEDRVT14_OR2_2)
+                                                          0.02       0.62 r
+  core_i/if_stage_i/prefetch_buffer_i/prefetch_controller_i/trans_addr_o[24] (cv32e40p_prefetch_controller_PULP_OBI0_COREV_PULP0_DEPTH2_test_1)
+                                                          0.00       0.62 r
+  core_i/if_stage_i/prefetch_buffer_i/instruction_obi_i/trans_addr_i[24] (cv32e40p_obi_interface_TRANS_STABLE0_test_1)
+                                                          0.00       0.62 r
+  core_i/if_stage_i/prefetch_buffer_i/instruction_obi_i/U87/X (SAEDRVT14_AO22_2)
+                                                          0.03       0.65 r
+  core_i/if_stage_i/prefetch_buffer_i/instruction_obi_i/obi_addr_o[24] (cv32e40p_obi_interface_TRANS_STABLE0_test_1)
+                                                          0.00       0.65 r
+  core_i/if_stage_i/prefetch_buffer_i/instr_addr_o[24] (cv32e40p_prefetch_buffer_PULP_OBI0_COREV_PULP0_test_1)
+                                                          0.00       0.65 r
+  core_i/if_stage_i/instr_addr_o[24] (cv32e40p_if_stage_COREV_PULP0_PULP_OBI0_PULP_SECURE0_FPU0_ZFINX0_test_1)
+                                                          0.00       0.65 r
+  core_i/instr_addr_o[24] (cv32e40p_core_COREV_PULP0_COREV_CLUSTER0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_NUM_MHPMCOUNTERS1_test_1)
+                                                          0.00       0.65 r
+  instr_addr_o[24] (out)                                  0.01       0.66 r
+  data arrival time                                                  0.66
 
   clock clk_i (rise edge)                                 0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   clock uncertainty                                       0.05       0.05
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[11]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00       0.05 r
-  library hold time                                       0.01       0.06
-  data required time                                                 0.06
+  output external delay                                  -3.00      -2.95
+  data required time                                                -2.95
   --------------------------------------------------------------------------
-  data required time                                                 0.06
-  data arrival time                                                  0.23
+  data required time                                                -2.95
+  data arrival time                                                 -0.66
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.29
+  slack (MET)                                                        3.61
 
 
-  Startpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[1]
+  Startpoint: core_i/id_stage_i/mhpmevent_pipe_stall_o_reg
               (rising edge-triggered flip-flop clocked by scan_clk)
-  Endpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[2]
+  Endpoint: core_i/id_stage_i/mhpmevent_store_o_reg
             (rising edge-triggered flip-flop clocked by scan_clk)
   Path Group: scan_clk
   Path Type: min
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
-  cv32e40p_top       16000                 saed14rvt_ss0p6v125c
+  cv32e40p_top       35000                 saed14rvt_ss0p6v125c
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock scan_clk (rise edge)                              0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[1]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
+  core_i/id_stage_i/mhpmevent_pipe_stall_o_reg/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
                                                           0.00 #     0.00 r
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[1]/Q (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                         -0.23      -0.23 f
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[2]/SI (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.01      -0.23 f
-  data arrival time                                                 -0.23
+  core_i/id_stage_i/mhpmevent_pipe_stall_o_reg/Q (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.04       0.04 f
+  core_i/id_stage_i/mhpmevent_store_o_reg/SI (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.00       0.04 f
+  data arrival time                                                  0.04
 
   clock scan_clk (rise edge)                              0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  clock uncertainty                                       1.00       1.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[2]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00       1.00 r
-  library hold time                                       0.01       1.01
-  data required time                                                 1.01
+  clock uncertainty                                      10.00      10.00
+  core_i/id_stage_i/mhpmevent_store_o_reg/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.00      10.00 r
+  library hold time                                      -0.01       9.99
+  data required time                                                 9.99
   --------------------------------------------------------------------------
-  data required time                                                 1.01
-  data arrival time                                                  0.23
+  data required time                                                 9.99
+  data arrival time                                                 -0.04
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -1.24
+  slack (VIOLATED)                                                  -9.95
 
 
-  Startpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[2]
+  Startpoint: core_i/id_stage_i/id_valid_q_reg
               (rising edge-triggered flip-flop clocked by scan_clk)
-  Endpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[3]
+  Endpoint: core_i/id_stage_i/imm_vec_ext_ex_o_reg[0]
             (rising edge-triggered flip-flop clocked by scan_clk)
   Path Group: scan_clk
   Path Type: min
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
-  cv32e40p_top       16000                 saed14rvt_ss0p6v125c
+  cv32e40p_top       35000                 saed14rvt_ss0p6v125c
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock scan_clk (rise edge)                              0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[2]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
+  core_i/id_stage_i/id_valid_q_reg/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
                                                           0.00 #     0.00 r
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[2]/Q (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                         -0.23      -0.23 f
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[3]/SI (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.01      -0.23 f
-  data arrival time                                                 -0.23
+  core_i/id_stage_i/id_valid_q_reg/Q (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.04       0.04 f
+  core_i/id_stage_i/imm_vec_ext_ex_o_reg[0]/SI (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.00       0.04 f
+  data arrival time                                                  0.04
 
   clock scan_clk (rise edge)                              0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  clock uncertainty                                       1.00       1.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[3]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00       1.00 r
-  library hold time                                       0.01       1.01
-  data required time                                                 1.01
+  clock uncertainty                                      10.00      10.00
+  core_i/id_stage_i/imm_vec_ext_ex_o_reg[0]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.00      10.00 r
+  library hold time                                      -0.01       9.99
+  data required time                                                 9.99
   --------------------------------------------------------------------------
-  data required time                                                 1.01
-  data arrival time                                                  0.23
+  data required time                                                 9.99
+  data arrival time                                                 -0.04
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -1.24
+  slack (VIOLATED)                                                  -9.95
 
 
-  Startpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[3]
+  Startpoint: core_i/id_stage_i/controller_i/debug_force_wakeup_q_reg
               (rising edge-triggered flip-flop clocked by scan_clk)
-  Endpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[4]
+  Endpoint: core_i/id_stage_i/controller_i/debug_fsm_cs_reg[0]
             (rising edge-triggered flip-flop clocked by scan_clk)
   Path Group: scan_clk
   Path Type: min
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
-  cv32e40p_top       16000                 saed14rvt_ss0p6v125c
+  cv32e40p_top       35000                 saed14rvt_ss0p6v125c
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock scan_clk (rise edge)                              0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[3]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
+  core_i/id_stage_i/controller_i/debug_force_wakeup_q_reg/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
                                                           0.00 #     0.00 r
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[3]/Q (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                         -0.23      -0.23 f
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[4]/SI (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.01      -0.23 f
-  data arrival time                                                 -0.23
+  core_i/id_stage_i/controller_i/debug_force_wakeup_q_reg/Q (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.04       0.04 f
+  core_i/id_stage_i/controller_i/debug_fsm_cs_reg[0]/SI (SAEDRVT14_FSDPSBQ_V2LP_2)
+                                                          0.01       0.05 f
+  data arrival time                                                  0.05
 
   clock scan_clk (rise edge)                              0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  clock uncertainty                                       1.00       1.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[4]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00       1.00 r
-  library hold time                                       0.01       1.01
-  data required time                                                 1.01
+  clock uncertainty                                      10.00      10.00
+  core_i/id_stage_i/controller_i/debug_fsm_cs_reg[0]/CK (SAEDRVT14_FSDPSBQ_V2LP_2)
+                                                          0.00      10.00 r
+  library hold time                                      -0.01       9.99
+  data required time                                                 9.99
   --------------------------------------------------------------------------
-  data required time                                                 1.01
-  data arrival time                                                  0.23
+  data required time                                                 9.99
+  data arrival time                                                 -0.05
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -1.24
+  slack (VIOLATED)                                                  -9.94
 
 
-  Startpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[4]
+  Startpoint: core_i/cs_registers_i/mcause_q_reg[5]
               (rising edge-triggered flip-flop clocked by scan_clk)
-  Endpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[5]
+  Endpoint: core_i/cs_registers_i/mcountinhibit_q_reg[0]
             (rising edge-triggered flip-flop clocked by scan_clk)
   Path Group: scan_clk
   Path Type: min
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
-  cv32e40p_top       16000                 saed14rvt_ss0p6v125c
+  cv32e40p_top       35000                 saed14rvt_ss0p6v125c
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock scan_clk (rise edge)                              0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[4]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
+  core_i/cs_registers_i/mcause_q_reg[5]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
                                                           0.00 #     0.00 r
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[4]/Q (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                         -0.23      -0.23 f
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[5]/SI (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.01      -0.23 f
-  data arrival time                                                 -0.23
+  core_i/cs_registers_i/mcause_q_reg[5]/Q (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.04       0.04 f
+  core_i/cs_registers_i/mcountinhibit_q_reg[0]/SI (SAEDRVT14_FSDPSBQ_V2LP_2)
+                                                          0.01       0.05 f
+  data arrival time                                                  0.05
 
   clock scan_clk (rise edge)                              0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  clock uncertainty                                       1.00       1.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[5]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00       1.00 r
-  library hold time                                       0.01       1.01
-  data required time                                                 1.01
+  clock uncertainty                                      10.00      10.00
+  core_i/cs_registers_i/mcountinhibit_q_reg[0]/CK (SAEDRVT14_FSDPSBQ_V2LP_2)
+                                                          0.00      10.00 r
+  library hold time                                      -0.01       9.99
+  data required time                                                 9.99
   --------------------------------------------------------------------------
-  data required time                                                 1.01
-  data arrival time                                                  0.23
+  data required time                                                 9.99
+  data arrival time                                                 -0.05
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -1.24
+  slack (VIOLATED)                                                  -9.94
 
 
-  Startpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[5]
+  Startpoint: core_i/cs_registers_i/mstatus_q_reg[mpie]
               (rising edge-triggered flip-flop clocked by scan_clk)
-  Endpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[6]
+  Endpoint: core_i/cs_registers_i/mtvec_mode_q_reg[0]
             (rising edge-triggered flip-flop clocked by scan_clk)
   Path Group: scan_clk
   Path Type: min
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
-  cv32e40p_top       16000                 saed14rvt_ss0p6v125c
+  cv32e40p_top       35000                 saed14rvt_ss0p6v125c
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock scan_clk (rise edge)                              0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[5]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
+  core_i/cs_registers_i/mstatus_q_reg[mpie]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
                                                           0.00 #     0.00 r
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[5]/Q (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                         -0.23      -0.23 f
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[6]/SI (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.01      -0.23 f
-  data arrival time                                                 -0.23
+  core_i/cs_registers_i/mstatus_q_reg[mpie]/Q (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.04       0.04 f
+  core_i/cs_registers_i/mtvec_mode_q_reg[0]/SI (SAEDRVT14_FSDPSBQ_V2LP_2)
+                                                          0.01       0.05 f
+  data arrival time                                                  0.05
 
   clock scan_clk (rise edge)                              0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  clock uncertainty                                       1.00       1.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[6]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00       1.00 r
-  library hold time                                       0.01       1.01
-  data required time                                                 1.01
+  clock uncertainty                                      10.00      10.00
+  core_i/cs_registers_i/mtvec_mode_q_reg[0]/CK (SAEDRVT14_FSDPSBQ_V2LP_2)
+                                                          0.00      10.00 r
+  library hold time                                      -0.01       9.99
+  data required time                                                 9.99
   --------------------------------------------------------------------------
-  data required time                                                 1.01
-  data arrival time                                                  0.23
+  data required time                                                 9.99
+  data arrival time                                                 -0.05
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -1.24
+  slack (VIOLATED)                                                  -9.94
 
 
-  Startpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[6]
+  Startpoint: core_i/id_stage_i/mhpmevent_compressed_o_reg
               (rising edge-triggered flip-flop clocked by scan_clk)
-  Endpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[7]
+  Endpoint: core_i/id_stage_i/mhpmevent_imiss_o_reg
             (rising edge-triggered flip-flop clocked by scan_clk)
   Path Group: scan_clk
   Path Type: min
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
-  cv32e40p_top       16000                 saed14rvt_ss0p6v125c
+  cv32e40p_top       35000                 saed14rvt_ss0p6v125c
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock scan_clk (rise edge)                              0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[6]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
+  core_i/id_stage_i/mhpmevent_compressed_o_reg/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
                                                           0.00 #     0.00 r
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[6]/Q (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                         -0.23      -0.23 f
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[7]/SI (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.01      -0.23 f
-  data arrival time                                                 -0.23
+  core_i/id_stage_i/mhpmevent_compressed_o_reg/Q (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.04       0.04 f
+  core_i/id_stage_i/mhpmevent_imiss_o_reg/SI (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.00       0.05 f
+  data arrival time                                                  0.05
 
   clock scan_clk (rise edge)                              0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  clock uncertainty                                       1.00       1.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[7]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00       1.00 r
-  library hold time                                       0.01       1.01
-  data required time                                                 1.01
+  clock uncertainty                                      10.00      10.00
+  core_i/id_stage_i/mhpmevent_imiss_o_reg/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.00      10.00 r
+  library hold time                                      -0.01       9.99
+  data required time                                                 9.99
   --------------------------------------------------------------------------
-  data required time                                                 1.01
-  data arrival time                                                  0.23
+  data required time                                                 9.99
+  data arrival time                                                 -0.05
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -1.24
+  slack (VIOLATED)                                                  -9.94
 
 
-  Startpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[7]
+  Startpoint: core_i/id_stage_i/mhpmevent_jump_o_reg
               (rising edge-triggered flip-flop clocked by scan_clk)
-  Endpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[8]
+  Endpoint: core_i/id_stage_i/mhpmevent_ld_stall_o_reg
             (rising edge-triggered flip-flop clocked by scan_clk)
   Path Group: scan_clk
   Path Type: min
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
-  cv32e40p_top       16000                 saed14rvt_ss0p6v125c
+  cv32e40p_top       35000                 saed14rvt_ss0p6v125c
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock scan_clk (rise edge)                              0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[7]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
+  core_i/id_stage_i/mhpmevent_jump_o_reg/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
                                                           0.00 #     0.00 r
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[7]/Q (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                         -0.23      -0.23 f
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[8]/SI (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.01      -0.23 f
-  data arrival time                                                 -0.23
+  core_i/id_stage_i/mhpmevent_jump_o_reg/Q (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.04       0.04 f
+  core_i/id_stage_i/mhpmevent_ld_stall_o_reg/SI (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.00       0.05 f
+  data arrival time                                                  0.05
 
   clock scan_clk (rise edge)                              0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  clock uncertainty                                       1.00       1.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[8]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00       1.00 r
-  library hold time                                       0.01       1.01
-  data required time                                                 1.01
+  clock uncertainty                                      10.00      10.00
+  core_i/id_stage_i/mhpmevent_ld_stall_o_reg/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.00      10.00 r
+  library hold time                                      -0.01       9.99
+  data required time                                                 9.99
   --------------------------------------------------------------------------
-  data required time                                                 1.01
-  data arrival time                                                  0.23
+  data required time                                                 9.99
+  data arrival time                                                 -0.05
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -1.24
+  slack (VIOLATED)                                                  -9.94
 
 
-  Startpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[8]
+  Startpoint: core_i/id_stage_i/mhpmevent_ld_stall_o_reg
               (rising edge-triggered flip-flop clocked by scan_clk)
-  Endpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[9]
+  Endpoint: core_i/id_stage_i/mhpmevent_load_o_reg
             (rising edge-triggered flip-flop clocked by scan_clk)
   Path Group: scan_clk
   Path Type: min
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
-  cv32e40p_top       16000                 saed14rvt_ss0p6v125c
+  cv32e40p_top       35000                 saed14rvt_ss0p6v125c
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock scan_clk (rise edge)                              0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[8]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
+  core_i/id_stage_i/mhpmevent_ld_stall_o_reg/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
                                                           0.00 #     0.00 r
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[8]/Q (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                         -0.23      -0.23 f
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[9]/SI (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.01      -0.23 f
-  data arrival time                                                 -0.23
+  core_i/id_stage_i/mhpmevent_ld_stall_o_reg/Q (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.04       0.04 f
+  core_i/id_stage_i/mhpmevent_load_o_reg/SI (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.00       0.05 f
+  data arrival time                                                  0.05
 
   clock scan_clk (rise edge)                              0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  clock uncertainty                                       1.00       1.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[9]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00       1.00 r
-  library hold time                                       0.01       1.01
-  data required time                                                 1.01
+  clock uncertainty                                      10.00      10.00
+  core_i/id_stage_i/mhpmevent_load_o_reg/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.00      10.00 r
+  library hold time                                      -0.01       9.99
+  data required time                                                 9.99
   --------------------------------------------------------------------------
-  data required time                                                 1.01
-  data arrival time                                                  0.23
+  data required time                                                 9.99
+  data arrival time                                                 -0.05
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -1.24
+  slack (VIOLATED)                                                  -9.94
 
 
-  Startpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[9]
+  Startpoint: core_i/id_stage_i/mhpmevent_imiss_o_reg
               (rising edge-triggered flip-flop clocked by scan_clk)
-  Endpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[10]
+  Endpoint: core_i/id_stage_i/mhpmevent_jr_stall_o_reg
             (rising edge-triggered flip-flop clocked by scan_clk)
   Path Group: scan_clk
   Path Type: min
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
-  cv32e40p_top       16000                 saed14rvt_ss0p6v125c
+  cv32e40p_top       35000                 saed14rvt_ss0p6v125c
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock scan_clk (rise edge)                              0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[9]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
+  core_i/id_stage_i/mhpmevent_imiss_o_reg/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
                                                           0.00 #     0.00 r
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[9]/Q (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                         -0.23      -0.23 f
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[10]/SI (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.01      -0.23 f
-  data arrival time                                                 -0.23
+  core_i/id_stage_i/mhpmevent_imiss_o_reg/Q (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.04       0.04 f
+  core_i/id_stage_i/mhpmevent_jr_stall_o_reg/SI (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.00       0.05 f
+  data arrival time                                                  0.05
 
   clock scan_clk (rise edge)                              0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  clock uncertainty                                       1.00       1.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[10]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00       1.00 r
-  library hold time                                       0.01       1.01
-  data required time                                                 1.01
+  clock uncertainty                                      10.00      10.00
+  core_i/id_stage_i/mhpmevent_jr_stall_o_reg/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.00      10.00 r
+  library hold time                                      -0.01       9.99
+  data required time                                                 9.99
   --------------------------------------------------------------------------
-  data required time                                                 1.01
-  data arrival time                                                  0.23
+  data required time                                                 9.99
+  data arrival time                                                 -0.05
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -1.24
+  slack (VIOLATED)                                                  -9.94
 
 
-  Startpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[10]
+  Startpoint: core_i/ex_stage_i/alu_i/alu_div_i/ResInv_SP_reg
               (rising edge-triggered flip-flop clocked by scan_clk)
-  Endpoint: core_i/id_stage_i/mult_operand_c_ex_o_reg[11]
+  Endpoint: core_i/ex_stage_i/alu_i/alu_div_i/ResReg_DP_reg[0]
             (rising edge-triggered flip-flop clocked by scan_clk)
   Path Group: scan_clk
   Path Type: min
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
-  cv32e40p_top       16000                 saed14rvt_ss0p6v125c
+  cv32e40p_top       35000                 saed14rvt_ss0p6v125c
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   clock scan_clk (rise edge)                              0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[10]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
+  core_i/ex_stage_i/alu_i/alu_div_i/ResInv_SP_reg/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
                                                           0.00 #     0.00 r
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[10]/Q (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                         -0.23      -0.23 f
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[11]/SI (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.01      -0.23 f
-  data arrival time                                                 -0.23
+  core_i/ex_stage_i/alu_i/alu_div_i/ResInv_SP_reg/Q (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.04       0.04 f
+  core_i/ex_stage_i/alu_i/alu_div_i/ResReg_DP_reg[0]/SI (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.00       0.05 f
+  data arrival time                                                  0.05
 
   clock scan_clk (rise edge)                              0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  clock uncertainty                                       1.00       1.00
-  core_i/id_stage_i/mult_operand_c_ex_o_reg[11]/CK (SAEDRVT14_FSDPRBQ_V2LP_1)
-                                                          0.00       1.00 r
-  library hold time                                       0.01       1.01
-  data required time                                                 1.01
+  clock uncertainty                                      10.00      10.00
+  core_i/ex_stage_i/alu_i/alu_div_i/ResReg_DP_reg[0]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.00      10.00 r
+  library hold time                                      -0.01       9.99
+  data required time                                                 9.99
   --------------------------------------------------------------------------
-  data required time                                                 1.01
-  data arrival time                                                  0.23
+  data required time                                                 9.99
+  data arrival time                                                 -0.05
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -1.24
+  slack (VIOLATED)                                                  -9.94
 
 
 1

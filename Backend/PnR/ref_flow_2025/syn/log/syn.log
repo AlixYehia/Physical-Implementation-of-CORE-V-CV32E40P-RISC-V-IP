@@ -1,0 +1,376 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version O-2018.06-SP1 for linux64 - Jul 19, 2018 
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+Initializing gui preferences from file  /home/ICer/.synopsys_dv_prefs.tcl
+set design mips_16
+mips_16
+#set_app_var search_path "/home/standard_cell_libraries/NangateOpenCellLibrary_PDKv1_3_v2010_12/lib/Front_End/Liberty/NLDM"
+#set_app_var search_path "/home/ICer/PDK/lib/Front_End/Liberty/NLDM"
+#set_app_var search_path "/home/ICer/PDK/saed_14/hvt_ibex"
+#set_app_var link_library "* saed14hvt_ss0p72vm40c.db"
+#set_app_var target_library "saed14hvt_ss0p72vm40c.db"
+set_app_var search_path "/home/ICer/PDK/saed_14/"
+/home/ICer/PDK/saed_14/
+set_app_var link_library "* /home/ICer/PDK/saed_14/saed14rvt_ss0p6v125c.db"
+* /home/ICer/PDK/saed_14/saed14rvt_ss0p6v125c.db
+set_app_var target_library "/home/ICer/PDK/saed_14/saed14rvt_ss0p6v125c.db"
+/home/ICer/PDK/saed_14/saed14rvt_ss0p6v125c.db
+sh rm -rf work
+sh mkdir -p work
+define_design_lib work -path ./work
+1
+set dc_allow_rtl_pg true
+true
+set hdlin_keep_power_ground_pins true
+true
+analyze -library work -format verilog ../rtl/${design}.v
+Running PRESTO HDLC
+Compiling source file ../rtl/mips_16.v
+Opening include file ../rtl/data_memory.v
+Opening include file ../rtl/ALUControl.v
+Warning:  ../rtl/data_memory.v:20: The statements in initial blocks are ignored. (VER-281)
+Opening include file ../rtl/control.v
+Opening include file ../rtl/JR_Control.v
+Opening include file ../rtl/register_file.v
+Opening include file ../rtl/instr_mem.v
+Opening include file ../rtl/alu.v
+Warning:  ../rtl/instr_mem.v:18: The statements in initial blocks are ignored. (VER-281)
+Presto compilation completed successfully.
+Loading db file '/home/ICer/PDK/saed_14/saed14rvt_ss0p6v125c.db'
+1
+elaborate $design -lib work
+Loading db file '/home/synopsys/syn/O-2018.06-SP1/libraries/syn/gtech.db'
+Loading db file '/home/synopsys/syn/O-2018.06-SP1/libraries/syn/standard.sldb'
+  Loading link library 'saed14rvt_ss0p6v125c'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+
+Inferred memory devices in process
+	in routine mips_16 line 39 in file
+		'../rtl/mips_16.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   pc_current_reg    | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'mips_16'.
+Information: Building the design 'instr_mem'. (HDL-193)
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+|   instr_mem/37   |   16   |    1    |      4       |
+======================================================
+Presto compilation completed successfully.
+Information: Building the design 'control'. (HDL-193)
+
+Statistics for case statements in always block at line 10 in file
+	'../rtl/control.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            25            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'register_file'. (HDL-193)
+
+Inferred memory devices in process
+	in routine register_file line 19 in file
+		'../rtl/register_file.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    reg_array_reg    | Flip-flop |  128  |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+| register_file/36 |   8    |   16    |      3       |
+| register_file/37 |   8    |   16    |      3       |
+======================================================
+Presto compilation completed successfully.
+Information: Building the design 'JR_Control'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ALUControl'. (HDL-193)
+
+Statistics for case statements in always block at line 10 in file
+	'../rtl/ALUControl.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            11            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'alu'. (HDL-193)
+
+Statistics for case statements in always block at line 10 in file
+	'../rtl/alu.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            12            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'data_memory'. (HDL-193)
+
+Inferred memory devices in process
+	in routine data_memory line 24 in file
+		'../rtl/data_memory.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       ram_reg       | Flip-flop | 4096  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+|  data_memory/28  |  256   |   16    |      8       |
+======================================================
+Presto compilation completed successfully.
+1
+current_design 
+Current design is 'mips_16'.
+{mips_16}
+check_design
+ 
+****************************************
+check_design summary:
+Version:     O-2018.06-SP1
+Date:        Wed Mar 12 06:11:01 2025
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                     10
+    Unconnected ports (LINT-28)                                    10
+
+Cells                                                               6
+    Cells do not drive (LINT-1)                                     6
+--------------------------------------------------------------------------------
+
+Warning: In design 'mips_16', cell 'B_17' does not drive any nets. (LINT-1)
+Warning: In design 'mips_16', cell 'B_18' does not drive any nets. (LINT-1)
+Warning: In design 'alu', cell 'B_6' does not drive any nets. (LINT-1)
+Warning: In design 'alu', cell 'B_7' does not drive any nets. (LINT-1)
+Warning: In design 'alu', cell 'B_8' does not drive any nets. (LINT-1)
+Warning: In design 'alu', cell 'B_9' does not drive any nets. (LINT-1)
+Warning: In design 'instr_mem', port 'pc[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'instr_mem', port 'pc[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'data_memory', port 'mem_access_addr[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'data_memory', port 'mem_access_addr[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'data_memory', port 'mem_access_addr[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'data_memory', port 'mem_access_addr[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'data_memory', port 'mem_access_addr[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'data_memory', port 'mem_access_addr[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'data_memory', port 'mem_access_addr[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'data_memory', port 'mem_access_addr[0]' is not connected to any nets. (LINT-28)
+1
+source -e -v ./cons/cons.tcl
+create_clock -name clk -period 4 -waveform {0 2} [get_ports clk]
+1
+set_input_delay -max 2 -clock [get_clocks clk] [remove_from_collection [all_inputs] [get_ports clk]]
+1
+set_output_delay -max 2 -clock [get_clocks clk] [all_outputs]
+1
+set_clock_uncertainty 0.35 [get_clocks]
+1
+set_false_path -hold -from [remove_from_collection [all_inputs] [get_ports clk]]
+1
+set_false_path -hold -to [all_outputs]
+1
+1
+link
+
+  Linking design 'mips_16'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (8 designs)               /home/ICer/ref_flow_2025/syn/mips_16.db, etc
+  saed14rvt_ss0p6v125c (library)
+                              /home/ICer/PDK/saed_14/saed14rvt_ss0p6v125c.db
+
+1
+compile -map_effort medium
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | O-2018.06-DWBB_201806.1 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+
+Information: There are 16 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Warning: No single bit degenerate for multibit library cell 'SAEDRVT14_FSDN4_V2_4'. (OPT-914)
+Warning: No single bit degenerate for multibit library cell 'SAEDRVT14_FSDN4_V2_2'. (OPT-914)
+Warning: No single bit degenerate for multibit library cell 'SAEDRVT14_FSDN4_V2_1'. (OPT-914)
+Warning: No single bit degenerate for multibit library cell 'SAEDRVT14_FSDN4_V2_0P5'. (OPT-914)
+Warning: No single bit degenerate for multibit library cell 'SAEDRVT14_FSDN2_V2_4'. (OPT-914)
+Warning: No single bit degenerate for multibit library cell 'SAEDRVT14_FSDN2_V2_2'. (OPT-914)
+Warning: No single bit degenerate for multibit library cell 'SAEDRVT14_FSDN2_V2_1'. (OPT-914)
+Warning: No single bit degenerate for multibit library cell 'SAEDRVT14_FSDN2_V2_0P5'. (OPT-914)
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'data_memory'
+  Processing 'alu'
+  Processing 'ALUControl'
+  Processing 'JR_Control'
+  Processing 'register_file'
+  Processing 'control'
+  Processing 'instr_mem'
+  Processing 'mips_16'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'mips_16_DW01_add_0'
+  Processing 'mips_16_DW01_sub_0'
+  Processing 'mips_16_DW01_add_1'
+  Processing 'alu_DW01_cmp2_0'
+  Processing 'alu_DW01_sub_0'
+  Processing 'alu_DW01_add_0'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:33   10577.4      0.00       0.0    4740.0                          
+    0:00:33   10577.4      0.00       0.0    4740.0                          
+    0:00:40   11639.2      0.00       0.0       0.0                          
+    0:00:40   11639.2      0.00       0.0       0.0                          
+    0:00:40   11639.2      0.00       0.0       0.0                          
+    0:00:40   11639.2      0.00       0.0       0.0                          
+    0:00:40   11639.2      0.00       0.0       0.0                          
+    0:00:48    8122.1      0.00       0.0       0.0                          
+    0:00:49    8122.1      0.00       0.0       0.0                          
+    0:00:49    8122.1      0.00       0.0       0.0                          
+    0:00:49    8122.1      0.00       0.0       0.0                          
+    0:00:49    8122.1      0.00       0.0       0.0                          
+    0:00:49    8122.1      0.00       0.0       0.0                          
+    0:00:49    8122.1      0.00       0.0       0.0                          
+    0:00:49    8122.1      0.00       0.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:49    8122.1      0.00       0.0       0.0                          
+    0:00:49    8122.1      0.00       0.0       0.0                          
+    0:00:49    8122.1      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:49    8122.1      0.00       0.0       0.0                          
+    0:00:49    8122.1      0.00       0.0       0.0                          
+    0:00:50    8043.5      0.00       0.0       0.0                          
+    0:00:52    7975.1      0.00       0.0       0.0                          
+    0:00:53    7974.9      0.00       0.0       0.0                          
+    0:00:53    7974.7      0.00       0.0       0.0                          
+    0:00:53    7974.6      0.00       0.0       0.0                          
+    0:00:53    7974.6      0.00       0.0       0.0                          
+    0:00:53    7974.6      0.00       0.0       0.0                          
+    0:00:53    7974.2      0.00       0.0       0.0                          
+    0:00:53    7974.2      0.00       0.0       0.0                          
+    0:00:53    7974.2      0.00       0.0       0.0                          
+    0:00:53    7974.2      0.00       0.0       0.0                          
+    0:00:53    7974.2      0.00       0.0       0.0                          
+    0:00:53    7974.2      0.00       0.0       0.0                          
+    0:00:54    7967.8      0.00       0.0       0.0                          
+Loading db file '/home/ICer/PDK/saed_14/saed14rvt_ss0p6v125c.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'mips_16' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'datamem/clk': 4240 load(s), 1 driver(s)
+1
+report_area > ./report/synth_area.rpt
+report_cell > ./report/synth_cells.rpt
+report_qor  > ./report/synth_qor.rpt
+report_resources > ./report/synth_resources.rpt
+report_timing -max_paths 10 > ./report/synth_timing.rpt 
+write_sdc  output/${design}.sdc 
+1
+define_name_rules  no_case -case_insensitive
+1
+change_names -rule no_case -hierarchy
+Warning: In the design instr_mem, net 'instruction[15]' is connecting multiple ports. (UCN-1)
+Warning: In the design control, net 'reg_dst[1]' is connecting multiple ports. (UCN-1)
+Warning: In the design control, net 'mem_to_reg[0]' is connecting multiple ports. (UCN-1)
+Warning: In the design control, net 'alu_op[1]' is connecting multiple ports. (UCN-1)
+1
+change_names -rule verilog -hierarchy
+Warning: In the design instr_mem, net 'instruction[15]' is connecting multiple ports. (UCN-1)
+Warning: In the design control, net 'reg_dst[1]' is connecting multiple ports. (UCN-1)
+Warning: In the design control, net 'mem_to_reg[0]' is connecting multiple ports. (UCN-1)
+Warning: In the design control, net 'alu_op[1]' is connecting multiple ports. (UCN-1)
+1
+set verilogout_no_tri	 true
+true
+set verilogout_equation  false
+false
+write -hierarchy -format verilog -output output/${design}.v 
+Writing verilog file '/home/ICer/ref_flow_2025/syn/output/mips_16.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+write -hierarchy -format verilog -output output/${design}_pg.v
+Writing verilog file '/home/ICer/ref_flow_2025/syn/output/mips_16_pg.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+write -f ddc -hierarchy -output output/${design}.ddc  
+Writing ddc file 'output/mips_16.ddc'.
+1
+return
+dc_shell> xit
+Error: unknown command 'xit' (CMD-005)
+dc_shell> exit
+
+Memory usage for main task 316 Mbytes.
+Memory usage for this session 316 Mbytes.
+CPU usage for this session 69 seconds ( 0.02 hours ).
+
+Thank you...

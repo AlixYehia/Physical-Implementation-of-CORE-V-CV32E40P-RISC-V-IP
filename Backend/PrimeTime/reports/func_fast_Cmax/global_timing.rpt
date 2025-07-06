@@ -1,0 +1,17 @@
+Information: Using automatic max wire load selection group 'predcaps'. (ENV-003)
+Information: Using automatic min wire load selection group 'predcaps'. (ENV-003)
+Warning: Some timing arcs have been disabled for breaking timing loops or because of constant propagation. Use the 'report_disable_timing' command to get the list of these disabled timing arcs. (PTE-003)
+Warning: An extrapolation exceeding 80% of the library characterization range has been detected. The delay calculation accuracy may be affected. for the cell timing arc, (saed14rvt_ff0p88vm40c/SAEDRVT14_BUF_20) CTS_cts_buf_281714274/A-->X (max positive_unate) [r/f slew = 0.000148197/0.000147212, lib_range = [0.003 0.133]/[0.003 0.133] (nS)] (RC-011)
+Warning: An extrapolation exceeding 80% of the library characterization range has been detected. The delay calculation accuracy may be affected. for the cell timing arc, (saed14rvt_ff0p88vm40c/SAEDRVT14_BUF_20) CTS_cts_buf_281714274/A-->X (min positive_unate) [r/f slew = 0.000148197/0.000147212, lib_range = [0.003 0.133]/[0.003 0.133] (nS)] (RC-011)
+****************************************
+Report : global_timing
+	-format { narrow }
+Design : cv32e40p_top
+Version: O-2018.06-SP1
+Date   : Sun Jul  6 22:16:58 2025
+****************************************
+
+No setup violations found.
+
+No hold violations found.
+1

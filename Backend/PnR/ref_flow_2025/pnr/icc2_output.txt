@@ -1,0 +1,462 @@
+
+Loading user preference file /home/ICer/.synopsys_icc2_gui/preferences.tcl
+icc2_shell> open_lib ndm/mips_16
+Information: Loading library file '/home/ICer/ref_flow_2025/pnr/ndm/mips_16' (FILE-007)
+Information: Loading library file '/home/ICer/PDK/saed_14/tech/ndm/saed14rvt_frame_timing_ccs.ndm' (FILE-007)
+Warning: Technology used to create frame-view and current technology have inconsistency: Min spacings are different for layer 'M1'. (FRAM-054)
+Warning: Technology 'saed14rvt_1p9m.tf' used for frame-view creation in library 'saed14rvt_frame_timing_ccs', is inconsistent with the current technology 'saed14nm_1p9m_mw.tf' of library "mips_16'. (NDM-102)
+{mips_16}
+icc2_shell> |
+Error: unknown command '|' (CMD-005)
+icc2_shell> list_blocks
+Lib mips_16 /home/ICer/ref_flow_2025/pnr/ndm/mips_16 tech current
+  ->  0 mips_16_1_imported.design Mar-15-16:58
+  ->  0 mips_16_2_fp.design Mar-15-17:18
+  ->  0 mips_16_3_power.design Mar-15-17:40
+  ->  0 mips_16_4_placed.design Mar-15-18:52
+  ->  0 mips_16_5_cts.design Mar-15-19:28
+  ->  0 mip16_route.design Mar-15-19:57
+6
+icc2_shell> open_block mip16_route.design
+Information: User units loaded from library 'saed14rvt_frame_timing_ccs' (LNK-040)
+Opening block 'mips_16:mip16_route.design' in edit mode
+Information: loading PG routing via master rules, patterns, strategies and strategy via rules.
+Begin building search trees for block mips_16:mip16_route.design
+Done building search trees for block mips_16:mip16_route.design (time 0s)
+{mips_16:mip16_route.design}
+icc2_shell> link_block
+Using libraries: mips_16 saed14rvt_frame_timing_ccs
+Warning: In library mips_16, no block views exist for block mips_16. (LNK-064)
+Visiting block mips_16:mip16_route.design
+Design 'mips_16' was successfully linked.
+1
+icc2_shell> create_stdcell_filler -lib_cell $std_fillers
+Error: can't read "std_fillers": no such variable
+        Use error_info for more info. (CMD-013)
+icc2_shell> connect_pg_net -net "VDD" [get_pins -hierarchical "*/VDD*"]
+icc2_shell> connect_pg_net -net "VSS" [get_pins -hierarchical "*/VSS"]
+icc2_shell> ## std filler
+icc2_shell> set pnr_std_fillers " */SAEDRVT14_FILL_ECO_18   */SAEDRVT14_FILL_ECO_15 */SAEDRVT14_FILL_ECO_12 */SAEDRVT14_FILL_ECO_9   */SAEDRVT14_FILL_ECO_2 */SAEDRVT14_FILL_ECO_1    */SAEDRVT14_FILL_NNWIV1Y2_2 */SAEDRVT14_FILL_NNWIV1Y2_3 */SAEDRVT14_FILL_NNWIY2_2 */SAEDRVT14_FILL_NNWIY2_3 */SAEDRVT14_FILL_NNWSPACERY2_7 */SAEDRVT14_FILL_NNWVDDBRKY2_3 */SAEDRVT14_FILLP2 */SAEDRVT14_FILLP3 */SAEDRVT14_FILL_SPACER_7 */SAEDRVT14_FILL_Y2_3 "
+ */SAEDRVT14_FILL_ECO_18   */SAEDRVT14_FILL_ECO_15 */SAEDRVT14_FILL_ECO_12 */SAEDRVT14_FILL_ECO_9   */SAEDRVT14_FILL_ECO_2 */SAEDRVT14_FILL_ECO_1    */SAEDRVT14_FILL_NNWIV1Y2_2 */SAEDRVT14_FILL_NNWIV1Y2_3 */SAEDRVT14_FILL_NNWIY2_2 */SAEDRVT14_FILL_NNWIY2_3 */SAEDRVT14_FILL_NNWSPACERY2_7 */SAEDRVT14_FILL_NNWVDDBRKY2_3 */SAEDRVT14_FILLP2 */SAEDRVT14_FILLP3 */SAEDRVT14_FILL_SPACER_7 */SAEDRVT14_FILL_Y2_3 
+icc2_shell> set std_fillers "  */SAEDRVT14_DCAP_PV1ECO_18   "
+  */SAEDRVT14_DCAP_PV1ECO_18   
+icc2_shell> #foreach filler $pnr_std_fillers { lappend std_fillers "*/${filler}" }
+icc2_shell> create_stdcell_filler -lib_cell $std_fillers
+Effort 5
+INFO:: begin filler insertions...
+CHF::NPL_CHKQUERY_PNET checking turned off by default
+master SAEDRVT14_DCAP_PV1ECO_18 has site unit
+ Use site unit (740)
+Warning: filler ref cell SAEDRVT14_DCAP_PV1ECO_18 not marked filler type. (CHF-011)
+INFO:: process regular filler master min-vth type: 
+Warning: Smallest filler provided is greater than specified in option place.rules.min_vt_filler_size (CHF-073)
+Warning: option -continue_on_error turned on automatically. (CHF-014)
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+PDC app_options settings =========
+        place.legalize.enable_prerouted_net_check: 1
+        place.legalize.num_tracks_for_access_check: 1
+        place.legalize.use_eol_spacing_for_access_check: 0
+        place.legalize.allow_touch_track_for_access_check: 1
+        place.legalize.reduce_conservatism_in_eol_check: 0
+        place.legalize.preroute_shape_merge_distance: 0.0
+        place.legalize.enable_non_preferred_direction_span_check: 0
+
+Layer M1: cached 0 shapes out of 4643 total shapes.
+Layer M2: cached 0 shapes out of 203447 total shapes.
+Layer M3: cached 0 shapes out of 143993 total shapes.
+Cached 48172 vias out of 368170 total vias.
+CHF: loading design...
+... VT_P rule: 0.888000
+... VT_N rule: 0.888000
+... max group width rule: 0.888000
+CHF:: Loading blkInsts from NDM...
+CHF:: Building row/inst relations...
+INFO:: Use fillers in order(1000): SAEDRVT14_DCAP_PV1ECO_18 (21 x 1), 
+WARNING: only one filler provided
+        10% complete ...
+        20% complete ...
+        30% complete ...
+        40% complete ...
+        50% complete ...
+        60% complete ...
+        70% complete ...
+        80% complete ...
+        90% complete ...
+Regular Filler Insertion Complete
+... 0 of regular filler SAEDRVT14_DCAP_PV1ECO_18 inserted
+icc2_shell> remove_stdcell_fillers_with_violation
+Warning: Cell contains tie connections which are not connected to real PG. (ZRT-511)
+Cell Min-Routing-Layer = M1
+Cell Max-Routing-Layer = M9
+Warning: There is no constraint to limit maximum number of secondary power and ground (PG) pins in a cluster. (ZRT-536)
+Warning: There is no constraint to limit maximum number of secondary power and ground (PG) pins in a cluster. (ZRT-536)
+Warning: Ignore 2 top cell ports with no pins. (ZRT-027)
+Info: number of net_type_blockage: 0 
+Via on layer (VIA1) needs more than one tracks
+Warning: Layer M1 pitch 0.074 may be too small: wire/via-down 0.074, wire/via-up 0.098. (ZRT-026)
+Via on layer (VIA1) needs more than one tracks
+Warning: Layer M2 pitch 0.060 may be too small: wire/via-down 0.098, wire/via-up 0.060. (ZRT-026)
+Via on layer (VIA3) needs more than one tracks
+Warning: Layer M3 pitch 0.074 may be too small: wire/via-down 0.060, wire/via-up 0.080. (ZRT-026)
+Wire on layer (M4) needs more than one tracks
+Via on layer (VIA3) needs more than one tracks
+Via on layer (VIA4) needs more than one tracks
+Warning: Layer M4 pitch 0.074 may be too small: wire/via-down 0.107, wire/via-up 0.105. (ZRT-026)
+Via on layer (VIA4) needs more than one tracks
+Warning: Layer M5 pitch 0.120 may be too small: wire/via-down 0.135, wire/via-up 0.107. (ZRT-026)
+Via on layer (VIA8) needs more than one tracks
+Warning: Layer M8 pitch 0.120 may be too small: wire/via-down 0.107, wire/via-up 0.135. (ZRT-026)
+Wire on layer (M9) needs more than one tracks
+Via on layer (VIA8) needs more than one tracks
+Via on layer (VIARDL) needs more than one tracks
+Warning: Layer M9 pitch 0.120 may be too small: wire/via-down 0.135, wire/via-up 1.570. (ZRT-026)
+Via on layer (VIARDL) needs more than one tracks
+Warning: Layer MRDL pitch 0.600 may be too small: wire/via-down 4.500, wire/via-up 0.600. (ZRT-026)
+Transition layer name: M3(2)
+Warning: Standard cell pin SAEDRVT14_NR2_2/A1 has no valid via regions. (ZRT-044)
+Warning: Standard cell pin SAEDRVT14_NR2_2/X has no valid via regions. (ZRT-044)
+Warning: Standard cell pin SAEDRVT14_DCAP_PV1ECO_18/VDD has no valid via regions. (ZRT-044)
+Printing options for 'route.common.*'
+common.verbose_level                                    :        0                   
+
+Printing options for 'route.detail.*'
+detail.antenna                                          :        false               
+detail.force_end_on_preferred_grid                      :        true                
+
+Printing options for 'route.auto_via_ladder.*'
+
+[Start Removing Filler Cells] Elapsed real time: 0:00:00 
+[Start Removing Filler Cells] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[Start Removing Filler Cells] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[Start Removing Filler Cells] Total (MB): Used  177  Alloctr  185  Proc 1750 
+
+Begin Filler DRC check ...
+
+Information: Using 1 threads for routing. (ZRT-444)
+[End Removing Filler Cells] Elapsed real time: 0:00:00 
+[End Removing Filler Cells] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End Removing Filler Cells] Stage (MB): Used   -2  Alloctr   -2  Proc   41 
+[End Removing Filler Cells] Total (MB): Used  175  Alloctr  183  Proc 1792 
+Updating the database ...
+Deleted 0 cell instances
+icc2_shell> #######
+icc2_shell> create_stdcell_filler -lib_cell $pnr_std_fillers
+Effort 5
+INFO:: begin filler insertions...
+CHF::NPL_CHKQUERY_PNET checking turned off by default
+master SAEDRVT14_FILL_ECO_18 has site unit
+master SAEDRVT14_FILL_ECO_15 has site unit
+master SAEDRVT14_FILL_ECO_12 has site unit
+master SAEDRVT14_FILL_ECO_9 has site unit
+master SAEDRVT14_FILL_ECO_2 has site unit
+master SAEDRVT14_FILL_ECO_1 has site unit
+master SAEDRVT14_FILL_NNWIV1Y2_2 has site unit
+master SAEDRVT14_FILL_NNWIV1Y2_3 has site unit
+master SAEDRVT14_FILL_NNWIY2_2 has site unit
+master SAEDRVT14_FILL_NNWIY2_3 has site unit
+master SAEDRVT14_FILL_NNWSPACERY2_7 has site unit
+master SAEDRVT14_FILL_NNWVDDBRKY2_3 has site unit
+master SAEDRVT14_FILLP2 has site unit
+master SAEDRVT14_FILLP3 has site unit
+master SAEDRVT14_FILL_SPACER_7 has site unit
+master SAEDRVT14_FILL_Y2_3 has site unit
+ Use site unit (740)
+Warning: filler ref cells not listed from laregst to smallest. Tool may not be able to fill all empty space. (CHF-008)
+INFO:: process regular filler master min-vth type: 
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+PDC app_options settings =========
+        place.legalize.enable_prerouted_net_check: 1
+        place.legalize.num_tracks_for_access_check: 1
+        place.legalize.use_eol_spacing_for_access_check: 0
+        place.legalize.allow_touch_track_for_access_check: 1
+        place.legalize.reduce_conservatism_in_eol_check: 0
+        place.legalize.preroute_shape_merge_distance: 0.0
+        place.legalize.enable_non_preferred_direction_span_check: 0
+
+Layer M1: cached 0 shapes out of 4643 total shapes.
+Layer M2: cached 0 shapes out of 203447 total shapes.
+Layer M3: cached 0 shapes out of 143993 total shapes.
+Cached 48172 vias out of 368170 total vias.
+CHF: loading design...
+... VT_P rule: 0.888000
+... VT_N rule: 0.888000
+... max group width rule: 0.888000
+CHF:: Loading blkInsts from NDM...
+CHF:: Building row/inst relations...
+INFO:: Use fillers in order(1000): SAEDRVT14_FILL_ECO_18 (20 x 1), SAEDRVT14_FILL_ECO_15 (17 x 1), SAEDRVT14_FILL_ECO_12 (14 x 1), SAEDRVT14_FILL_ECO_9 (10 x 1), SAEDRVT14_FILL_ECO_2 (4 x 1), SAEDRVT14_FILL_ECO_1 (1 x 1), SAEDRVT14_FILL_NNWIV1Y2_2 (4 x 2), SAEDRVT14_FILL_NNWIV1Y2_3 (5 x 2), SAEDRVT14_FILL_NNWIY2_2 (4 x 2), SAEDRVT14_FILL_NNWIY2_3 (5 x 2), SAEDRVT14_FILL_NNWSPACERY2_7 (9 x 2), SAEDRVT14_FILL_NNWVDDBRKY2_3 (5 x 2), SAEDRVT14_FILLP2 (4 x 1), SAEDRVT14_FILLP3 (5 x 1), SAEDRVT14_FILL_SPACER_7 (9 x 2), SAEDRVT14_FILL_Y2_3 (5 x 2), 
+Attempt to insert SAEDRVT14_FILL_ECO_1 at location (17.444000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_1 at location (17.518000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILLP2 at location (17.444000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILLP2 at location (17.740000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILLP3 at location (17.444000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILLP3 at location (17.814000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Exhausted all possibilities at location (17.444000, 17.000000), back tracking, remove SAEDRVT14_FILLP3(xofiller!SAEDRVT14_FILLP3!x170740y170000) at location (17.074000, 17.000000).
+, success => xofiller!SAEDRVT14_FILLP3!x170740y170000 inserted.
+Attempt to insert SAEDRVT14_FILL_ECO_18 at location (17.444000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_18 at location (18.924000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_15 at location (17.444000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_15 at location (18.702000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_12 at location (17.444000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_12 at location (18.480000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_9 at location (17.444000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_9 at location (18.184000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_2 at location (17.444000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_2 at location (17.740000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_1 at location (17.444000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_1 at location (17.518000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILLP2 at location (17.444000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILLP2 at location (17.740000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILLP3 at location (17.444000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILLP3 at location (17.814000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Exhausted all possibilities at location (17.444000, 17.000000), back tracking, remove SAEDRVT14_FILLP3(xofiller!SAEDRVT14_FILLP3!x170740y170000) at location (17.074000, 17.000000).
+Exhausted all possibilities at location (17.074000, 17.000000), back tracking, remove SAEDRVT14_FILL_ECO_1(xofiller!SAEDRVT14_FILL_ECO_1!x170000y170000) at location (17.000000, 17.000000).
+, success => xofiller!SAEDRVT14_FILLP2!x170000y170000 inserted.
+Attempt to insert SAEDRVT14_FILL_ECO_18 at location (17.296000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_18 at location (18.776000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_15 at location (17.296000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_15 at location (18.554000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_12 at location (17.296000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_12 at location (18.332000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_9 at location (17.296000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_9 at location (18.036000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_2 at location (17.296000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_2 at location (17.592000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_1 at location (17.296000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_1 at location (17.370000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILLP2 at location (17.296000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILLP2 at location (17.592000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILLP3 at location (17.296000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILLP3 at location (17.666000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Exhausted all possibilities at location (17.296000, 17.000000), back tracking, remove SAEDRVT14_FILLP2(xofiller!SAEDRVT14_FILLP2!x170000y170000) at location (17.000000, 17.000000).
+, success => xofiller!SAEDRVT14_FILLP2!x170000y170000 inserted.
+Attempt to insert SAEDRVT14_FILL_ECO_18 at location (17.296000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_18 at location (18.776000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_15 at location (17.296000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_15 at location (18.554000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_12 at location (17.296000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_12 at location (18.332000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_9 at location (17.296000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_9 at location (18.036000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_2 at location (17.296000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_2 at location (17.592000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_1 at location (17.296000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_1 at location (17.370000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILLP2 at location (17.296000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILLP2 at location (17.592000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILLP3 at location (17.296000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILLP3 at location (17.666000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Exhausted all possibilities at location (17.296000, 17.000000), back tracking, remove SAEDRVT14_FILLP2(xofiller!SAEDRVT14_FILLP2!x170000y170000) at location (17.000000, 17.000000).
+, success => xofiller!SAEDRVT14_FILLP3!x170000y170000 inserted.
+Attempt to insert SAEDRVT14_FILL_ECO_18 at location (17.370000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_18 at location (18.850000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_15 at location (17.370000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_15 at location (18.628000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_12 at location (17.370000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_12 at location (18.406000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_9 at location (17.370000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_9 at location (18.110000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_2 at location (17.370000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_2 at location (17.666000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_1 at location (17.370000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_1 at location (17.444000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILLP2 at location (17.370000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILLP2 at location (17.666000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILLP3 at location (17.370000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILLP3 at location (17.740000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Exhausted all possibilities at location (17.370000, 17.000000), back tracking, remove SAEDRVT14_FILLP3(xofiller!SAEDRVT14_FILLP3!x170000y170000) at location (17.000000, 17.000000).
+, success => xofiller!SAEDRVT14_FILLP3!x170000y170000 inserted.
+Attempt to insert SAEDRVT14_FILL_ECO_18 at location (17.370000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_18 at location (18.850000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_15 at location (17.370000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_15 at location (18.628000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_12 at location (17.370000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_12 at location (18.406000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_9 at location (17.370000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_9 at location (18.110000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_2 at location (17.370000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_2 at location (17.666000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_1 at location (17.370000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILL_ECO_1 at location (17.444000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILLP2 at location (17.370000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILLP2 at location (17.666000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILLP3 at location (17.370000, 17.600000) orient MX., failed =>  cell violates intercell spacing rule;
+.
+Attempt to insert SAEDRVT14_FILLP3 at location (17.740000, 17.600000) orient R180., failed =>  cell violates intercell spacing rule;
+.
+Exhausted all possibilities at location (17.370000, 17.000000), back tracking, remove SAEDRVT14_FILLP3(xofiller!SAEDRVT14_FILLP3!x170000y170000) at location (17.000000, 17.000000).
+Exhausted all possibilities for location between x= 17 and  18.554 at y= 17, no further insertion possible, skipping the location.
+Exhausted all possibilities for location between x= 17.000000 and 18.554000  at y= 17.000000, no further insertion possible, skipping the location.
+For more messages, you can use "set_app_options -name chf.create_stdcell_fillers.max_display_messages -value ### " to set the amount of messages to display. Notice that #### is limited to 10000. 
+icc2_shell> help *spacing_rule*
+ remove_placement_spacing_rules # Remove placement spacing rules
+ report_placement_spacing_rules # Report placement spacing rules
+ set_floorplan_spacing_rules # Create a floorplan spacing rule
+ set_placement_spacing_rule # Set placement spacing rule between labels
+icc2_shell> remove_placement_spacing_rules *
+Error: extra positional option '*' (CMD-012)
+Error: Must specify one of these options: -label or -rule or -all. (CMD-004)
+icc2_shell> remove_placement_spacing_rules -all
+1
+icc2_shell> create_stdcell_filler -lib_cell $pnr_std_fillers
+Effort 5
+INFO:: begin filler insertions...
+CHF::NPL_CHKQUERY_PNET checking turned off by default
+master SAEDRVT14_FILL_ECO_18 has site unit
+master SAEDRVT14_FILL_ECO_15 has site unit
+master SAEDRVT14_FILL_ECO_12 has site unit
+master SAEDRVT14_FILL_ECO_9 has site unit
+master SAEDRVT14_FILL_ECO_2 has site unit
+master SAEDRVT14_FILL_ECO_1 has site unit
+master SAEDRVT14_FILL_NNWIV1Y2_2 has site unit
+master SAEDRVT14_FILL_NNWIV1Y2_3 has site unit
+master SAEDRVT14_FILL_NNWIY2_2 has site unit
+master SAEDRVT14_FILL_NNWIY2_3 has site unit
+master SAEDRVT14_FILL_NNWSPACERY2_7 has site unit
+master SAEDRVT14_FILL_NNWVDDBRKY2_3 has site unit
+master SAEDRVT14_FILLP2 has site unit
+master SAEDRVT14_FILLP3 has site unit
+master SAEDRVT14_FILL_SPACER_7 has site unit
+master SAEDRVT14_FILL_Y2_3 has site unit
+ Use site unit (740)
+Warning: filler ref cells not listed from laregst to smallest. Tool may not be able to fill all empty space. (CHF-008)
+INFO:: process regular filler master min-vth type: 
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+PDC app_options settings =========
+        place.legalize.enable_prerouted_net_check: 1
+        place.legalize.num_tracks_for_access_check: 1
+        place.legalize.use_eol_spacing_for_access_check: 0
+        place.legalize.allow_touch_track_for_access_check: 1
+        place.legalize.reduce_conservatism_in_eol_check: 0
+        place.legalize.preroute_shape_merge_distance: 0.0
+        place.legalize.enable_non_preferred_direction_span_check: 0
+
+Layer M1: cached 0 shapes out of 4643 total shapes.
+Layer M2: cached 0 shapes out of 203447 total shapes.
+Layer M3: cached 0 shapes out of 143993 total shapes.
+Cached 48172 vias out of 368170 total vias.
+CHF: loading design...
+... VT_P rule: 0.888000
+... VT_N rule: 0.888000
+... max group width rule: 0.888000
+CHF:: Loading blkInsts from NDM...
+CHF:: Building row/inst relations...
+INFO:: Use fillers in order(1000): SAEDRVT14_FILL_ECO_18 (20 x 1), SAEDRVT14_FILL_ECO_15 (17 x 1), SAEDRVT14_FILL_ECO_12 (14 x 1), SAEDRVT14_FILL_ECO_9 (10 x 1), SAEDRVT14_FILL_ECO_2 (4 x 1), SAEDRVT14_FILL_ECO_1 (1 x 1), SAEDRVT14_FILL_NNWIV1Y2_2 (4 x 2), SAEDRVT14_FILL_NNWIV1Y2_3 (5 x 2), SAEDRVT14_FILL_NNWIY2_2 (4 x 2), SAEDRVT14_FILL_NNWIY2_3 (5 x 2), SAEDRVT14_FILL_NNWSPACERY2_7 (9 x 2), SAEDRVT14_FILL_NNWVDDBRKY2_3 (5 x 2), SAEDRVT14_FILLP2 (4 x 1), SAEDRVT14_FILLP3 (5 x 1), SAEDRVT14_FILL_SPACER_7 (9 x 2), SAEDRVT14_FILL_Y2_3 (5 x 2), 
+        10% complete ...
+        20% complete ...
+        30% complete ...
+        40% complete ...
+        50% complete ...
+        60% complete ...
+        70% complete ...
+        80% complete ...
+        90% complete ...
+Regular Filler Insertion Complete
+... 177533 of regular filler SAEDRVT14_FILL_ECO_18 inserted
+... 1410 of regular filler SAEDRVT14_FILL_ECO_15 inserted
+... 1644 of regular filler SAEDRVT14_FILL_ECO_12 inserted
+... 10846 of regular filler SAEDRVT14_FILL_ECO_9 inserted
+... 9572 of regular filler SAEDRVT14_FILL_ECO_2 inserted
+... 204973 of regular filler SAEDRVT14_FILL_ECO_1 inserted
+... 0 of regular filler SAEDRVT14_FILL_NNWIV1Y2_2 inserted
+... 0 of regular filler SAEDRVT14_FILL_NNWIV1Y2_3 inserted
+... 0 of regular filler SAEDRVT14_FILL_NNWIY2_2 inserted
+... 0 of regular filler SAEDRVT14_FILL_NNWIY2_3 inserted
+... 0 of regular filler SAEDRVT14_FILL_NNWSPACERY2_7 inserted
+... 0 of regular filler SAEDRVT14_FILL_NNWVDDBRKY2_3 inserted
+... 0 of regular filler SAEDRVT14_FILLP2 inserted
+... 0 of regular filler SAEDRVT14_FILLP3 inserted
+... 0 of regular filler SAEDRVT14_FILL_SPACER_7 inserted
+... 0 of regular filler SAEDRVT14_FILL_Y2_3 inserted
+icc2_shell> gui_show_man_page write_verilog
+icc2_shell> help exit
+ exit                 # Terminate the application
+icc2_shell> exit
+Maximum memory usage for this session: 815.45 MB
+CPU usage for this session:    461 seconds (  0.13 hours)
+Elapsed time for this session:  95212 seconds ( 26.45 hours)
+Thank you for using IC Compiler II.
+

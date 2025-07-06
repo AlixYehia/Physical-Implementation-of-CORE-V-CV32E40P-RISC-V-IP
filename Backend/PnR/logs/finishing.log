@@ -1,0 +1,684 @@
+
+
+
+                              IC Compiler II (TM)
+
+             Version O-2018.06-SP1 for linux64 - Jul 17, 2018 -SLE
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+Loading user preference file /home/ICer/.synopsys_icc2_gui/preferences.tcl
+##############################################
+########### 8. Finishing #####################
+##############################################
+set design cv32e40p_top
+cv32e40p_top
+open_block ./${design}:${design}_7_primetime
+Warning: Technology used to create frame-view and current technology have inconsistency: Min spacings are different for layer 'M1'. (FRAM-054)
+Warning: Technology 'saed14rvt_1p9m.tf' used for frame-view creation in library 'saed14rvt', is inconsistent with the current technology 'saed14nm_1p9m_mw.tf' of library "cv32e40p_top'. (NDM-102)
+Information: User units loaded from library 'saed14rvt' (LNK-040)
+Opening block 'cv32e40p_top:cv32e40p_top_7_primetime.design' in edit mode
+Information: loading PG routing via master rules, patterns, strategies and strategy via rules.
+{cv32e40p_top:cv32e40p_top_7_primetime.design}
+copy_block -from_block ${design}:${design}_7_primetime -to_block ${design}_8_finished
+Information: Overwriting block 'cv32e40p_top_8_finished.design' in library 'cv32e40p_top'. (DES-025)
+{cv32e40p_top:cv32e40p_top_8_finished.design}
+current_block ${design}_8_finished
+{cv32e40p_top:cv32e40p_top_8_finished.design}
+set_host_options -max_cores 12
+1
+remove_placement_spacing_rules -all 
+Using libraries: cv32e40p_top saed14rvt
+Warning: In library cv32e40p_top, no block views exist for block cv32e40p_top. (LNK-064)
+Visiting block cv32e40p_top:cv32e40p_top_8_finished.design
+Design 'cv32e40p_top' was successfully linked.
+1
+## std filler
+set pnr_std_fillers " */SAEDRVT14_FILL_ECO_18   */SAEDRVT14_FILL_ECO_15 */SAEDRVT14_FILL_ECO_12 */SAEDRVT14_FILL_ECO_9   */SAEDRVT14_FILL_ECO_2 */SAEDRVT14_FILL_ECO_1    */SAEDRVT14_FILL_NNWIV1Y2_2 */SAEDRVT14_FILL_NNWIV1Y2_3 */SAEDRVT14_FILL_NNWIY2_2 */SAEDRVT14_FILL_NNWIY2_3 */SAEDRVT14_FILL_NNWSPACERY2_7 */SAEDRVT14_FILL_NNWVDDBRKY2_3 */SAEDRVT14_FILLP2 */SAEDRVT14_FILLP3 */SAEDRVT14_FILL_SPACER_7 */SAEDRVT14_FILL_Y2_3 "
+ */SAEDRVT14_FILL_ECO_18   */SAEDRVT14_FILL_ECO_15 */SAEDRVT14_FILL_ECO_12 */SAEDRVT14_FILL_ECO_9   */SAEDRVT14_FILL_ECO_2 */SAEDRVT14_FILL_ECO_1    */SAEDRVT14_FILL_NNWIV1Y2_2 */SAEDRVT14_FILL_NNWIV1Y2_3 */SAEDRVT14_FILL_NNWIY2_2 */SAEDRVT14_FILL_NNWIY2_3 */SAEDRVT14_FILL_NNWSPACERY2_7 */SAEDRVT14_FILL_NNWVDDBRKY2_3 */SAEDRVT14_FILLP2 */SAEDRVT14_FILLP3 */SAEDRVT14_FILL_SPACER_7 */SAEDRVT14_FILL_Y2_3 
+set std_fillers "  */SAEDRVT14_DCAP_PV1ECO_18   "
+  */SAEDRVT14_DCAP_PV1ECO_18   
+#foreach filler $pnr_std_fillers { lappend std_fillers "*/${filler}" }
+create_stdcell_filler -lib_cell $std_fillers
+Effort 5
+INFO:: begin filler insertions...
+CHF::NPL_CHKQUERY_PNET checking turned off by default
+master SAEDRVT14_DCAP_PV1ECO_18 has site unit
+ Use site unit (740)
+Warning: filler ref cell SAEDRVT14_DCAP_PV1ECO_18 not marked filler type. (CHF-011)
+INFO:: process regular filler master min-vth type: 
+Warning: Smallest filler provided is greater than specified in option place.rules.min_vt_filler_size (CHF-073)
+Warning: option -continue_on_error turned on automatically. (CHF-014)
+Begin building search trees for block cv32e40p_top:cv32e40p_top_8_finished.design
+Done building search trees for block cv32e40p_top:cv32e40p_top_8_finished.design (time 0s)
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+PDC app_options settings =========
+	place.legalize.enable_prerouted_net_check: 1
+	place.legalize.num_tracks_for_access_check: 1
+	place.legalize.use_eol_spacing_for_access_check: 0
+	place.legalize.allow_touch_track_for_access_check: 1
+	place.legalize.reduce_conservatism_in_eol_check: 0
+	place.legalize.preroute_shape_merge_distance: 0.0
+	place.legalize.enable_non_preferred_direction_span_check: 0
+
+Layer M1: cached 0 shapes out of 4172 total shapes.
+Layer M2: cached 0 shapes out of 138095 total shapes.
+Layer M3: cached 3 shapes out of 113633 total shapes.
+Cached 6435 vias out of 205162 total vias.
+CHF: loading design...
+... VT_P rule: 0.888000
+... VT_N rule: 0.888000
+... max group width rule: 0.888000
+CHF:: Loading blkInsts from NDM...
+CHF:: Building row/inst relations...
+INFO:: Use fillers in order(1000): SAEDRVT14_DCAP_PV1ECO_18 (21 x 1), 
+WARNING: only one filler provided
+	10% complete ...
+	20% complete ...
+	30% complete ...
+	40% complete ...
+	50% complete ...
+	60% complete ...
+	70% complete ...
+	80% complete ...
+	90% complete ...
+Regular Filler Insertion Complete
+... 39592 of regular filler SAEDRVT14_DCAP_PV1ECO_18 inserted
+remove_stdcell_fillers_with_violation
+Warning: Cell contains tie connections which are not connected to real PG. (ZRT-511)
+Cell Min-Routing-Layer = M1
+Cell Max-Routing-Layer = M9
+Warning: There is no constraint to limit maximum number of secondary power and ground (PG) pins in a cluster. (ZRT-536)
+Warning: There is no constraint to limit maximum number of secondary power and ground (PG) pins in a cluster. (ZRT-536)
+Warning: Ignore 2 top cell ports with no pins. (ZRT-027)
+Skipping 1 internal pins that are not physical. Set route.common.verbose_level to > 0 and run routing command to get skipped pin names.
+Info: number of net_type_blockage: 0 
+Via on layer (VIA1) needs more than one tracks
+Warning: Layer M1 pitch 0.074 may be too small: wire/via-down 0.074, wire/via-up 0.098. (ZRT-026)
+Via on layer (VIA1) needs more than one tracks
+Warning: Layer M2 pitch 0.060 may be too small: wire/via-down 0.098, wire/via-up 0.060. (ZRT-026)
+Via on layer (VIA3) needs more than one tracks
+Warning: Layer M3 pitch 0.074 may be too small: wire/via-down 0.060, wire/via-up 0.080. (ZRT-026)
+Wire on layer (M4) needs more than one tracks
+Via on layer (VIA3) needs more than one tracks
+Via on layer (VIA4) needs more than one tracks
+Warning: Layer M4 pitch 0.074 may be too small: wire/via-down 0.107, wire/via-up 0.105. (ZRT-026)
+Via on layer (VIA4) needs more than one tracks
+Warning: Layer M5 pitch 0.120 may be too small: wire/via-down 0.135, wire/via-up 0.107. (ZRT-026)
+Via on layer (VIA8) needs more than one tracks
+Warning: Layer M8 pitch 0.120 may be too small: wire/via-down 0.107, wire/via-up 0.135. (ZRT-026)
+Wire on layer (M9) needs more than one tracks
+Via on layer (VIA8) needs more than one tracks
+Via on layer (VIARDL) needs more than one tracks
+Warning: Layer M9 pitch 0.120 may be too small: wire/via-down 0.135, wire/via-up 1.570. (ZRT-026)
+Via on layer (VIARDL) needs more than one tracks
+Warning: Layer MRDL pitch 0.600 may be too small: wire/via-down 4.500, wire/via-up 0.600. (ZRT-026)
+Transition layer name: M3(2)
+Warning: Standard cell pin SAEDRVT14_NR2_2/A1 has no valid via regions. (ZRT-044)
+Warning: Standard cell pin SAEDRVT14_NR2_2/X has no valid via regions. (ZRT-044)
+Warning: Standard cell pin SAEDRVT14_OA2BB2_2/B1 has no valid via regions. (ZRT-044)
+Warning: Standard cell pin SAEDRVT14_DCAP_PV1ECO_18/VDD has no valid via regions. (ZRT-044)
+Warning: Standard cell pin SAEDRVT14_NR3B_4/A has no valid via regions. (ZRT-044)
+Printing options for 'route.common.*'
+common.verbose_level                                    :	 0                   
+
+Printing options for 'route.detail.*'
+detail.antenna                                          :	 false               
+detail.force_end_on_preferred_grid                      :	 true                
+
+Printing options for 'route.auto_via_ladder.*'
+
+[Start Removing Filler Cells] Elapsed real time: 0:00:00 
+[Start Removing Filler Cells] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[Start Removing Filler Cells] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[Start Removing Filler Cells] Total (MB): Used  170  Alloctr  176  Proc 1645 
+
+Begin Filler DRC check ...
+
+Information: Using 12 threads for routing. (ZRT-444)
+Partition 1, Fillers with Violations = 26
+Partition 3, Fillers with Violations = 85
+Partition 9, Fillers with Violations = 48
+Partition 5, Fillers with Violations = 82
+Partition 11, Fillers with Violations = 30
+Partition 14, Fillers with Violations = 76
+Partition 7, Fillers with Violations = 55
+Partition 40, Fillers with Violations = 73
+Partition 4, Fillers with Violations = 71
+Partition 6, Fillers with Violations = 78
+Partition 12, Fillers with Violations = 20
+Partition 10, Fillers with Violations = 46
+Partition 2, Fillers with Violations = 73
+Partition 29, Fillers with Violations = 288
+Partition 8, Fillers with Violations = 49
+Partition 37, Fillers with Violations = 242
+Partition 35, Fillers with Violations = 313
+Partition 53, Fillers with Violations = 66
+Partition 27, Fillers with Violations = 68
+Partition 31, Fillers with Violations = 287
+Partition 55, Fillers with Violations = 286
+Partition 79, Fillers with Violations = 65
+Partition 33, Fillers with Violations = 271
+Partition 57, Fillers with Violations = 334
+Partition 59, Fillers with Violations = 306
+Partition 24, Fillers with Violations = 155
+Partition 66, Fillers with Violations = 63
+Partition 16, Fillers with Violations = 245
+Partition 22, Fillers with Violations = 217
+Partition 61, Fillers with Violations = 321
+Partition 25, Fillers with Violations = 69
+Partition 63, Fillers with Violations = 243
+Partition 18, Fillers with Violations = 255
+Partition 81, Fillers with Violations = 297
+Partition 20, Fillers with Violations = 192
+Partition 38, Fillers with Violations = 79
+Partition 41, Fillers with Violations = 231
+Partition 43, Fillers with Violations = 306
+Partition 23, Fillers with Violations = 165
+Partition 15, Fillers with Violations = 211
+Partition 70, Fillers with Violations = 272
+Partition 64, Fillers with Violations = 81
+Partition 45, Fillers with Violations = 277
+Partition 17, Fillers with Violations = 220
+Partition 49, Fillers with Violations = 285
+Partition 47, Fillers with Violations = 311
+Partition 21, Fillers with Violations = 177
+Partition 51, Fillers with Violations = 80
+Partition 54, Fillers with Violations = 227
+Partition 19, Fillers with Violations = 251
+Partition 74, Fillers with Violations = 272
+Partition 28, Fillers with Violations = 222
+Partition 72, Fillers with Violations = 282
+Partition 80, Fillers with Violations = 262
+Partition 44, Fillers with Violations = 252
+Partition 36, Fillers with Violations = 225
+Partition 46, Fillers with Violations = 262
+Partition 69, Fillers with Violations = 281
+Partition 97, Fillers with Violations = 273
+Partition 76, Fillers with Violations = 263
+Partition 92, Fillers with Violations = 63
+Partition 95, Fillers with Violations = 321
+Partition 99, Fillers with Violations = 301
+Partition 67, Fillers with Violations = 245
+Partition 77, Fillers with Violations = 79
+Partition 42, Fillers with Violations = 226
+Partition 71, Fillers with Violations = 240
+Partition 101, Fillers with Violations = 274
+Partition 32, Fillers with Violations = 238
+Partition 48, Fillers with Violations = 209
+Partition 73, Fillers with Violations = 250
+Partition 90, Fillers with Violations = 85
+Partition 50, Fillers with Violations = 202
+Partition 75, Fillers with Violations = 201
+Partition 93, Fillers with Violations = 256
+Partition 98, Fillers with Violations = 246
+Partition 30, Fillers with Violations = 248
+Partition 82, Fillers with Violations = 253
+Partition 56, Fillers with Violations = 253
+Partition 105, Fillers with Violations = 56
+Partition 102, Fillers with Violations = 253
+Partition 58, Fillers with Violations = 271
+Partition 100, Fillers with Violations = 277
+Partition 34, Fillers with Violations = 224
+Partition 62, Fillers with Violations = 187
+Partition 60, Fillers with Violations = 197
+Partition 108, Fillers with Violations = 326
+Partition 131, Fillers with Violations = 76
+Partition 89, Fillers with Violations = 212
+Partition 125, Fillers with Violations = 265
+Partition 106, Fillers with Violations = 262
+Partition 68, Fillers with Violations = 232
+Partition 115, Fillers with Violations = 257
+Partition 110, Fillers with Violations = 250
+Partition 142, Fillers with Violations = 85
+Partition 86, Fillers with Violations = 243
+Partition 84, Fillers with Violations = 262
+Partition 103, Fillers with Violations = 90
+Partition 133, Fillers with Violations = 267
+Partition 140, Fillers with Violations = 284
+Partition 88, Fillers with Violations = 230
+Partition 135, Fillers with Violations = 203
+Partition 94, Fillers with Violations = 278
+Partition 112, Fillers with Violations = 282
+Partition 118, Fillers with Violations = 78
+Partition 116, Fillers with Violations = 70
+Partition 114, Fillers with Violations = 248
+Partition 83, Fillers with Violations = 229
+Partition 144, Fillers with Violations = 29
+Partition 85, Fillers with Violations = 245
+Partition 109, Fillers with Violations = 241
+Partition 137, Fillers with Violations = 258
+Partition 148, Fillers with Violations = 78
+Partition 146, Fillers with Violations = 87
+Partition 120, Fillers with Violations = 284
+Partition 87, Fillers with Violations = 204
+Partition 141, Fillers with Violations = 179
+Partition 145, Fillers with Violations = 98
+Partition 139, Fillers with Violations = 254
+Partition 150, Fillers with Violations = 69
+Partition 147, Fillers with Violations = 70
+Partition 111, Fillers with Violations = 235
+Partition 113, Fillers with Violations = 240
+Partition 122, Fillers with Violations = 223
+Partition 107, Fillers with Violations = 270
+Partition 96, Fillers with Violations = 241
+Partition 154, Fillers with Violations = 83
+Partition 155, Fillers with Violations = 31
+Partition 152, Fillers with Violations = 79
+Partition 149, Fillers with Violations = 68
+Partition 151, Fillers with Violations = 84
+Partition 153, Fillers with Violations = 73
+Partition 132, Fillers with Violations = 261
+Partition 124, Fillers with Violations = 209
+Partition 128, Fillers with Violations = 207
+Partition 126, Fillers with Violations = 240
+Partition 134, Fillers with Violations = 215
+Partition 129, Fillers with Violations = 71
+Partition 119, Fillers with Violations = 257
+Partition 123, Fillers with Violations = 239
+Partition 138, Fillers with Violations = 211
+Partition 121, Fillers with Violations = 248
+Partition 127, Fillers with Violations = 231
+Partition 136, Fillers with Violations = 184
+[End Removing Filler Cells] Elapsed real time: 0:00:08 
+[End Removing Filler Cells] Elapsed cpu  time: sys=0:00:01 usr=0:00:34 total=0:00:35
+[End Removing Filler Cells] Stage (MB): Used    0  Alloctr    1  Proc  645 
+[End Removing Filler Cells] Total (MB): Used  170  Alloctr  177  Proc 2291 
+Updating the database ...
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x2398140y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x2413680y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x2435880y170000 due to Diff net spacing violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x2451420y170000 due to Diff net spacing violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x899640y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x915180y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x1032840y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x1048380y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x1095000y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x1152720y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x1168260y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x1243740y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x1259280y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x1315520y170000 due to Diff net spacing violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x1337720y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x1353260y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x1404320y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x1648520y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x1664060y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x1901600y170000 due to Diff net spacing violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x1917140y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x2651220y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x2666760y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x244000y176000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x357220y176000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x2160600y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x2176140y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x185540y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x201080y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x253620y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x323180y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x338720y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x403100y170000 due to Diff net spacing violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x418640y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x465260y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x587360y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x602900y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x618440y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x650260y170000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x403100y176000 due to Diff net spacing violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x514840y176000 due to Diff net spacing violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x551100y176000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x170000y182000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x647300y176000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x662840y176000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x943300y176000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x1002500y176000 due to Diff net spacing violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x1018040y176000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x1047640y176000 due to Short violation
+Delete xofiller!SAEDRVT14_DCAP_PV1ECO_18!x1098700y176000 due to Short violation
+Reporting for the first 50 deleted cells
+Deleted 27842 cell instances
+#######
+create_stdcell_filler -lib_cell $pnr_std_fillers
+Effort 5
+INFO:: begin filler insertions...
+CHF::NPL_CHKQUERY_PNET checking turned off by default
+master SAEDRVT14_FILL_ECO_18 has site unit
+master SAEDRVT14_FILL_ECO_15 has site unit
+master SAEDRVT14_FILL_ECO_12 has site unit
+master SAEDRVT14_FILL_ECO_9 has site unit
+master SAEDRVT14_FILL_ECO_2 has site unit
+master SAEDRVT14_FILL_ECO_1 has site unit
+master SAEDRVT14_FILL_NNWIV1Y2_2 has site unit
+master SAEDRVT14_FILL_NNWIV1Y2_3 has site unit
+master SAEDRVT14_FILL_NNWIY2_2 has site unit
+master SAEDRVT14_FILL_NNWIY2_3 has site unit
+master SAEDRVT14_FILL_NNWSPACERY2_7 has site unit
+master SAEDRVT14_FILL_NNWVDDBRKY2_3 has site unit
+master SAEDRVT14_FILLP2 has site unit
+master SAEDRVT14_FILLP3 has site unit
+master SAEDRVT14_FILL_SPACER_7 has site unit
+master SAEDRVT14_FILL_Y2_3 has site unit
+ Use site unit (740)
+Warning: filler ref cells not listed from laregst to smallest. Tool may not be able to fill all empty space. (CHF-008)
+INFO:: process regular filler master min-vth type: 
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+PDC app_options settings =========
+	place.legalize.enable_prerouted_net_check: 1
+	place.legalize.num_tracks_for_access_check: 1
+	place.legalize.use_eol_spacing_for_access_check: 0
+	place.legalize.allow_touch_track_for_access_check: 1
+	place.legalize.reduce_conservatism_in_eol_check: 0
+	place.legalize.preroute_shape_merge_distance: 0.0
+	place.legalize.enable_non_preferred_direction_span_check: 0
+
+Layer M1: cached 0 shapes out of 4172 total shapes.
+Layer M2: cached 0 shapes out of 138095 total shapes.
+Layer M3: cached 3 shapes out of 113633 total shapes.
+Cached 6435 vias out of 205162 total vias.
+CHF: loading design...
+... VT_P rule: 0.888000
+... VT_N rule: 0.888000
+... max group width rule: 0.888000
+CHF:: Loading blkInsts from NDM...
+CHF:: Building row/inst relations...
+INFO:: Use fillers in order(1000): SAEDRVT14_FILL_ECO_18 (20 x 1), SAEDRVT14_FILL_ECO_15 (17 x 1), SAEDRVT14_FILL_ECO_12 (14 x 1), SAEDRVT14_FILL_ECO_9 (10 x 1), SAEDRVT14_FILL_ECO_2 (4 x 1), SAEDRVT14_FILL_ECO_1 (1 x 1), SAEDRVT14_FILL_NNWIV1Y2_2 (4 x 2), SAEDRVT14_FILL_NNWIV1Y2_3 (5 x 2), SAEDRVT14_FILL_NNWIY2_2 (4 x 2), SAEDRVT14_FILL_NNWIY2_3 (5 x 2), SAEDRVT14_FILL_NNWSPACERY2_7 (9 x 2), SAEDRVT14_FILL_NNWVDDBRKY2_3 (5 x 2), SAEDRVT14_FILLP2 (4 x 1), SAEDRVT14_FILLP3 (5 x 1), SAEDRVT14_FILL_SPACER_7 (9 x 2), SAEDRVT14_FILL_Y2_3 (5 x 2), 
+	10% complete ...
+	20% complete ...
+	30% complete ...
+	40% complete ...
+	50% complete ...
+	60% complete ...
+	70% complete ...
+	80% complete ...
+	90% complete ...
+Regular Filler Insertion Complete
+... 29587 of regular filler SAEDRVT14_FILL_ECO_18 inserted
+... 3084 of regular filler SAEDRVT14_FILL_ECO_15 inserted
+... 3184 of regular filler SAEDRVT14_FILL_ECO_12 inserted
+... 4890 of regular filler SAEDRVT14_FILL_ECO_9 inserted
+... 11211 of regular filler SAEDRVT14_FILL_ECO_2 inserted
+... 50170 of regular filler SAEDRVT14_FILL_ECO_1 inserted
+... 0 of regular filler SAEDRVT14_FILL_NNWIV1Y2_2 inserted
+... 0 of regular filler SAEDRVT14_FILL_NNWIV1Y2_3 inserted
+... 0 of regular filler SAEDRVT14_FILL_NNWIY2_2 inserted
+... 0 of regular filler SAEDRVT14_FILL_NNWIY2_3 inserted
+... 0 of regular filler SAEDRVT14_FILL_NNWSPACERY2_7 inserted
+... 0 of regular filler SAEDRVT14_FILL_NNWVDDBRKY2_3 inserted
+... 0 of regular filler SAEDRVT14_FILLP2 inserted
+... 0 of regular filler SAEDRVT14_FILLP3 inserted
+... 0 of regular filler SAEDRVT14_FILL_SPACER_7 inserted
+... 0 of regular filler SAEDRVT14_FILL_Y2_3 inserted
+connect_pg_net -net "VDD" [get_pins -hierarchical "*/VDD*"]
+connect_pg_net -net "VSS" [get_pins -hierarchical "*/VSS"]
+remove_stdcell_fillers_with_violation
+Warning: Cell contains tie connections which are not connected to real PG. (ZRT-511)
+Cell Min-Routing-Layer = M1
+Cell Max-Routing-Layer = M9
+Warning: There is no constraint to limit maximum number of secondary power and ground (PG) pins in a cluster. (ZRT-536)
+Warning: There is no constraint to limit maximum number of secondary power and ground (PG) pins in a cluster. (ZRT-536)
+Warning: Ignore 2 top cell ports with no pins. (ZRT-027)
+Skipping 1 internal pins that are not physical. Set route.common.verbose_level to > 0 and run routing command to get skipped pin names.
+Info: number of net_type_blockage: 0 
+Via on layer (VIA1) needs more than one tracks
+Warning: Layer M1 pitch 0.074 may be too small: wire/via-down 0.074, wire/via-up 0.098. (ZRT-026)
+Via on layer (VIA1) needs more than one tracks
+Warning: Layer M2 pitch 0.060 may be too small: wire/via-down 0.098, wire/via-up 0.060. (ZRT-026)
+Via on layer (VIA3) needs more than one tracks
+Warning: Layer M3 pitch 0.074 may be too small: wire/via-down 0.060, wire/via-up 0.080. (ZRT-026)
+Wire on layer (M4) needs more than one tracks
+Via on layer (VIA3) needs more than one tracks
+Via on layer (VIA4) needs more than one tracks
+Warning: Layer M4 pitch 0.074 may be too small: wire/via-down 0.107, wire/via-up 0.105. (ZRT-026)
+Via on layer (VIA4) needs more than one tracks
+Warning: Layer M5 pitch 0.120 may be too small: wire/via-down 0.135, wire/via-up 0.107. (ZRT-026)
+Via on layer (VIA8) needs more than one tracks
+Warning: Layer M8 pitch 0.120 may be too small: wire/via-down 0.107, wire/via-up 0.135. (ZRT-026)
+Wire on layer (M9) needs more than one tracks
+Via on layer (VIA8) needs more than one tracks
+Via on layer (VIARDL) needs more than one tracks
+Warning: Layer M9 pitch 0.120 may be too small: wire/via-down 0.135, wire/via-up 1.570. (ZRT-026)
+Via on layer (VIARDL) needs more than one tracks
+Warning: Layer MRDL pitch 0.600 may be too small: wire/via-down 4.500, wire/via-up 0.600. (ZRT-026)
+Transition layer name: M3(2)
+Warning: Standard cell pin SAEDRVT14_NR2_2/A1 has no valid via regions. (ZRT-044)
+Warning: Standard cell pin SAEDRVT14_NR2_2/X has no valid via regions. (ZRT-044)
+Warning: Standard cell pin SAEDRVT14_DCAP_PV1ECO_18/VDD has no valid via regions. (ZRT-044)
+Warning: Standard cell pin SAEDRVT14_NR3B_4/A has no valid via regions. (ZRT-044)
+Warning: Standard cell pin SAEDRVT14_OA2BB2_2/B1 has no valid via regions. (ZRT-044)
+Printing options for 'route.common.*'
+common.verbose_level                                    :	 0                   
+
+Printing options for 'route.detail.*'
+detail.antenna                                          :	 false               
+detail.force_end_on_preferred_grid                      :	 true                
+
+Printing options for 'route.auto_via_ladder.*'
+
+[Start Removing Filler Cells] Elapsed real time: 0:00:00 
+[Start Removing Filler Cells] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[Start Removing Filler Cells] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[Start Removing Filler Cells] Total (MB): Used  194  Alloctr  200  Proc 2291 
+
+Begin Filler DRC check ...
+
+Information: Using 12 threads for routing. (ZRT-444)
+Partition 1, Fillers with Violations = 0
+Partition 5, Fillers with Violations = 0
+Partition 3, Fillers with Violations = 0
+Partition 11, Fillers with Violations = 0
+Partition 12, Fillers with Violations = 0
+Partition 7, Fillers with Violations = 0
+Partition 40, Fillers with Violations = 0
+Partition 14, Fillers with Violations = 0
+Partition 9, Fillers with Violations = 0
+Partition 4, Fillers with Violations = 0
+Partition 55, Fillers with Violations = 0
+Partition 6, Fillers with Violations = 0
+Partition 57, Fillers with Violations = 0
+Partition 8, Fillers with Violations = 0
+Partition 31, Fillers with Violations = 0
+Partition 53, Fillers with Violations = 0
+Partition 29, Fillers with Violations = 0
+Partition 10, Fillers with Violations = 0
+Partition 2, Fillers with Violations = 0
+Partition 27, Fillers with Violations = 0
+Partition 37, Fillers with Violations = 0
+Partition 79, Fillers with Violations = 0
+Partition 33, Fillers with Violations = 0
+Partition 35, Fillers with Violations = 0
+Partition 61, Fillers with Violations = 0
+Partition 56, Fillers with Violations = 0
+Partition 54, Fillers with Violations = 0
+Partition 59, Fillers with Violations = 0
+Partition 66, Fillers with Violations = 0
+Partition 63, Fillers with Violations = 0
+Partition 17, Fillers with Violations = 0
+Partition 28, Fillers with Violations = 0
+Partition 81, Fillers with Violations = 0
+Partition 19, Fillers with Violations = 0
+Partition 48, Fillers with Violations = 0
+Partition 83, Fillers with Violations = 0
+Partition 24, Fillers with Violations = 0
+Partition 21, Fillers with Violations = 0
+Partition 43, Fillers with Violations = 0
+Partition 18, Fillers with Violations = 0
+Partition 72, Fillers with Violations = 0
+Partition 74, Fillers with Violations = 0
+Partition 67, Fillers with Violations = 0
+Partition 15, Fillers with Violations = 0
+Partition 45, Fillers with Violations = 0
+Partition 50, Fillers with Violations = 0
+Partition 47, Fillers with Violations = 0
+Partition 41, Fillers with Violations = 0
+Partition 25, Fillers with Violations = 0
+Partition 30, Fillers with Violations = 0
+Partition 77, Fillers with Violations = 0
+Partition 69, Fillers with Violations = 0
+Partition 51, Fillers with Violations = 0
+Partition 22, Fillers with Violations = 0
+Partition 58, Fillers with Violations = 0
+Partition 90, Fillers with Violations = 0
+Partition 38, Fillers with Violations = 0
+Partition 20, Fillers with Violations = 0
+Partition 84, Fillers with Violations = 0
+Partition 80, Fillers with Violations = 0
+Partition 75, Fillers with Violations = 0
+Partition 73, Fillers with Violations = 0
+Partition 16, Fillers with Violations = 0
+Partition 44, Fillers with Violations = 0
+Partition 49, Fillers with Violations = 0
+Partition 42, Fillers with Violations = 0
+Partition 64, Fillers with Violations = 0
+Partition 46, Fillers with Violations = 0
+Partition 92, Fillers with Violations = 0
+Partition 23, Fillers with Violations = 0
+Partition 68, Fillers with Violations = 0
+Partition 70, Fillers with Violations = 0
+Partition 85, Fillers with Violations = 0
+Partition 87, Fillers with Violations = 0
+Partition 94, Fillers with Violations = 0
+Partition 89, Fillers with Violations = 0
+Partition 96, Fillers with Violations = 0
+Partition 32, Fillers with Violations = 0
+Partition 62, Fillers with Violations = 0
+Partition 105, Fillers with Violations = 0
+Partition 111, Fillers with Violations = 0
+Partition 34, Fillers with Violations = 0
+Partition 36, Fillers with Violations = 0
+Partition 60, Fillers with Violations = 0
+Partition 103, Fillers with Violations = 0
+Partition 107, Fillers with Violations = 0
+Partition 118, Fillers with Violations = 0
+Partition 86, Fillers with Violations = 0
+Partition 129, Fillers with Violations = 0
+Partition 109, Fillers with Violations = 0
+Partition 82, Fillers with Violations = 0
+Partition 71, Fillers with Violations = 0
+Partition 88, Fillers with Violations = 0
+Partition 131, Fillers with Violations = 0
+Partition 114, Fillers with Violations = 0
+Partition 112, Fillers with Violations = 0
+Partition 133, Fillers with Violations = 0
+Partition 135, Fillers with Violations = 0
+Partition 144, Fillers with Violations = 0
+Partition 93, Fillers with Violations = 0
+Partition 116, Fillers with Violations = 0
+Partition 145, Fillers with Violations = 0
+Partition 108, Fillers with Violations = 0
+Partition 97, Fillers with Violations = 0
+Partition 119, Fillers with Violations = 0
+Partition 76, Fillers with Violations = 0
+Partition 139, Fillers with Violations = 0
+Partition 137, Fillers with Violations = 0
+Partition 99, Fillers with Violations = 0
+Partition 141, Fillers with Violations = 0
+Partition 134, Fillers with Violations = 0
+Partition 95, Fillers with Violations = 0
+Partition 152, Fillers with Violations = 0
+Partition 101, Fillers with Violations = 0
+Partition 136, Fillers with Violations = 0
+Partition 110, Fillers with Violations = 0
+Partition 154, Fillers with Violations = 0
+Partition 151, Fillers with Violations = 0
+Partition 147, Fillers with Violations = 0
+Partition 132, Fillers with Violations = 0
+Partition 126, Fillers with Violations = 0
+Partition 106, Fillers with Violations = 0
+Partition 155, Fillers with Violations = 0
+Partition 149, Fillers with Violations = 0
+Partition 153, Fillers with Violations = 0
+Partition 146, Fillers with Violations = 0
+Partition 102, Fillers with Violations = 0
+Partition 128, Fillers with Violations = 0
+Partition 121, Fillers with Violations = 0
+Partition 100, Fillers with Violations = 0
+Partition 148, Fillers with Violations = 0
+Partition 150, Fillers with Violations = 0
+Partition 98, Fillers with Violations = 0
+Partition 142, Fillers with Violations = 0
+Partition 125, Fillers with Violations = 0
+Partition 123, Fillers with Violations = 0
+Partition 120, Fillers with Violations = 0
+Partition 140, Fillers with Violations = 0
+Partition 115, Fillers with Violations = 0
+Partition 113, Fillers with Violations = 0
+Partition 122, Fillers with Violations = 0
+Partition 138, Fillers with Violations = 0
+Partition 127, Fillers with Violations = 0
+Partition 124, Fillers with Violations = 0
+[End Removing Filler Cells] Elapsed real time: 0:00:04 
+[End Removing Filler Cells] Elapsed cpu  time: sys=0:00:00 usr=0:00:22 total=0:00:23
+[End Removing Filler Cells] Stage (MB): Used    0  Alloctr    1  Proc   18 
+[End Removing Filler Cells] Total (MB): Used  195  Alloctr  202  Proc 2310 
+Updating the database ...
+Deleted 0 cell instances
+##############################################
+########### 9. Checks and Outputs ############
+##############################################
+set design cv32e40p_top
+cv32e40p_top
+set_host_options -max_cores 4
+1
+#write_oasis or write_gds for ICC2
+define_name_rules  no_case -case_insensitive
+1
+change_names -rule no_case -hierarchy
+ Information: Using name rules 'no_case'.
+ Information: 500 objects (0 ports, 0 bus ports, 0 cells, 500 nets & 0 bus nets) changed in design 'cv32e40p_top_8_finished'.
+1
+change_names -rule verilog -hierarchy
+ Information: Using name rules 'verilog'.
+Information: The specified replacement character _ is conflicting with the specified restricted character. (NDMUI-736)
+Information: The specified replacement character _ is conflicting with the specified restricted character. (NDMUI-736)
+Information: The specified replacement character _ is conflicting with the specified restricted character. (NDMUI-736)
+Information: The specified replacement character _ is conflicting with the specified restricted character. (NDMUI-736)
+Information: The specified replacement character _ is conflicting with the specified restricted character. (NDMUI-736)
+Information: The specified replacement character _ is conflicting with the specified restricted character. (NDMUI-736)
+ Information: 127267 objects (106 ports, 0 bus ports, 119972 cells, 6888 nets & 301 bus nets) changed in design 'cv32e40p_top_8_finished'.
+1
+set verilogout_no_tri	 true
+true
+set verilogout_equation  false
+false
+sh mkdir -p outputs
+sh mkdir -p reports/finished
+write_verilog -top_module_first ./netlists/${design}_finished_icc2.v
+1
+write_verilog -exclude [list pg_objects all_physical_cells] ./outputs/${design}_icc2_no_phy.v
+1
+write_verilog -exclude pg_objects ./outputs/${design}_icc2_nopg.v
+1
+#extract_rc
+write_parasitics -output ./outputs/${design} > outputs/spef_writing.rpt
+#write_sdc -output ./outputs/cv32e40p_top_icc2.sdc
+report_routing_rules -nosplit > reports/finished/${design}_routing_rules.rpt
+report_cells > reports/finished/report_cells_finished.rpt
+report_congestion > reports/finished/report_congestion_finished.rpt
+report_timing -delay_type max -max_path 20 > reports/finished/setup_finished.rpt
+report_timing -delay_type min -max_path 20 > reports/finished/hold_finished.rpt
+report_utilization > reports/finished/routing_utilization.rpt
+report_qor > reports/finished/${design}_qor_icc2.rpt
+analyze_design_violations > reports/finished/analyze_design_violations_finished.rpt
+report_constraints -all_violators > reports/finished/constraints.rpt
+save_block -as ${design}_8_finished
+Information: Saving block 'cv32e40p_top:cv32e40p_top_8_finished.design'
+1
+close_blocks
+Closing block 'cv32e40p_top:cv32e40p_top_8_finished.design'
+Information: The net parasitics of block cv32e40p_top are cleared. (TIM-123)
+1
+save_lib
+Saving library 'cv32e40p_top'
+1
+close_lib
+Closing library 'cv32e40p_top'
+1
+exit
+Maximum memory usage for this session: 1212.68 MB
+CPU usage for this session:    287 seconds (  0.08 hours)
+Elapsed time for this session:    155 seconds (  0.04 hours)
+Thank you for using IC Compiler II.

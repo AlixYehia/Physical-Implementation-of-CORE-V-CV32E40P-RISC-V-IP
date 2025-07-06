@@ -1,0 +1,43 @@
+
+****************************************
+Report : Workspace
+Version: O-2018.06-SP1
+Date   : Sun Jun 29 21:50:57 2025
+****************************************
+
+Workspace name: saed14rvt
+
+...Flow:        normal
+
+...Checked?     Success
+
+...Technology file:
+      /SCRATCH/armanga/ndm_gen/tf/saed14rvt_1p9m.tf
+
+...Current PVT Configuration:
+      <No rules specified>
+
+...DB/Liberty files:
+      1. /mnt/hgfs/saed14_pdk/stdcell_rvt/db_ccs/saed14rvt_ss0p6v125c.db
+      2. /mnt/hgfs/saed14_pdk/stdcell_rvt/db_ccs/saed14rvt_ff0p88vm40c.db
+
+...Physical source files:
+      1. /mnt/hgfs/saed14_pdk/stdcell_rvt/ndm/saed14rvt_frame_only.ndm
+
+...TLUP files: <none>
+
+...Panes: 2
+     Pane 0, process = ss (1),  voltages:  0.6; temperatures: 125
+       Rail 1 -  power (VDD):  0.6
+       Rail 2 -  power (VDDR):  0.6
+       Rail 3 - ground (VSS):  0
+       Source DB libraries:
+         /mnt/hgfs/saed14_pdk/stdcell_rvt/db_ccs/saed14rvt_ss0p6v125c.db
+
+     Pane 1, process = ff (1),  voltages:  0.88; temperatures: -40
+       Rail 1 -  power (VDD):  0.88
+       Rail 2 -  power (VDDR):  0.88
+       Rail 3 - ground (VSS):  0
+       Source DB libraries:
+         /mnt/hgfs/saed14_pdk/stdcell_rvt/db_ccs/saed14rvt_ff0p88vm40c.db
+

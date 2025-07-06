@@ -1,0 +1,23 @@
+Information: Design cv32e40p_top_8_finished has 27028 nets, 0 global routed, 27026 detail routed. (NEX-024)
+Warning: Technology layer 'M4' setting 'pitch' is not valid (NEX-001)
+Warning: Technology layer 'MRDL' setting 'pitch' is not valid (NEX-001)
+Warning: Parasitic Tech Library layer 'M1' parameter 'SMIN' = 0.040 does not match 0.026 of technology file (NEX-007)
+Warning: Parasitic Tech Library layer 'M2' parameter 'SMIN' = 0.040 does not match 0.026 of technology file (NEX-007)
+Warning: Parasitic Tech Library layer 'M3' parameter 'SMIN' = 0.040 does not match 0.026 of technology file (NEX-007)
+Warning: Parasitic Tech Library layer 'M1' parameter 'SMIN' = 0.040 does not match 0.026 of technology file (NEX-007)
+Warning: Parasitic Tech Library layer 'M2' parameter 'SMIN' = 0.040 does not match 0.026 of technology file (NEX-007)
+Warning: Parasitic Tech Library layer 'M3' parameter 'SMIN' = 0.040 does not match 0.026 of technology file (NEX-007)
+Warning: Parasitic Tech Library layer 'M8' parameter 'WMIN' = 0.030 does not match 0.060 of technology file (NEX-007)
+Warning: Parasitic Tech Library layer 'M8' parameter 'SMIN' = 0.060 does not match 0.040 of technology file (NEX-007)
+NEX: extract design cv32e40p_top
+Information: batch extract takes 0.00 seconds, elapse 0.00 seconds (NEX-015)
+NEX: write corner ID 0 parasitics to ./outputs/cv32e40p_top.tlup_max_125.spef 
+spefName ./outputs/cv32e40p_top.tlup_max_125.spef, corner name slow_Cmax 
+NEX: write corner ID 1 parasitics to ./outputs/cv32e40p_top.tlup_min_125.spef 
+spefName ./outputs/cv32e40p_top.tlup_min_125.spef, corner name slow_Cmin 
+NEX: write corner ID 2 parasitics to ./outputs/cv32e40p_top.tlup_max_-40.spef 
+spefName ./outputs/cv32e40p_top.tlup_max_-40.spef, corner name fast_Cmax 
+NEX: write corner ID 3 parasitics to ./outputs/cv32e40p_top.tlup_min_-40.spef 
+spefName ./outputs/cv32e40p_top.tlup_min_-40.spef, corner name fast_Cmin 
+Information: The stitching and editing of coupling caps is turned OFF for design 'cv32e40p_top:cv32e40p_top_8_finished.design'. (TIM-125)
+Information: SPEF output -mt with 4 threads (NEX-014)

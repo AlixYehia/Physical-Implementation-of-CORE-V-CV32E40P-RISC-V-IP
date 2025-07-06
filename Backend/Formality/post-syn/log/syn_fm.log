@@ -19,9 +19,12 @@
 
 Build: 4031317
 Hostname: IC_EDA (RHEL64)
-Current time: Wed May 21 21:16:44 2025
+Current time: Thu Jun 19 08:33:13 2025
 
 Loading db file '/home/synopsys/Formality2016/libraries/syn/gtech.db'
+set_host_options -max_cores 12
+Warning:  max_cores must be <= 8; setting max_cores to 8.
+1
 ############################  Search PATH ################################
 set top_module cv32e40p_top
 cv32e40p_top
@@ -347,7 +350,7 @@ match
 Reference design is 'Ref:/WORK/cv32e40p_top'
 Implementation design is 'Imp:/WORK/cv32e40p_top'
 Status:  Checking designs...
-    Warning: 0 (127) undriven nets found in reference (implementation) design; see formality.log for list (FM-399)
+    Warning: 0 (94) undriven nets found in reference (implementation) design; see formality.log for list (FM-399)
 Status:  Building verification models...
 Status:  Processing Guide Commands...
 
@@ -406,7 +409,6 @@ Implementation design is 'Imp:/WORK/cv32e40p_top'
 ****************************************************************************************
 
 Status:  Verifying...
-.
 
 ************ RTL Interpretation Summary ************
 ************ Design: Ref:/WORK/cv32e40p_top
@@ -475,3 +477,10 @@ start_gui
 1
 1
 fm_shell (verify)> 
+Maximum memory usage for this session: 1942428 KB
+CPU usage for this session: 206.34 seconds
+Current time: Thu Jun 19 08:35:46 2025
+Elapsed time: 154 seconds
+Number of cores used: 8
+
+Thank you for using Formality (R)!

@@ -1,0 +1,40 @@
+sh sync
+
+restore_session /home/ICer/ITI/PnR_Grad/Backend/PrimeTime/sessions/func_fast_Cmax
+Information: Clean up the current session for restore:
+	 removing all loaded designs and libraries in memory.... (SR-004)
+Date session saved: Sun Jul  6 22:16:58 2025
+Restoring variable information.....
+Restoring netlist information.....
+Loading db file '/mnt/hgfs/saed14_pdk/stdcell_rvt/db_ccs/saed14rvt_ff0p88vm40c.db'
+Restoring environmental constraints.....
+Restoring timing information.....
+Restoring miscellaneous application information.....
+Completing timing information.....
+Information: Defining new variable 'lc'. (CMD-041)
+Information: Defining new variable 'command'. (CMD-041)
+Information: Defining new variable 'scenarios'. (CMD-041)
+Information: Defining new variable 'SDC'. (CMD-041)
+Information: Defining new variable 'scenario'. (CMD-041)
+Information: Defining new variable 'gui_auto_start'. (CMD-041)
+Information: Defining new variable 'tcl_prompt1'. (CMD-041)
+Information: Defining new variable 'DB_PATH'. (CMD-041)
+Information: Defining new variable 'PI_CAT'. (CMD-041)
+Information: Defining new variable 'parasitics'. (CMD-041)
+Information: Defining new variable 'longstr'. (CMD-041)
+Information: Defining new variable 'gui_online_browser'. (CMD-041)
+Information: Defining new variable 'HIERARCHY_DELIMITER'. (CMD-041)
+Information: Defining new variable 'LIB'. (CMD-041)
+1
+report_constraint -all_violators
+1
+report_global_timing
+****************************************
+Report : global_timing
+	-format { narrow }
+Design : cv32e40p_top
+Version: O-2018.06-SP1
+Date   : Sun Jul  6 22:22:19 2025
+****************************************
+
+1

@@ -1,0 +1,202 @@
+##############################################
+########### 1. DESIGN SETUP ##################
+##############################################
+
+set design mips_16
+
+sh rm -rf $design
+
+set sc_dir "/home/standard_cell_libraries/NangateOpenCellLibrary_PDKv1_3_v2010_12"
+
+set_app_var search_path "/home/standard_cell_libraries/NangateOpenCellLibrary_PDKv1_3_v2010_12/lib/Front_End/Liberty/NLDM \
+			 /home/mohamed/Desktop/johnson/rtl"
+
+set_app_var link_library "* NangateOpenCellLibrary_ss0p95vn40c.db"
+set_app_var target_library "NangateOpenCellLibrary_ss0p95vn40c.db"
+
+
+create_mw_lib   ./${design} \
+                -technology $sc_dir/tech/techfile/milkyway/FreePDK45_10m.tf \
+		-mw_reference_library $sc_dir/lib/Back_End/mdb \
+		-hier_separator {/} \
+		-bus_naming_style {[%d]} \
+		-open
+
+set tlupmax "$sc_dir/tech/rcxt/FreePDK45_10m_Cmax.tlup"
+set tlupmin "$sc_dir/tech/rcxt/FreePDK45_10m_Cmin.tlup"
+set tech2itf "$sc_dir/tech/rcxt/FreePDK45_10m.map"
+
+set_tlu_plus_files -max_tluplus $tlupmax \
+                   -min_tluplus $tlupmin \
+     		   -tech2itf_map $tech2itf
+
+
+import_designs  ../syn/output/${design}.v \
+                -format verilog \
+		-top ${design} \
+		-cel ${design}
+
+
+source  ../syn/cons/cons.tcl
+set_propagated_clock [get_clocks clk]
+
+save_mw_cel -as ${design}_1_imported
+
+##############################################
+########### 2. Floorplan #####################
+##############################################
+
+## Create Starting Floorplan
+############################
+create_floorplan -core_utilization 0.25 \
+	-start_first_row -flip_first_row \
+	-left_io2core 12.4 -bottom_io2core 12.4 -right_io2core 12.4 -top_io2core 12.4
+
+
+## CONSTRAINTS
+##############
+## Here, We define more constraints on your design that are related to floorplan stage.
+report_ignored_layers
+remove_ignored_layers -all
+set_ignored_layers -max_routing_layer metal6
+
+## Initial Virtual Flat Placement
+#################################
+## Use the following command with any of its options to meet a specific target
+#    create_fp_placement -timing -no_hierarchy_gravity -congestion 
+#     create_fp_placement
+
+##AH## ## To show design-specific blocks
+##AH## gui_set_highlight_options -current_color yellow
+##AH## change_selection [get_cells   alu_unit/*]
+
+##AH## gui_set_highlight_options -current_color blue
+##AH## change_selection [get_cells   ALU_Control_unit/*]
+
+##AH## gui_set_highlight_options -current_color green
+##AH## change_selection [get_cells   datamem/*]
+
+##AH## gui_set_highlight_options -current_color orange
+##AH## change_selection [get_cells   reg_file/*]
+
+## ASSESSMENT
+#############
+## Analyze Congestion
+#route_fp_proto -congestion_map_only -effort medium    
+# View Congestion map : In GUI, Route > Global Route Congestion Map.
+
+## Analyze Timing
+#extract_rc; # Improves accuracy of timing after updated GR.
+
+#report_timing -nosplit; # For Worst Setup violation report
+#report_timing -nosplit -delay_type min; # For Worst Hold violation report
+
+#report_constraint -all_violators -nosplit -max_delay; # For all Setup violation report
+#report_constraint -all_violators -nosplit -min_delay; # For all Hold violations report
+
+##Based on your assessment, you may need to do any of the following fixes
+
+## FIXES
+########
+## You can use one or all of the follwoing based on your need.
+#   set_fp_placement_strategy -virtual_IPO on 
+#
+#   create_bounds -name "temp" -coordinate {55 0 270 270} datamem
+#   create_bounds -name "temp1" -coordinate {0 0 104 270} reg_file
+#
+#   set_congestion_options -max_util 0.4 -coordinate {x1 y1 x2 y2}; # if cell density is causing congestion.
+#
+#   create_placement_blockage -name PB -type hard -bbox {x1 y1 x2 y2}
+#
+#   set_fp_placement_strategy -congestion_effort high
+#
+## Then you need to re-run create_fp_placement
+#   create_fp_placement -incremental; 
+## Note:  use -incremental option if you want to refine the current virtual placement. Don't use it if you want to re-place the design from scratch 
+
+## If there still congestion, change ignored layers, if it is still there, increase floorplan area.
+
+save_mw_cel -as ${design}_2_fp
+
+
+##################################################
+########### 3. POWER NETWORK #####################
+##################################################
+
+## Defining Logical POWER/GROUND Connections
+############################################
+derive_pg_connection 	 -power_net VDD		\
+			 -ground_net VSS	\
+			 -power_pin VDD		\
+			 -ground_pin VSS	
+
+
+## Define Power Ring 
+####################
+set_fp_rail_constraints  -set_ring -nets  {VDD VSS}  \
+                         -horizontal_ring_layer { metal7 metal9 } \
+                         -vertical_ring_layer { metal8 metal10 } \
+			 -ring_spacing 0.8 \
+			 -ring_width 5 \
+			 -ring_offset 0.8 \
+			 -extend_strap core_ring
+
+## Define Power Mesh 
+####################
+set_fp_rail_constraints -add_layer  -layer metal10 -direction vertical   -max_strap 128 -min_strap 20 -min_width 2.5 -spacing minimum
+set_fp_rail_constraints -add_layer  -layer metal9  -direction horizontal -max_strap 128 -min_strap 20 -min_width 2.5 -spacing minimum
+set_fp_rail_constraints -add_layer  -layer metal8  -direction vertical   -max_strap 128 -min_strap 20 -min_width 2.5 -spacing minimum
+set_fp_rail_constraints -add_layer  -layer metal7  -direction horizontal -max_strap 128 -min_strap 20 -min_width 2.5 -spacing minimum
+set_fp_rail_constraints -add_layer  -layer metal6  -direction vertical   -max_strap 128 -min_strap 20 -min_width 2.5 -spacing minimum
+
+#set_fp_rail_constraints -add_layer  -layer metal10 -direction vertical   -max_pitch 12 -min_pitch 12 -min_width 5 -spacing minimum
+#set_fp_rail_constraints -add_layer  -layer metal9  -direction horizontal -max_pitch 12 -min_pitch 12 -min_width 5 -spacing minimum
+#set_fp_rail_constraints -add_layer  -layer metal8  -direction vertical   -max_pitch 12 -min_pitch 12 -min_width 5 -spacing minimum
+#set_fp_rail_constraints -add_layer  -layer metal7  -direction horizontal -max_pitch 12 -min_pitch 12 -min_width 5 -spacing minimum
+#set_fp_rail_constraints -add_layer  -layer metal6  -direction vertical   -max_pitch 12 -min_pitch 12 -min_width 5 -spacing minimum
+
+
+set_fp_rail_constraints -set_global
+
+## Creating virtual PG pads
+###########################
+# you can create them with gui. Preroute > Create Virtual Power Pad
+create_fp_virtual_pad -net VSS -point {77.1665 387.6000}
+create_fp_virtual_pad -net VSS -point {0.6745 376.4420}
+create_fp_virtual_pad -net VSS -point {408.1495 371.0450}
+create_fp_virtual_pad -net VSS -point {407.4745 259.0565}
+create_fp_virtual_pad -net VSS -point {-0.6745 263.1045}
+create_fp_virtual_pad -net VSS -point {0.0000 146.3940}
+create_fp_virtual_pad -net VSS -point {406.8000 138.9730}
+create_fp_virtual_pad -net VSS -point {408.1495 30.3580}
+create_fp_virtual_pad -net VSS -point {0.0000 30.3580}
+create_fp_virtual_pad -net VSS -point {325.1700 0.0000}
+create_fp_virtual_pad -net VSS -point {232.7465 -1.3490}
+create_fp_virtual_pad -net VSS -point {124.1315 -1.3490}
+create_fp_virtual_pad -net VSS -point {120.0835 403.4270}
+create_fp_virtual_pad -net VSS -point {222.6270 406.8000}
+create_fp_virtual_pad -net VSS -point {323.1465 406.8000}
+create_fp_virtual_pad -net VDD -point {0.0000 321.1225}
+create_fp_virtual_pad -net VDD -point {0.6745 204.4120}
+create_fp_virtual_pad -net VDD -point {0.0000 87.7015}
+create_fp_virtual_pad -net VDD -point {407.4745 87.0270}
+create_fp_virtual_pad -net VDD -point {408.1495 204.4120}
+create_fp_virtual_pad -net VDD -point {407.4745 319.7730}
+create_fp_virtual_pad -net VDD -point {380.4895 -1.3490}
+create_fp_virtual_pad -net VDD -point {278.6210 0.0000}
+create_fp_virtual_pad -net VDD -point {174.0540 -0.6745}
+create_fp_virtual_pad -net VDD -point {60.7165 -2.0240}
+create_fp_virtual_pad -net VDD -point {62.7405 405.4505}
+create_fp_virtual_pad -net VDD -point {175.4030 406.1255}
+create_fp_virtual_pad -net VDD -point {278.6210 407.4745}
+create_fp_virtual_pad -net VDD -point {377.1165 407.4745}
+
+synthesize_fp_rail  -nets {VDD VSS} -synthesize_power_plan -target_voltage_drop 22 -voltage_supply 1.1 -power_budget 500
+## Analyze IR-drop; Modify power network constraints and re-synthesize, as needed.
+## Max IR is 2% of Nominal Supply. In our case, 0.02 x 1.1v= 22mv
+
+commit_fp_rail
+
+set_preroute_drc_strategy -max_layer metal6
+preroute_standard_cells -fill_empty_rows -remove_floating_pieces
+

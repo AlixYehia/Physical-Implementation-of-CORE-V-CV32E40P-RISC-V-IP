@@ -1,0 +1,32 @@
+ 
+****************************************
+Report : area
+Design : mips_16
+Version: O-2018.06-SP1
+Date   : Sat Mar 15 16:26:38 2025
+****************************************
+
+Information: Updating design information... (UID-85)
+Warning: Design 'mips_16' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Library(s) Used:
+
+    saed14rvt_ss0p6v125c (File: /home/ICer/PDK/saed_14/saed14rvt_ss0p6v125c.db)
+
+Number of ports:                          362
+Number of nets:                         14496
+Number of cells:                        14192
+Number of combinational cells:           9943
+Number of sequential cells:              4240
+Number of macros/black boxes:               0
+Number of buf/inv:                       1143
+Number of references:                      19
+
+Combinational area:               6271.855341
+Buf/Inv area:                      321.855590
+Noncombinational area:            4192.780903
+Macro/Black Box area:                0.000000
+Net Interconnect area:           15412.868800
+
+Total cell area:                 10464.636243
+Total area:                      25877.505044
+1

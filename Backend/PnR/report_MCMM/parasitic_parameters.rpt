@@ -1,0 +1,37 @@
+
+Corner: slow_Cmax
+ early_spec = tlup_max
+ tlup_max = /mnt/hgfs/saed14_pdk/ttt/SAED14nm_PDK_12232018/starrc/max/saed14nm_1p9m_Cmax.tluplus 
+ early_temperature = 125
+ late_spec = tlup_max
+ tlup_max = /mnt/hgfs/saed14_pdk/ttt/SAED14nm_PDK_12232018/starrc/max/saed14nm_1p9m_Cmax.tluplus 
+ late_temperature = 125
+
+
+Corner: slow_Cmin
+ early_spec = tlup_min
+ tlup_min = /mnt/hgfs/saed14_pdk/ttt/SAED14nm_PDK_12232018/starrc/min/saed14nm_1p9m_Cmin.tluplus 
+ early_temperature = 125
+ late_spec = tlup_min
+ tlup_min = /mnt/hgfs/saed14_pdk/ttt/SAED14nm_PDK_12232018/starrc/min/saed14nm_1p9m_Cmin.tluplus 
+ late_temperature = 125
+
+
+Corner: fast_Cmax
+ early_spec = tlup_max
+ tlup_max = /mnt/hgfs/saed14_pdk/ttt/SAED14nm_PDK_12232018/starrc/max/saed14nm_1p9m_Cmax.tluplus 
+ early_temperature = -40
+ late_spec = tlup_max
+ tlup_max = /mnt/hgfs/saed14_pdk/ttt/SAED14nm_PDK_12232018/starrc/max/saed14nm_1p9m_Cmax.tluplus 
+ late_temperature = -40
+
+
+Corner: fast_Cmin
+ early_spec = tlup_min
+ tlup_min = /mnt/hgfs/saed14_pdk/ttt/SAED14nm_PDK_12232018/starrc/min/saed14nm_1p9m_Cmin.tluplus 
+ early_temperature = -40
+ late_spec = tlup_min
+ tlup_min = /mnt/hgfs/saed14_pdk/ttt/SAED14nm_PDK_12232018/starrc/min/saed14nm_1p9m_Cmin.tluplus 
+ late_temperature = -40
+
+1

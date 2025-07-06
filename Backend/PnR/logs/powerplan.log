@@ -1,0 +1,295 @@
+
+
+
+                              IC Compiler II (TM)
+
+             Version O-2018.06-SP1 for linux64 - Jul 17, 2018 -SLE
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+Loading user preference file /home/ICer/.synopsys_icc2_gui/preferences.tcl
+##################################################
+########### 3. POWER NETWORK #####################
+##################################################
+set design cv32e40p_top
+cv32e40p_top
+open_block ./${design}:${design}_2_fp
+Warning: Technology used to create frame-view and current technology have inconsistency: Min spacings are different for layer 'M1'. (FRAM-054)
+Warning: Technology 'saed14rvt_1p9m.tf' used for frame-view creation in library 'saed14rvt', is inconsistent with the current technology 'saed14nm_1p9m_mw.tf' of library "cv32e40p_top'. (NDM-102)
+Information: User units loaded from library 'saed14rvt' (LNK-040)
+Opening block 'cv32e40p_top:cv32e40p_top_2_fp.design' in edit mode
+{cv32e40p_top:cv32e40p_top_2_fp.design}
+copy_block -from_block ${design}:${design}_2_fp -to_block ${design}_3_power
+{cv32e40p_top:cv32e40p_top_3_power.design}
+current_block ${design}_3_power
+{cv32e40p_top:cv32e40p_top_3_power.design}
+set_host_options -max_cores 12
+1
+#ICC2 commands
+############################
+########  PG RINGS  ########
+############################
+remove_pg_via_master_rules -all
+Using libraries: cv32e40p_top saed14rvt
+Warning: In library cv32e40p_top, no block views exist for block cv32e40p_top. (LNK-064)
+Visiting block cv32e40p_top:cv32e40p_top_3_power.design
+Design 'cv32e40p_top' was successfully linked.
+No via def rule is found.
+remove_pg_patterns -all
+No pattern is found.
+remove_pg_strategies -all
+All strategies have been removed.
+remove_pg_strategy_via_rules -all
+All strategy via rules have been removed.
+set top_ring_width 5
+5
+set top_offset 2
+2
+set top_ring_spacing 5
+5
+set hm_top M8
+M8
+set vm_top M9
+M9
+create_pg_region top_power_ring_region -core -expand_by_edge            "{{side: 1} {offset: $top_offset}} {{side: 2} {offset: $top_offset}} {{side: 3} {offset: $top_offset}} {{side: 4} {offset: $top_offset}}"
+Define region based on core area.
+Expanding the region by: 
+{Horizontal offset: 0.000} {Vertical offset: 0.000} {Edge ID: 1 offset: 2.000} {Edge ID: 2 offset: 2.000} {Edge ID: 3 offset: 2.000} {Edge ID: 4 offset: 2.000} 
+Create region top_power_ring_region
+{top_power_ring_region}
+create_pg_ring_pattern                  ring                  -horizontal_layer $hm_top -vertical_layer $vm_top                  -horizontal_width $top_ring_width -vertical_width $top_ring_width                  -horizontal_spacing $top_ring_spacing -vertical_spacing $top_ring_spacing
+Successfully create PG ring pattern ring.
+set_pg_strategy  ring -pg_regions { top_power_ring_region } -pattern {{ name: ring} { nets: "VSS VDD" }}
+Successfully set PG strategy ring.
+compile_pg -strategies ring
+Sanity check for inputs.
+No strategy-level via rule is specified, the default rule will be applied.
+Automatic PG net connection through connect_pg_net is disabled.
+Loading library and design information.
+Begin building search trees for block cv32e40p_top:cv32e40p_top_3_power.design
+Done building search trees for block cv32e40p_top:cv32e40p_top_3_power.design (time 0s)
+Updating PG strategies.
+Updating strategy ring.
+Number of Standard Cells: 0
+Number of Hard Macros: 0
+Number of Pads: 0
+Creating rings.
+Creating via connection between strategies and existing shapes.
+Via DRC checking runtime 0.00 seconds.
+via connection runtime: 0 seconds.
+Removing dangling/floating wire/vias after DRC check.
+Start iteration 1:
+Checking potential dangling/floating power plan wires.
+Checking dangling/floating vias inside strategy ring.
+Checking 8 stacked vias:0% 10% 20% 30% 50% 60% 70% 80% 100%
+Finish removing all dangling or floating wires and vias.
+Commiting wires and vias.
+Committed 8 wires.
+Committing wires takes 0.00 seconds.
+Committed 8 vias.
+Committed 0 wires for via creation.
+Committing vias takes 0.00 seconds.
+Overall PG creation runtime: 0 seconds.
+Successfully compiled PG.
+Overall runtime: 0 seconds.
+1
+####Connect P/G Pins and Creafte Power Rails#################
+create_pg_mesh_pattern P_top_two 	-layers { 		{ {horizontal_layer: M8} {width: 5} {spacing: interleaving} {pitch: 50} {trim : true} } 		{ {vertical_layer: M9}   {width: 5} {spacing: interleaving} {pitch: 50} {trim : true} } 		{ {vertical_layer: M7}   {width: 5} {spacing: interleaving} {pitch: 50} {trim : true} } 		} 
+Successfully create mesh pattern P_top_two.
+1
+set_pg_strategy S_default_vddvss 	-core 	-pattern   { {name: P_top_two} {nets:{VSS VDD}} } 	-extension { {{stop:design_boundary_and_generate_pin}} }
+Successfully set PG strategy S_default_vddvss.
+compile_pg -strategies {S_default_vddvss} 
+Sanity check for inputs.
+No strategy-level via rule is specified, the default rule will be applied.
+Automatic PG net connection through connect_pg_net is disabled.
+Loading library and design information.
+Updating PG strategies.
+Updating strategy S_default_vddvss.
+Number of Standard Cells: 0
+Number of Hard Macros: 0
+Number of Pads: 0
+Creating straps and vias in power plan.
+Creating wire shapes for strategies S_default_vddvss .
+User specified offset for layer M8 in pattern P_top_two may result in some wires (partially) out of routing area boundary.
+User specified offset for layer M9 in pattern P_top_two may result in some wires (partially) out of routing area boundary.
+User specified offset for layer M7 in pattern P_top_two may result in some wires (partially) out of routing area boundary.
+Creating wire shapes runtime: 0 seconds
+Blockage cutting and DRC fixing for wire shapes for strategies S_default_vddvss .
+Check and fix DRC for 30 wires for strategy S_default_vddvss.
+Number of threads: 12
+Number of partitions: 4
+Direction of partitions: vertical
+Number of wires: 20
+Checking DRC for 20 wires:10% 40% 50% 60% 100%
+Number of threads: 12
+Number of partitions: 4
+Direction of partitions: horizontal
+Number of wires: 10
+Checking DRC for 10 wires:0% 20% 40% 60% 80% 100%
+Creating 30 wires after DRC fixing.
+Wire DRC checking runtime 0.00 seconds.
+Creating via shapes for strategies S_default_vddvss .
+Number of threads: 12
+Working on strategy S_default_vddvss.
+Number of detected intersections: 100
+Total runtime of via shapes creation: 0 seconds
+Check and fix DRC for 100 stacked vias for strategy S_default_vddvss.
+Number of threads: 12
+Number of partitions: 4
+Direction of partitions: horizontal
+Number of vias: 100
+Checking DRC for 100 stacked vias:15% 15% 20% 65% 70% 75% 80% 85% 90% 95% 100%
+Runtime of via DRC checking for strategy S_default_vddvss: 0.00 seconds.
+Creating via connection between strategies and existing shapes.
+Check and fix DRCs for 60 stacked vias.
+Number of threads: 12
+Number of partitions: 5
+Direction of partitions: horizontal
+Number of vias: 60
+Checking DRC for 60 stacked vias:5% 10% 15% 20% 25% 25% 30% 35% 40% 45% 55% 60% 70% 80% 80% 85% 100%
+Via DRC checking runtime 0.00 seconds.
+via connection runtime: 0 seconds.
+Removing dangling/floating wire/vias after DRC check.
+Start iteration 1:
+Checking potential dangling/floating power plan wires.
+Checking dangling/floating vias inside strategy S_default_vddvss.
+Checking 100 stacked vias:0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Checking dangling/floating vias between strategies and existing shapes.
+Checking 60 stacked vias:0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Finish removing all dangling or floating wires and vias.
+Commiting wires and vias.
+Committed 90 wires.
+Created 60 pins at design boundary.
+Committing wires takes 0.00 seconds.
+Committed 160 vias.
+Committed 0 wires for via creation.
+Committing vias takes 0.00 seconds.
+Overall PG creation runtime: 1 seconds.
+Successfully compiled PG.
+Overall runtime: 1 seconds.
+1
+#------------ no need for 2nd mesh however I can simply add the 2 lines to the above layers instead of rewriting the full command -----------------#
+## Create std rail
+#VDD VSS
+#set_app_option -name plan.pgroute.disable_via_creation -value true
+create_pg_std_cell_conn_pattern std_rail_conn1 -rail_width 0.094 -layers M1
+Successfully create standard cell rail pattern std_rail_conn1.
+# -rail_mask mask_one
+set_pg_strategy  std_rail_1 -pattern {{name : std_rail_conn1} {nets: "VDD VSS"}} -core
+Successfully set PG strategy std_rail_1.
+set_pg_strategy_via_rule VIA_NIL -via_rule { { {intersection: adjacent} {via_master:NIL}}}
+Successfully set strategy via rule VIA_NIL.
+compile_pg -via_rule VIA_NIL -strategies std_rail_1
+Sanity check for inputs.
+Automatic PG net connection through connect_pg_net is disabled.
+Loading library and design information.
+Updating PG strategies.
+Updating strategy std_rail_1.
+Number of Standard Cells: 0
+Number of Hard Macros: 0
+Number of Pads: 0
+Creating standard cell rails.
+Creating standard cell rails for strategy std_rail_1.
+DRC checking and fixing for standard cell rail strategy std_rail_1.
+Number of threads: 12
+Number of partitions: 39
+Direction of partitions: horizontal
+Number of wires: 429
+Checking DRC for 429 wires:10% 100%
+Creating 429 wires after DRC fixing.
+Wire DRC checking runtime 0.00 seconds.
+Creating via connection between strategies and existing shapes.
+via connection runtime: 0 seconds.
+Removing dangling/floating wire/vias after DRC check.
+Start iteration 1:
+Checking potential dangling/floating power plan wires.
+Finish removing all dangling or floating wires and vias.
+Commiting wires and vias.
+Committed 429 wires.
+Committing wires takes 0.00 seconds.
+Committed 0 vias.
+Committed 0 wires for via creation.
+Committing vias takes 0.00 seconds.
+Overall PG creation runtime: 0 seconds.
+Successfully compiled PG.
+Overall runtime: 0 seconds.
+1
+# ---------------------- Commands to remove Vias ---------------------- #
+#remove_shapes [get_shapes -filter "shape_use == lib_cell_pin_connect"]
+#remove_vias [get_vias -filter "upper_layer.name != M9"]
+create_pg_vias -nets { VDD VSS } -from_layers M7 -to_layers M1 -drc no_check
+Query intersections and create vias.
+Object query runtime: 0 seconds.
+Determining intersections for 527 shapes starts
+Intersection detection runtime: 0 seconds.
+Instantiating vias for 2145 intersections starts
+Via instantiation runtime: 0 seconds.
+Committed 12870 vias.
+Committing vias takes 0.00 seconds.
+Overall runtime: 0 seconds.
+Successfully created PG Vias.
+1
+set_via_def -pitch "0.27 0.27" -vias [get_vias -filter "via_def.name != VIA89_C"] -size "1 5"
+{VIA_SA_8 VIA_SA_11 VIA_SA_12 VIA_SA_14 VIA_SA_16 VIA_SA_18 VIA_SA_20 VIA_SA_23 VIA_SA_24 VIA_SA_27 VIA_SA_29 VIA_SA_31 VIA_SA_33 VIA_SA_34 VIA_SA_37 VIA_SA_38 VIA_SA_40 VIA_SA_42 VIA_SA_44 VIA_SA_47 VIA_SA_49 VIA_SA_51 VIA_SA_52 VIA_SA_54 VIA_SA_56 VIA_SA_58 VIA_SA_61 VIA_SA_63 VIA_SA_64 VIA_SA_67 VIA_SA_69 VIA_SA_70 VIA_SA_72 VIA_SA_74 VIA_SA_76 VIA_SA_79 VIA_SA_81 VIA_SA_83 VIA_SA_84 VIA_SA_87 VIA_SA_89 VIA_SA_91 VIA_SA_93 VIA_SA_94 VIA_SA_96 VIA_SA_99 VIA_SA_101 VIA_SA_103 VIA_SA_105 VIA_SA_107 VIA_SA_108 VIA_SA_111 VIA_SA_112 VIA_SA_114 VIA_SA_117 VIA_SA_119 VIA_SA_120 VIA_SA_123 VIA_SA_125 VIA_SA_126 VIA_SA_149 VIA_SA_151 VIA_SA_153 VIA_SA_155 VIA_SA_156 VIA_SA_158 VIA_SA_160 VIA_SA_162 VIA_SA_164 VIA_SA_167 VIA_SA_168 VIA_SA_169 VIA_SA_170 VIA_SA_171 VIA_SA_172 VIA_SA_173 VIA_SA_174 VIA_SA_175 VIA_SA_176 VIA_SA_177 VIA_SA_178 VIA_SA_179 VIA_SA_180 VIA_SA_181 VIA_SA_182 VIA_SA_183 VIA_SA_184 VIA_SA_185 VIA_SA_186 VIA_SA_187 VIA_SA_188 VIA_SA_189 VIA_SA_190 VIA_SA_191 VIA_SA_192 VIA_SA_193 VIA_SA_194 VIA_SA_195 VIA_SA_196 VIA_SA_197 ...}
+# ----------------------------- dont change the created vias in metal 8 and 9 that were created during the mesh only change the ones below so they stack on each other and no min spacing violations occur ----------------------------- #
+#
+#set_via_def -via_def VIA23SQ_C -pitch "0.13 0.13" -vias [get_vias -filter "via_def.name == VIA23SQ_C"] -size "1 19"
+check_pg_drc
+Command check_pg_drc started  at Tue Jul  1 12:14:37 2025
+Command check_pg_drc finished at Tue Jul  1 12:14:37 2025
+CPU usage for check_pg_drc: 1.62 seconds ( 0.00 hours)
+Elapsed time for check_pg_drc: 0.27 seconds ( 0.00 hours)
+No errors found.
+check_pg_connectivity 
+Loading cell instances...
+Number of Standard Cells: 31331
+Number of Macro Cells: 0
+Number of IO Pad Cells: 0
+Number of Blocks: 0
+Loading P/G wires and vias...
+Number of VDD Wires: 234
+Number of VDD Vias: 6534
+Number of VDD Terminals: 30
+Number of VSS Wires: 233
+Number of VSS Vias: 6504
+Number of VSS Terminals: 30
+**************Verify net VDD connectivity*****************
+  Number of floating wires: 0
+  Number of floating vias: 0
+  Number of floating std cells: 27460
+  Number of floating hard macros: 0
+  Number of floating I/O pads: 0
+  Number of floating terminals: 0
+  Number of floating hierarchical blocks: 0
+************************************************************
+**************Verify net VSS connectivity*****************
+  Number of floating wires: 0
+  Number of floating vias: 0
+  Number of floating std cells: 27460
+  Number of floating hard macros: 0
+  Number of floating I/O pads: 0
+  Number of floating terminals: 0
+  Number of floating hierarchical blocks: 0
+************************************************************
+Overall runtime: 1 seconds.
+check_pg_missing_vias 
+Check net VDD vias...
+Number of missing vias: 0
+Checking net VDD vias took 0 seconds.
+Check net VSS vias...
+Number of missing vias: 0
+Checking net VSS vias took 0 seconds.
+Overall runtime: 0 seconds.
+save_block -as ${design}_3_power
+Information: Saving block 'cv32e40p_top:cv32e40p_top_3_power.design'
+1
+exit
+Maximum memory usage for this session: 347.00 MB
+CPU usage for this session:     20 seconds (  0.01 hours)
+Elapsed time for this session:     19 seconds (  0.01 hours)
+Thank you for using IC Compiler II.

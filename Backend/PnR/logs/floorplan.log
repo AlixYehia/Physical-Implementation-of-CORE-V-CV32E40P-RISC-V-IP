@@ -1,0 +1,154 @@
+
+
+
+                              IC Compiler II (TM)
+
+             Version O-2018.06-SP1 for linux64 - Jul 17, 2018 -SLE
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+Loading user preference file /home/ICer/.synopsys_icc2_gui/preferences.tcl
+##############################################
+########### 2. Floorplan #####################
+##############################################
+set design cv32e40p_top
+cv32e40p_top
+open_block ./${design}:${design}_1_imported
+Warning: Technology used to create frame-view and current technology have inconsistency: Min spacings are different for layer 'M1'. (FRAM-054)
+Warning: Technology 'saed14rvt_1p9m.tf' used for frame-view creation in library 'saed14rvt', is inconsistent with the current technology 'saed14nm_1p9m_mw.tf' of library "cv32e40p_top'. (NDM-102)
+Information: User units loaded from library 'saed14rvt' (LNK-040)
+Opening block 'cv32e40p_top:cv32e40p_top_1_imported.design' in edit mode
+{cv32e40p_top:cv32e40p_top_1_imported.design}
+copy_block -from_block ${design}:${design}_1_imported -to_block ${design}_2_fp
+{cv32e40p_top:cv32e40p_top_2_fp.design}
+current_block ${design}_2_fp
+{cv32e40p_top:cv32e40p_top_2_fp.design}
+set_host_options -max_cores 12
+1
+## Create Starting Floorplan
+############################
+set_attribute [get_layers [list M1 M3 M5 M7 M9]] routing_direction vertical
+Information: The design specific attribute override for layer 'M1' is set in the current block 'cv32e40p_top_2_fp', because the actual library setting may not be overwritten. (ATTR-12)
+Information: The design specific attribute override for layer 'M3' is set in the current block 'cv32e40p_top_2_fp', because the actual library setting may not be overwritten. (ATTR-12)
+Information: The design specific attribute override for layer 'M5' is set in the current block 'cv32e40p_top_2_fp', because the actual library setting may not be overwritten. (ATTR-12)
+Information: The design specific attribute override for layer 'M7' is set in the current block 'cv32e40p_top_2_fp', because the actual library setting may not be overwritten. (ATTR-12)
+Information: The design specific attribute override for layer 'M9' is set in the current block 'cv32e40p_top_2_fp', because the actual library setting may not be overwritten. (ATTR-12)
+{M1 M3 M5 M7 M9}
+set_attribute [get_layers [list M2 M4 M6 M8]] routing_direction horizontal
+Information: The design specific attribute override for layer 'M2' is set in the current block 'cv32e40p_top_2_fp', because the actual library setting may not be overwritten. (ATTR-12)
+Information: The design specific attribute override for layer 'M4' is set in the current block 'cv32e40p_top_2_fp', because the actual library setting may not be overwritten. (ATTR-12)
+Information: The design specific attribute override for layer 'M6' is set in the current block 'cv32e40p_top_2_fp', because the actual library setting may not be overwritten. (ATTR-12)
+Information: The design specific attribute override for layer 'M8' is set in the current block 'cv32e40p_top_2_fp', because the actual library setting may not be overwritten. (ATTR-12)
+{M2 M4 M6 M8}
+set_attribute [get_layers MRDL] routing_direction horizontal
+Information: The design specific attribute override for layer 'MRDL' is set in the current block 'cv32e40p_top_2_fp', because the actual library setting may not be overwritten. (ATTR-12)
+{MRDL}
+# Use this
+set_wire_track_pattern -site_def unit -layer M1 -mode uniform -mask_constraint {mask_two mask_one} -coord 0.037 -space 0.074 -direction vertical
+Using libraries: cv32e40p_top saed14rvt
+Warning: In library cv32e40p_top, no block views exist for block cv32e40p_top. (LNK-064)
+Visiting block cv32e40p_top:cv32e40p_top_2_fp.design
+Design 'cv32e40p_top' was successfully linked.
+1
+# Or this
+#create_track -layer M1 -coord 0.017 -space 0.074
+#initialize_floorplan -boundary "{0 0} {500 500}" -flip_first_row true -core_offset {17 17 17 17} -control_type die
+initialize_floorplan -core_utilization 0.25 -flip_first_row true -core_offset {17 17 17 17}
+Removing existing floorplan objects
+Creating core...
+Core utilization ratio = 25.02%
+Unplacing all cells...
+Creating site array...
+Creating routing tracks...
+Total create 3932 uniform wire tracks based on track pattern set by command set_wire_track_pattern.
+Initializing floorplan completed.
+#remove_tracks -all
+#remove_tracks [get_tracks -of_objects M1] -verbose
+#create_track -layer M1 -coord 0.017 -space 0.074
+#create_track -layer M2 -coord 0 -space 0.06 
+#create_track -layer M3 -coord 0 -space 0.074 
+#create_track -layer M4 -coord 0 -space 0.074
+#create_track -layer M5 -coord 0 -space 0.12
+#create_track -layer M6 -coord 0 -space 0.12 
+#create_track -layer M7 -coord 0 -space 0.12  
+#create_track -layer M8 -coord 0 -space 0.12  
+#create_track -layer M9 -coord 0 -space 0.12 
+#create_track -layer MRDL -coord 0 -space 0.6
+place_pins -ports [get_ports *]
+Begin building search trees for block cv32e40p_top:cv32e40p_top_2_fp.design
+Done building search trees for block cv32e40p_top:cv32e40p_top_2_fp.design (time 0s)
+
+Min routing layer: M1
+Max routing layer: MRDL
+
+
+Number of block ports: 379
+Number of block pin locations assigned from router: 0
+Number of PG ports on blocks: 0
+Number of pins created: 379
+CPU Time for Pin Placement: 00:00:00.84u 00:00:00.00s 00:00:00.84e: 
+Total Pin Placement CPU Time: 00:00:00.90u 00:00:00.01s 00:00:00.91e: 
+1
+#create_placement -timing_driven -floorplan
+create_tap_cells -lib_cell  [get_lib_cell */SAEDRVT14_TAPDS] -pattern stagger -distance 30
+Warning: Site master "unit" has neither X-Symmetry nor Y-Symmetry.The "legal orientations" for the standard cells will be limited. (LGL-031)
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+PDC app_options settings =========
+	place.legalize.enable_prerouted_net_check: 1
+	place.legalize.num_tracks_for_access_check: 1
+	place.legalize.use_eol_spacing_for_access_check: 0
+	place.legalize.allow_touch_track_for_access_check: 1
+	place.legalize.reduce_conservatism_in_eol_check: 0
+	place.legalize.preroute_shape_merge_distance: 0.0
+	place.legalize.enable_non_preferred_direction_span_check: 0
+
+Layer M1: cached 0 shapes out of 0 total shapes.
+Layer M2: cached 0 shapes out of 0 total shapes.
+Layer M3: cached 0 shapes out of 0 total shapes.
+Cached 0 vias out of 0 total vias.
+Information: Starting tap cell insertion into cv32e40p_top_2_fp using site master "unit". (CHF-200)
+	10% complete ...
+	20% complete ...
+	30% complete ...
+	40% complete ...
+	50% complete ...
+	60% complete ...
+	70% complete ...
+	80% complete ...
+	90% complete ...
+Information: Total 3871 tap cells inserted successfully into cv32e40p_top_2_fp. (CHF-100)
+create_net VDD -power
+{VDD}
+create_net VSS -ground
+{VSS}
+connect_pg_net -net "VDD" [get_pins -hierarchical "*/VDD*"]
+connect_pg_net -net "VSS" [get_pins -hierarchical "*/VSS"]
+## CONSTRAINTS
+##############
+## Here, We define more constraints on your design that are related to floorplan stage.
+#report_ignored_layers
+#remove_ignored_layers -all
+#set_ignored_layers -max_routing_layer metal6
+#AH## ## To show design-specific blocks
+##AH## gui_set_highlight_options -current_color yellow
+##AH## change_selection [get_cells   alu_unit/*]
+##AH## gui_set_highlight_options -current_color blue
+##AH## change_selection [get_cells   ALU_Control_unit/*]
+##AH## gui_set_highlight_options -current_color green
+##AH## change_selection [get_cells   datamem/*]
+##AH## gui_set_highlight_options -current_color orange
+##AH## change_selection [get_cells   reg_file/*]
+sh mkdir -p reports/floorplan
+report_qor > reports/floorplan/floorplan_qor.rpt
+save_block -as ${design}_2_fp
+Information: Saving block 'cv32e40p_top:cv32e40p_top_2_fp.design'
+1
+exit
+Maximum memory usage for this session: 492.00 MB
+CPU usage for this session:     57 seconds (  0.02 hours)
+Elapsed time for this session:     30 seconds (  0.01 hours)
+Thank you for using IC Compiler II.

@@ -1,0 +1,5 @@
+cd cmin 
+StarXtract xt.com | tee ../log/cmin.log
+cd ../cmax
+StarXtract xt.com | tee ../log/cmax.log
+cd ../

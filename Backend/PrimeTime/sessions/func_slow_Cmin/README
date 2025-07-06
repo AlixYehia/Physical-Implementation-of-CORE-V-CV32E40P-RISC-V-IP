@@ -1,0 +1,24 @@
+-------------------------------------------------------
+
+PrimeTime save_session README file
+
+-------------------------------------------------------
+
+PrimeTime Version: 
+	O-2018.06-SP1 for linux64 -- Jul 19, 2018
+Save Session Date:
+	Sun Jul  6 22:18:11 2025
+ 
+-------------------------------------------------------
+
+Command log of this session is saved in "cmd_log".
+If the saved session is moved to a different location, 
+    please update the paths in the cmd_log file accordingly, 
+    in order to use the Constraints in-design flow.
+-------------------------------------------------------
+
+Current Design: cv32e40p_top
+
+Technology librares referenced by this session:
+/mnt/hgfs/saed14_pdk/stdcell_rvt/db_ccs/saed14rvt_ss0p6v125c.db     saed14rvt_ss0p6v125c.db
+-------------------------------------------------------

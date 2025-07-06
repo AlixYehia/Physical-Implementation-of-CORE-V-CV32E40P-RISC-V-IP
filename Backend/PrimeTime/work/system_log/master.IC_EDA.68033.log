@@ -1,0 +1,130 @@
+1751811702.628787: 68033-7f55c7c57200: cdpl_log.c:221: in cdpl_log_open(): debug: @@start_of_log@@
+1751811702.628850: 68033-7f55c7c57200: cdpl_log.c:729: in cdpl_log_dump_sysinfo(): info: time: 2025/07/06 22:21:42 CST +0800
+1751811702.628869: 68033-7f55c7c57200: cdpl_log.c:731: in cdpl_log_dump_sysinfo(): info: version: O_2018.06_PRIVATE_CDPL_HO2 
+1751811702.628883: 68033-7f55c7c57200: cdpl_log.c:736: in cdpl_log_dump_sysinfo(): info: system: Linux 3.10.0-1160.6.1.el7.x86_64 #1 SMP Tue Nov 17 13:59:11 UTC 2020
+1751811702.628890: 68033-7f55c7c57200: cdpl_log.c:740: in cdpl_log_dump_sysinfo(): info: processor: x86_64 64-bits
+1751811702.628896: 68033-7f55c7c57200: cdpl_log.c:742: in cdpl_log_dump_sysinfo(): info: hostname: IC_EDA
+1751811702.628903: 68033-7f55c7c57200: cdpl_log.c:223: in cdpl_log_open(): debug: path: /home/ICer/ITI/PnR_Grad/Backend/PrimeTime/work/system_log/master.IC_EDA.68033.log
+1751811702.628909: 68033-7f55c7c57200: cdpl_log.c:224: in cdpl_log_open(): debug: dir: /home/ICer/ITI/PnR_Grad/Backend/PrimeTime/work/system_log
+1751811702.628918: 68033-7f55c7c57200: cdpl_log.c:621: in cdpl_log_set_filter(): info: filter level 1
+1751811702.628966: 68033-7f55c7c57200: cdpl_server.c:522: in cdpl_sv_init(): info: new server S1545674545
+1751811702.628986: 68033-7f55c7c57200: cdpl_ipc.c:2731: in cdpl_ipc_init(): info: using IPv4 protocol
+1751811702.631275: 68033-7f55c7c57200: cdpl_server.c:649: in cdpl_sv_new_master(): info: new master M1
+1751811702.631325: 68033-7f55c7c57200: cdpl_compat_master.c:1995: in cdplInitMaster(): info: bcast dir is `/home/ICer/ITI/PnR_Grad/Backend/PrimeTime/work/system_log'
+1751811702.631543: 68033-7f55c7c57200: cdpl_compat_master.c:4048: in cdplMasterLogInfo(): info: PrimeTime Version   : O-2018.06-SP1
+1751811702.631563: 68033-7f55c7c57200: cdpl_compat_master.c:4048: in cdplMasterLogInfo(): info: PrimeTime Build Date: Jul 19, 2018
+1751811702.631571: 68033-7f55c7c57200: cdpl_compat_master.c:4048: in cdplMasterLogInfo(): info: PrimeTime Executable: /home/synopsys/pts/O-2018.06-SP1/linux64/syn/bin/pt_shell_exec
+1751811702.631598: 68033-7f55c7c57200: cdpl_server.c:4347: in cdpl_sv_ctl_master(): warning: CUSTOM WORKER MANAGEMENT
+1751811702.631610: 68033-7f55c7c57200: cdpl_server.c:4417: in cdpl_sv_ctl_master(): warning: master will ignore spurious communication
+1751811702.632163: 68033-7f559b6aa700: cdpl_monitor.c:406: in cdpl_mn_init_client(): info: creating client monitor instance
+1751811702.632210: 68033-7f559b6aa700: cdpl_ipc.c:2731: in cdpl_ipc_init(): info: using IPv4 protocol
+1751811702.633709: 68033-7f559b6aa700: cdpl_ipc.c:3030: in cdpl_ipc_connect(): info: connecting to 127.0.0.1:41435
+1751811702.634972: 68033-7f559b6aa700: cdpl_ipc.c:3099: in cdpl_ipc_connect(): info: connected as `127.0.0.1:43806'
+1751811702.635316: 68033-7f55c7c57200: cdpl_compat_master.c:587: in _check_localhost(): warning: using 127.0.0.1 for the master IP address
+1751811702.635358: 68033-7f55c7c57200: cdpl_farm.c:1427: in cdpl_farm_new_ssh(): info: creating SSH farm
+1751811702.635426: 68033-7f55c7c57200: cdpl_farm.c:2557: in cdpl_farm_setcmd(): info: using custom command `ssh'
+1751811702.635483: 68033-7f55c7c57200: cdpl_compat_master.c:281: in _set_farm_env(): info: exporting CDPL_LOGDIR as `/home/ICer/ITI/PnR_Grad/Backend/PrimeTime/work/system_log'
+1751811702.635505: 68033-7f55c7c57200: cdpl_compat_master.c:301: in _set_farm_env(): info: exporting SNPSLMD_LICENSE_FILE as `27000@IC_EDA'
+1751811702.635515: 68033-7f55c7c57200: cdpl_compat_master.c:321: in _set_farm_env(): info: exporting CDPL_OPTIONS as `[filter][nowlogs]'
+1751811702.635524: 68033-7f55c7c57200: cdpl_compat_master.c:328: in _set_farm_env(): info: exporting DISPLAY as `:0'
+1751811702.635538: 68033-7f55c7c57200: cdpl_compat_master.c:489: in _set_farm_env(): info: exporting SNPSLMD_LICENSE_FILE as `27000@IC_EDA'
+1751811702.635545: 68033-7f55c7c57200: cdpl_compat_master.c:489: in _set_farm_env(): info: exporting DISPLAY as `:0'
+1751811702.635553: 68033-7f55c7c57200: cdpl_compat_master.c:489: in _set_farm_env(): info: exporting DISTRIBUTED_WORKING_DIR as `/home/ICer/ITI/PnR_Grad/Backend/PrimeTime/work'
+1751811702.635577: 68033-7f55c7c57200: cdpl_compat_master.c:489: in _set_farm_env(): info: exporting DISTRIBUTED_MASTER_LAUNCH_DIR as `/home/ICer/ITI/PnR_Grad/Backend/PrimeTime'
+1751811702.635587: 68033-7f55c7c57200: cdpl_compat_master.c:489: in _set_farm_env(): info: exporting SNPS_SML_DISABLED as `false'
+1751811702.635595: 68033-7f55c7c57200: cdpl_compat_master.c:489: in _set_farm_env(): info: exporting CMCR_WKR_LAUNCH_CMD as `/home/synopsys/pts/O-2018.06-SP1/bin/pt_shell -slv_type dmsa_slv'
+1751811702.635677: 68033-7f55c7c57200: cdpl_server.c:725: in cdpl_sv_new_job(): info: new job J1 in M1
+1751811702.635707: 68033-7f55c7c57200: cdpl_server.c:2491: in cdpl_sv_start_job(): info: starting job J1
+1751811702.635980: 68033-7f55c7c57200: cdpl_compat_master.c:1180: in _add_worker(): info: new worker type 100, min:1, max:4, cmd:`/home/synopsys/pts/O-2018.06-SP1/bin/pt_shell -slv_type dmsa_slv -max_cores 4 -hoid 100 -master_uid IC_EDA_68033_100'
+1751811702.636037: 68033-7f55c7c57200: cdpl_server.c:852: in cdpl_sv_new_bin_withfarm(): info: new bin B1 in J1
+1751811702.636291: 68033-7f55c7c57200: cdpl_farm.c:1475: in cdpl_farm_new_sh(): info: creating SH farm on localhost
+1751811702.636324: 68033-7f55c7c57200: cdpl_farm.c:2557: in cdpl_farm_setcmd(): info: using custom command `sh'
+1751811702.636337: 68033-7f55c7c57200: cdpl_compat_master.c:281: in _set_farm_env(): info: exporting CDPL_LOGDIR as `/home/ICer/ITI/PnR_Grad/Backend/PrimeTime/work/system_log'
+1751811702.636348: 68033-7f55c7c57200: cdpl_compat_master.c:301: in _set_farm_env(): info: exporting SNPSLMD_LICENSE_FILE as `27000@IC_EDA'
+1751811702.636357: 68033-7f55c7c57200: cdpl_compat_master.c:321: in _set_farm_env(): info: exporting CDPL_OPTIONS as `[filter][nowlogs]'
+1751811702.636364: 68033-7f55c7c57200: cdpl_compat_master.c:328: in _set_farm_env(): info: exporting DISPLAY as `:0'
+1751811702.636374: 68033-7f55c7c57200: cdpl_compat_master.c:489: in _set_farm_env(): info: exporting SNPSLMD_LICENSE_FILE as `27000@IC_EDA'
+1751811702.636381: 68033-7f55c7c57200: cdpl_compat_master.c:489: in _set_farm_env(): info: exporting DISPLAY as `:0'
+1751811702.636388: 68033-7f55c7c57200: cdpl_compat_master.c:489: in _set_farm_env(): info: exporting DISTRIBUTED_WORKING_DIR as `/home/ICer/ITI/PnR_Grad/Backend/PrimeTime/work'
+1751811702.636395: 68033-7f55c7c57200: cdpl_compat_master.c:489: in _set_farm_env(): info: exporting DISTRIBUTED_MASTER_LAUNCH_DIR as `/home/ICer/ITI/PnR_Grad/Backend/PrimeTime'
+1751811702.636445: 68033-7f55c7c57200: cdpl_compat_master.c:489: in _set_farm_env(): info: exporting SNPS_SML_DISABLED as `false'
+1751811702.636506: 68033-7f55c7c57200: cdpl_compat_master.c:489: in _set_farm_env(): info: exporting CMCR_WKR_LAUNCH_CMD as `/home/synopsys/pts/O-2018.06-SP1/bin/pt_shell -slv_type dmsa_slv'
+1751811702.674206: 68033-7f5599ea7700: cdpl_server_sched.c:478: in _sv_launch_worker(): info: started worker W1 (as C1) in bin B1
+1751811702.674265: 68033-7f5599ea7700: cdpl_server_sched.c:478: in _sv_launch_worker(): info: started worker W2 (as C2) in bin B1
+1751811702.674279: 68033-7f5599ea7700: cdpl_server_sched.c:478: in _sv_launch_worker(): info: started worker W3 (as C3) in bin B1
+1751811702.674290: 68033-7f5599ea7700: cdpl_server_sched.c:478: in _sv_launch_worker(): info: started worker W4 (as C4) in bin B1
+1751811702.674320: 68033-7f5598ea5700: cdpl_sh.c:40: in cdpl_sh_submit(): info: SH : /home/synopsys/pts/O-2018.06-SP1/bin/pt_shell -slv_type dmsa_slv -max_cores 4 -hoid 100 -master_uid IC_EDA_68033_100
+1751811702.677848: 68033-7f5598ea5700: cdpl_sh.c:40: in cdpl_sh_submit(): info: SH : /home/synopsys/pts/O-2018.06-SP1/bin/pt_shell -slv_type dmsa_slv -max_cores 4 -hoid 100 -master_uid IC_EDA_68033_100
+1751811702.682623: 68033-7f5598ea5700: cdpl_sh.c:40: in cdpl_sh_submit(): info: SH : /home/synopsys/pts/O-2018.06-SP1/bin/pt_shell -slv_type dmsa_slv -max_cores 4 -hoid 100 -master_uid IC_EDA_68033_100
+1751811702.685949: 68033-7f5598ea5700: cdpl_sh.c:40: in cdpl_sh_submit(): info: SH : /home/synopsys/pts/O-2018.06-SP1/bin/pt_shell -slv_type dmsa_slv -max_cores 4 -hoid 100 -master_uid IC_EDA_68033_100
+1751811703.637307: 68033-7f55c7c57200: cdpl_server.c:3442: in cdpl_sv_prelaunch(): error: timed out
+1751811704.867913: 68033-7f559beab700: cdpl_server_ipc.c:496: in _sv_on_hello(): info: W1 is `127.0.0.1:43840'
+1751811704.867950: 68033-7f559beab700: cdpl_server_ipc.c:498: in _sv_on_hello(): info: W1 log file is /dev/null
+1751811704.872727: 68033-7f559beab700: cdpl_server_ipc.c:496: in _sv_on_hello(): info: W4 is `127.0.0.1:43842'
+1751811704.872761: 68033-7f559beab700: cdpl_server_ipc.c:498: in _sv_on_hello(): info: W4 log file is /dev/null
+1751811704.876634: 68033-7f559beab700: cdpl_server_ipc.c:496: in _sv_on_hello(): info: W3 is `127.0.0.1:43844'
+1751811704.876666: 68033-7f559beab700: cdpl_server_ipc.c:498: in _sv_on_hello(): info: W3 log file is /dev/null
+1751811704.881508: 68033-7f559beab700: cdpl_server_ipc.c:496: in _sv_on_hello(): info: W2 is `127.0.0.1:43846'
+1751811704.881540: 68033-7f559beab700: cdpl_server_ipc.c:498: in _sv_on_hello(): info: W2 log file is /dev/null
+1751811707.749962: 68033-7f559b6aa700: cdpl_ipc.c:3030: in cdpl_ipc_connect(): info: connecting to 127.0.0.1:44921
+1751811707.750651: 68033-7f559b6aa700: cdpl_ipc.c:3099: in cdpl_ipc_connect(): info: connected as `127.0.0.1:47390'
+1751811707.750763: 68033-7f559b6aa700: cdpl_ipc.c:3030: in cdpl_ipc_connect(): info: connecting to 127.0.0.1:40593
+1751811707.763373: 68033-7f559b6aa700: cdpl_ipc.c:3099: in cdpl_ipc_connect(): info: connected as `127.0.0.1:36054'
+1751811707.763510: 68033-7f559b6aa700: cdpl_ipc.c:3030: in cdpl_ipc_connect(): info: connecting to 127.0.0.1:33371
+1751811707.764188: 68033-7f559b6aa700: cdpl_ipc.c:3099: in cdpl_ipc_connect(): info: connected as `127.0.0.1:39006'
+1751811707.764316: 68033-7f559b6aa700: cdpl_ipc.c:3030: in cdpl_ipc_connect(): info: connecting to 127.0.0.1:45642
+1751811707.765707: 68033-7f559b6aa700: cdpl_ipc.c:3099: in cdpl_ipc_connect(): info: connected as `127.0.0.1:35646'
+1751811714.247178: 68033-7f55c7c57200: cdpl_server.c:1622: in _sv_gen_task(): info: new task T0 in B1 (prio 0)
+1751811714.247269: 68033-7f55c7c57200: cdpl_server.c:1622: in _sv_gen_task(): info: new task T1 in B1 (prio 0)
+1751811714.247310: 68033-7f55c7c57200: cdpl_server.c:1622: in _sv_gen_task(): info: new task T2 in B1 (prio 0)
+1751811714.247333: 68033-7f55c7c57200: cdpl_server.c:1622: in _sv_gen_task(): info: new task T3 in B1 (prio 0)
+1751811714.247466: 68033-7f5599ea7700: cdpl_server_sched.c:709: in _assign(): info: assigning task T0 to worker W1
+1751811714.247548: 68033-7f5599ea7700: cdpl_server_sched.c:709: in _assign(): info: assigning task T1 to worker W4
+1751811714.247577: 68033-7f5599ea7700: cdpl_server_sched.c:709: in _assign(): info: assigning task T2 to worker W3
+1751811714.247609: 68033-7f5599ea7700: cdpl_server_sched.c:709: in _assign(): info: assigning task T3 to worker W2
+1751811738.132791: 68033-7f559beab700: cdpl_server_ipc.c:886: in _sv_on_finish(): info: worker W4 completed task T1
+1751811738.135199: 68033-7f559beab700: cdpl_server_ipc.c:893: in _sv_on_finish(): info: stat T1: utime=16458 stime=7181
+1751811738.135228: 68033-7f559beab700: cdpl_server_ipc.c:901: in _sv_on_finish(): info: statm T1: vsize=2001144 rss=1035920 shared=6860 text=162984 data=1343400
+1751811738.136710: 68033-7f559beab700: cdpl_server_ipc.c:886: in _sv_on_finish(): info: worker W3 completed task T2
+1751811738.136741: 68033-7f559beab700: cdpl_server_ipc.c:893: in _sv_on_finish(): info: stat T2: utime=15542 stime=7635
+1751811738.136750: 68033-7f559beab700: cdpl_server_ipc.c:901: in _sv_on_finish(): info: statm T2: vsize=1985232 rss=1016108 shared=6844 text=162984 data=1327488
+1751811738.145473: 68033-7f559beab700: cdpl_server_ipc.c:886: in _sv_on_finish(): info: worker W2 completed task T3
+1751811738.145503: 68033-7f559beab700: cdpl_server_ipc.c:893: in _sv_on_finish(): info: stat T3: utime=15394 stime=6868
+1751811738.145513: 68033-7f559beab700: cdpl_server_ipc.c:901: in _sv_on_finish(): info: statm T3: vsize=1985232 rss=1016328 shared=6844 text=162984 data=1327488
+1751811738.248055: 68033-7f559beab700: cdpl_server_ipc.c:886: in _sv_on_finish(): info: worker W1 completed task T0
+1751811738.248101: 68033-7f559beab700: cdpl_server_ipc.c:893: in _sv_on_finish(): info: stat T0: utime=15822 stime=7360
+1751811738.248111: 68033-7f559beab700: cdpl_server_ipc.c:901: in _sv_on_finish(): info: statm T0: vsize=2001088 rss=1038148 shared=6952 text=162984 data=1343344
+1751811738.966004: 68033-7f55c7c57200: cdpl_server.c:1622: in _sv_gen_task(): info: new task T4 in B1 (prio 0)
+1751811738.969589: 68033-7f55c7c57200: cdpl_server.c:1622: in _sv_gen_task(): info: new task T5 in B1 (prio 0)
+1751811738.969634: 68033-7f55c7c57200: cdpl_server.c:1622: in _sv_gen_task(): info: new task T6 in B1 (prio 0)
+1751811738.969652: 68033-7f55c7c57200: cdpl_server.c:1622: in _sv_gen_task(): info: new task T7 in B1 (prio 0)
+1751811738.977095: 68033-7f5599ea7700: cdpl_server_sched.c:709: in _assign(): info: assigning task T5 to worker W4
+1751811738.986915: 68033-7f5599ea7700: cdpl_server_sched.c:709: in _assign(): info: assigning task T6 to worker W3
+1751811738.986953: 68033-7f5599ea7700: cdpl_server_sched.c:709: in _assign(): info: assigning task T7 to worker W2
+1751811738.986968: 68033-7f5599ea7700: cdpl_server_sched.c:709: in _assign(): info: assigning task T4 to worker W1
+1751811739.156660: 68033-7f559beab700: cdpl_server_ipc.c:886: in _sv_on_finish(): info: worker W4 completed task T5
+1751811739.156693: 68033-7f559beab700: cdpl_server_ipc.c:893: in _sv_on_finish(): info: stat T5: utime=146 stime=13
+1751811739.156702: 68033-7f559beab700: cdpl_server_ipc.c:901: in _sv_on_finish(): info: statm T5: vsize=2001144 rss=1036264 shared=7116 text=162984 data=1343400
+1751811739.157482: 68033-7f559beab700: cdpl_server_ipc.c:886: in _sv_on_finish(): info: worker W2 completed task T7
+1751811739.157550: 68033-7f559beab700: cdpl_server_ipc.c:893: in _sv_on_finish(): info: stat T7: utime=145 stime=6
+1751811739.157560: 68033-7f559beab700: cdpl_server_ipc.c:901: in _sv_on_finish(): info: statm T7: vsize=1985232 rss=1016644 shared=7100 text=162984 data=1327488
+1751811739.174052: 68033-7f559beab700: cdpl_server_ipc.c:886: in _sv_on_finish(): info: worker W3 completed task T6
+1751811739.174087: 68033-7f559beab700: cdpl_server_ipc.c:893: in _sv_on_finish(): info: stat T6: utime=163 stime=9
+1751811739.174096: 68033-7f559beab700: cdpl_server_ipc.c:901: in _sv_on_finish(): info: statm T6: vsize=1985232 rss=1016440 shared=7100 text=162984 data=1327488
+1751811739.219951: 68033-7f559beab700: cdpl_server_ipc.c:886: in _sv_on_finish(): info: worker W1 completed task T4
+1751811739.219983: 68033-7f559beab700: cdpl_server_ipc.c:893: in _sv_on_finish(): info: stat T4: utime=183 stime=44
+1751811739.219992: 68033-7f559beab700: cdpl_server_ipc.c:901: in _sv_on_finish(): info: statm T4: vsize=2001088 rss=1038276 shared=7008 text=162984 data=1343344
+1751811741.280977: 68033-7f559aea9700: cdpl_ipc.c:802: in _readv(): warning: read(): EOF
+1751811741.314144: 68033-7f559aea9700: cdpl_ipc.c:802: in _readv(): warning: read(): EOF
+1751811741.314201: 68033-7f559aea9700: cdpl_ipc.c:802: in _readv(): warning: read(): EOF
+1751811741.314230: 68033-7f559aea9700: cdpl_ipc.c:802: in _readv(): warning: read(): EOF
+1751811741.502427: 68033-7f55c7c57200: cdpl_server.c:2276: in cdpl_sv_halt_job_errno(): info: stopping job J1
+1751811741.503518: 68033-7f55c7c57200: cdpl_farm.c:1581: in cdpl_farm_free(): info: freeing farm
+1751811741.571771: 68033-7f55c7c57200: cdpl_server.c:281: in _sv_free_job(): info: freeing job J1
+1751811741.573527: 68033-7f55c7c57200: cdpl_farm.c:1581: in cdpl_farm_free(): info: freeing farm
+1751811741.573560: 68033-7f55c7c57200: cdpl_monitor.c:495: in cdpl_mn_kill(): info: killing monitor
+1751811741.573932: 68033-7f559c6ac700: cdpl_ipc.c:802: in _readv(): warning: read(): EOF
+1751811741.580918: 68033-7f559b6aa700: cdpl_ipc.c:2997: in cdpl_ipc_free(): warning: 1 host(s) were not released
+1751811741.596923: 68033-7f55c7c57200: cdpl_server.c:2386: in cdpl_sv_free(): info: freeing server S1545674545
+1751811741.596961: 68033-7f55c7c57200: cdpl_server.c:2351: in cdpl_sv_kill_errno(): info: killing server
+1751811741.597498: 68033-7f55c7c57200: cdpl_server.c:314: in _sv_free_master(): info: freeing master M1

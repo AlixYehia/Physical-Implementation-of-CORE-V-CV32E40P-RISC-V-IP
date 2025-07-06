@@ -1,0 +1,82 @@
+Error: Library Compiler executable path is not set. (PT-063)
+
+                                 PrimeTime (R)
+
+               Version O-2018.06-SP1 for linux64 - Jul 19, 2018 
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+file delete -force ./work
+set multi_scenario_working_directory ./work 
+./work
+create_scenario -name func_slow_Cmax -image sessions/func_slow_Cmax
+1
+create_scenario -name func_slow_Cmin -image sessions/func_slow_Cmin
+1
+create_scenario -name func_fast_Cmax -image sessions/func_fast_Cmax
+1
+create_scenario -name func_fast_Cmin -image sessions/func_fast_Cmin
+1
+set_host_options -num_processes 4 -max_cores 4
+1
+start_hosts
+Launching 4 Distributed Worker(s)
+   1] Launched : sh localhost /home/synopsys/pts/O-2018.06-SP1/bin/pt_shell \
+                  -slv_type dmsa_slv -max_cores 4
+
+   2] Launched : sh localhost /home/synopsys/pts/O-2018.06-SP1/bin/pt_shell \
+                  -slv_type dmsa_slv -max_cores 4
+
+   3] Launched : sh localhost /home/synopsys/pts/O-2018.06-SP1/bin/pt_shell \
+                  -slv_type dmsa_slv -max_cores 4
+
+   4] Launched : sh localhost /home/synopsys/pts/O-2018.06-SP1/bin/pt_shell \
+                  -slv_type dmsa_slv -max_cores 4
+
+  ---------------------------------------------------------------------------
+  Distributed farm creation timeout   : 21600 seconds
+  Waiting for   4 (of   4) workers    : Wed Jul  2 02:48:30 2025
+  Waiting for   0 (of   4) workers    : Wed Jul  2 02:48:40 2025
+  ---------------------------------------------------------------------------
+
+1
+current_session {func_slow_Cmax func_slow_Cmin func_fast_Cmax func_fast_Cmin}
+{"func_slow_Cmax", "func_slow_Cmin", "func_fast_Cmax", "func_fast_Cmin"}
+############################ after_applyment ############################
+sh mkdir -p after_applyment
+report_constraints -all_violators > after_applyment/constraint_violations_check.rpt 
+report_global_timing > after_applyment/global_timing_before_check.rpt
+pt_shell> exit
+
+Timing updates: 0 (0 implicit, 0 explicit) (0 incremental, 0 full, 0 logical)
+Noise updates: 0 (0 implicit, 0 explicit) (0 incremental, 0 full)
+
+Maximum memory usage for distributed processes:
+AUTO_0          4   localhost          1465.46 MB
+                3   localhost          1465.43 MB
+                1   localhost          1450.00 MB
+                2   localhost          1449.96 MB
+CPU time usage for distributed processes:
+AUTO_0          4   localhost          23 seconds
+                3   localhost          24 seconds
+                1   localhost          23 seconds
+                2   localhost          22 seconds
+Elapsed time for distributed processes:
+AUTO_0          4   localhost          168 seconds
+                3   localhost          168 seconds
+                1   localhost          168 seconds
+                2   localhost          168 seconds
+Maximum memory usage for this session: 1002.78 MB
+CPU usage for this session: 3 seconds 
+Elapsed time for this session: 174 seconds
+Shutting down worker processes ...
+ Shutdown Process 4
+ Shutdown Process 3
+ Shutdown Process 1
+ Shutdown Process 2
+Diagnostics summary: 1 error, 4 informationals
+
+Thank you for using pt_shell!

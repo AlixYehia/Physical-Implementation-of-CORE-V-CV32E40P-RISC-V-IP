@@ -1,0 +1,27 @@
+
+****************************************
+Report : Violation analysis
+Design : cv32e40p_top
+Version: O-2018.06-SP1
+Date   : Fri Jul  4 21:43:28 2025
+****************************************
+
+START_CMD: analyze_design_violations CPU:   5830 s ( 1.62 hr) ELAPSE: 183774 s (51.05 hr) MEM-PEAK:   774 Mb Fri Jul  4 21:43:28 2025
+Number of Site types in the design = 1
+Setting up Chip Core
+Chip Core shape: (170000 170000) (2739280 2738000)
+Number of unique PDs = 1
+Number of Power Domains = 1
+Number of Voltage Areas = 1
+Number of supply Nets = 2
+Number of used supplies = 2
+Use advanced legalizer engine : 0
+Warning: Library cell saed14rvt:SAEDRVT14_ISOFSDPQ_PECO_8.frame is missing supply pins. Its power structure cannot be determined. (LGL-050)
+Warning: Library cell saed14rvt:SAEDRVT14_DCAP_PV1ECO_12.frame is missing supply pins. Its power structure cannot be determined. (LGL-050)
+Design utilization is 0.331385
+
+  Start analyzing MAX_TRANS violations.
+
+  No max_trans violation is found.
+
+END_CMD: analyze_design_violations CPU:   5838 s ( 1.62 hr) ELAPSE: 183782 s (51.05 hr) MEM-PEAK:   774 Mb Fri Jul  4 21:43:36 2025

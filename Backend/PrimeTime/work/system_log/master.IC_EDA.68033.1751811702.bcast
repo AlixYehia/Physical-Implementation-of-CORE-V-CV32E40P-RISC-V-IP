@@ -1,0 +1,10 @@
+# Master Broadcast File
+time 1751811702
+pid 68033
+log /home/ICer/ITI/PnR_Grad/Backend/PrimeTime/work/system_log/master.IC_EDA.68033.log
+tcp 127.0.0.1:41435
+wlog /dev/null
+wlog /dev/null
+wlog /dev/null
+wlog /dev/null
+status done

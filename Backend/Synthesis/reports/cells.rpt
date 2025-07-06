@@ -3,7 +3,7 @@
 Report : cell
 Design : cv32e40p_top
 Version: O-2018.06-SP1
-Date   : Sat May 24 22:45:34 2025
+Date   : Tue Jul  1 12:04:21 2025
 ****************************************
 
 Attributes:
@@ -20,8 +20,8 @@ U2                        SAEDRVT14_TIE0_V1_2
                                           saed14rvt_ss0p6v125c
                                                           0.488400  
 core_i                    cv32e40p_core_COREV_PULP0_COREV_CLUSTER0_FPU0_FPU_ADDMUL_LAT0_FPU_OTHERS_LAT0_ZFINX0_NUM_MHPMCOUNTERS1
-                                                          13255.797593
+                                                          16508.142043
                                                                     b, h, n, p
 --------------------------------------------------------------------------------
-Total 2 cells                                             13256.285993
+Total 2 cells                                             16508.630443
 1

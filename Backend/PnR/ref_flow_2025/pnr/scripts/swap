@@ -1,0 +1,6 @@
+layout open  ./output/mips_16.gds ??
+layout open  /home/standard_cell_libraries/NangateOpenCellLibrary_PDKv1_3_v2010_12/lib/Back_End/gds/NangateOpenCellLibrary.gds ??
+layout merge overwrite {layout 1} {layout 2 layer_offset 0:0} -dbu 1e-10 -format gds -output ./output/mips_16_new.gds
+layout open  ./output/mips_16_new.gds ??
+layout extract ./output/mips_16_swap.gds -format gds -cell mips_16
+exit

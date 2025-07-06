@@ -1,38 +1,0 @@
-<Database>
-Name/home/ICer/ITI/PnR_Grad/Backend/PnR/check_workspace.ems
-Creation TimeThu May 22 16:16:40 2025
-Modified TimeThu May 22 16:17:11 2025
-Design Name
-Library Name
-</Database>
-<RuleCount>
-LM-0011
-LM-0334
-LM-0341
-LM-0521
-LM-1071
-LM-1099
-LM-1251
-</RuleCount>
-<UserDefinedRules>
-</UserDefinedRules>
-<Messages>
-LM-001para113210para2dynamic power record10para3s10
-LM-125para1dynamic power records10
-LM-033para1FRAME10para2saed14rvt_2/SAEDRVT14_ISOFSDPQ_PECO_410para3 - Extra DB/power  :  VDD10
-LM-033para1FRAME10para2saed14rvt_2/SAEDRVT14_ISOFSDPQ_PECO_810para3 - Extra DB/ground :  VSS10
-LM-107para1SAEDRVT14_TIEDIN_PV1ECO_610
-LM-033para1FRAME10para2saed14rvt_2/SAEDRVT14_DCAP_PV1ECO_1210para3 - Extra DB/power  :  VDD VDDR - Extra DB/ground :  VSS10
-LM-109para1saed14rvt_2/SAEDRVT14_AOINV_IW_0P5/VDDR10
-LM-109para1saed14rvt_2/SAEDRVT14_AOINV_IW_1/VDDR10
-LM-109para1saed14rvt_2/SAEDRVT14_AOINV_IW_2/VDDR10
-LM-109para1saed14rvt_2/SAEDRVT14_AOINV_IW_4/VDDR10
-LM-109para1saed14rvt_2/SAEDRVT14_AOINV_IW_6/VDDR10
-LM-033para1FRAME10para2saed14rvt_2/SAEDRVT14_FILL_NNWVDDBRKY2_310para3 - Extra DB/power  :  VDD10
-LM-109para1saed14rvt_2/SAEDRVT14_FILLP2/VDDR10
-LM-109para1saed14rvt_2/SAEDRVT14_FILLP3/VDDR10
-LM-109para1saed14rvt_2/SAEDRVT14_TAPPP10/VDDR10
-LM-109para1saed14rvt_2/SAEDRVT14_CAPTTAPP6/VDDR10
-LM-034para192210para2s10para3922 with a frame view (896 had ports reordered);10
-LM-052para113110para2s10
-</Messages>

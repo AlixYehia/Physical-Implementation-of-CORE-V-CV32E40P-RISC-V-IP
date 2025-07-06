@@ -1,4 +1,6 @@
 
+set_host_options -max_cores 12
+
 ########################### Define Top Module ############################
                                                    
 set top_module cv32e40p_top
@@ -28,11 +30,11 @@ lappend search_path "/home/ICer/ITI/PnR_Grad/rtl/include"
 lappend search_path "/home/ICer/ITI/PnR_Grad/rtl/vendor/pulp_platform_fpnew/src"
 
 set SSLIB "saed14rvt_ss0p6v125c.db" 
-set TTLIB "saed14rvt_tt0p6v25c.db"
-set FFLIB "saed14rvt_ff0p88v125c.db" 
+set TTLIB "saed14rvt_tt0p8v25c.db"
+set FFLIB "saed14rvt_ff0p88vm40c.db"
 
 ## Standard Cell libraries 
-set target_library [list $SSLIB $TTLIB $FFLIB]
+set target_library [list $SSLIB]
 
 ## Standard Cell & Hard Macros libraries 
 set link_library [list * $SSLIB $TTLIB $FFLIB]
@@ -111,8 +113,8 @@ puts "###############################################"
 puts "############ Design Constraints #### ##########"
 puts "###############################################"
 
+source -echo -v /home/ICer/ITI/PnR_Grad/Backend/PnR/scripts/import/dont_use.tcl
 source -echo -v cons/cv32e40p_core.sdc
-source -echo -v cons/cons.tcl
 
 ###################### Mapping and optimization ########################
 puts "###############################################"
@@ -141,13 +143,13 @@ report_area -hierarchy > reports/area.rpt
 report_cell > reports/cells.rpt
 report_qor > reports/qor.rpt
 report_power -hierarchy > reports/power.rpt
-report_timing -delay_type max -max_paths 10 > reports/setup.rpt
+report_timing -delay_type max -max_paths 10 -significant_digits 4 > reports/setup.rpt
 report_clock -attributes > reports/clocks.rpt
 report_resources > reports/resources.rpt
-report_constraint -all_violators -nosplit > reports/constraints.rpt
+report_constraint -all_violators -significant_digits 4 -nosplit > reports/constraints.rpt
 
 ############################################################################
-# DFT Preparation Section
+# report_constraintDFT Preparation Section
 ############################################################################
 
 ### to calculate no. of chains based on ff no. ###

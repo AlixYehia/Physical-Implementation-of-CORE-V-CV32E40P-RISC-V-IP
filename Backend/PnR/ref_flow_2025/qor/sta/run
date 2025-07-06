@@ -1,0 +1,5 @@
+cd max
+pt_shell -f ./sta.tcl
+cd ../min
+pt_shell -f ./sta.tcl
+cd ../

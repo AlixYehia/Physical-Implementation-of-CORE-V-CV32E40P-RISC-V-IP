@@ -1,0 +1,427 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 10
+Design : mips_16
+Version: O-2018.06-SP1
+Date   : Sat Mar 15 16:26:39 2025
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss0p6v125c   Library: saed14rvt_ss0p6v125c
+Wire Load Model Mode: top
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: reg_file/reg_array_reg[0][9]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mips_16            16000                 saed14rvt_ss0p6v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 f
+  reset (in)                                              0.00       2.00 f
+  control_unit/reset (control)                            0.00       2.00 f
+  control_unit/U3/X (SAEDRVT14_OAI21_V1_4)                0.04       2.04 r
+  control_unit/reg_write (control)                        0.00       2.04 r
+  reg_file/reg_write_en (register_file)                   0.00       2.04 r
+  reg_file/U11/X (SAEDRVT14_AN2B_MM_4)                    0.03       2.08 r
+  reg_file/U3/X (SAEDRVT14_ND3_2)                         0.06       2.14 f
+  reg_file/U65/X (SAEDRVT14_AO22_2)                       0.08       2.22 f
+  reg_file/reg_array_reg[0][9]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.01       2.22 f
+  data arrival time                                                  2.22
+
+  clock clk (rise edge)                                   4.00       4.00
+  clock network delay (ideal)                             0.00       4.00
+  clock uncertainty                                      -0.35       3.65
+  reg_file/reg_array_reg[0][9]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.00       3.65 r
+  library setup time                                     -0.02       3.63
+  data required time                                                 3.63
+  --------------------------------------------------------------------------
+  data required time                                                 3.63
+  data arrival time                                                 -2.22
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.41
+
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: reg_file/reg_array_reg[0][8]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mips_16            16000                 saed14rvt_ss0p6v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 f
+  reset (in)                                              0.00       2.00 f
+  control_unit/reset (control)                            0.00       2.00 f
+  control_unit/U3/X (SAEDRVT14_OAI21_V1_4)                0.04       2.04 r
+  control_unit/reg_write (control)                        0.00       2.04 r
+  reg_file/reg_write_en (register_file)                   0.00       2.04 r
+  reg_file/U11/X (SAEDRVT14_AN2B_MM_4)                    0.03       2.08 r
+  reg_file/U3/X (SAEDRVT14_ND3_2)                         0.06       2.14 f
+  reg_file/U64/X (SAEDRVT14_AO22_2)                       0.08       2.22 f
+  reg_file/reg_array_reg[0][8]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.01       2.22 f
+  data arrival time                                                  2.22
+
+  clock clk (rise edge)                                   4.00       4.00
+  clock network delay (ideal)                             0.00       4.00
+  clock uncertainty                                      -0.35       3.65
+  reg_file/reg_array_reg[0][8]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.00       3.65 r
+  library setup time                                     -0.02       3.63
+  data required time                                                 3.63
+  --------------------------------------------------------------------------
+  data required time                                                 3.63
+  data arrival time                                                 -2.22
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.41
+
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: reg_file/reg_array_reg[0][7]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mips_16            16000                 saed14rvt_ss0p6v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 f
+  reset (in)                                              0.00       2.00 f
+  control_unit/reset (control)                            0.00       2.00 f
+  control_unit/U3/X (SAEDRVT14_OAI21_V1_4)                0.04       2.04 r
+  control_unit/reg_write (control)                        0.00       2.04 r
+  reg_file/reg_write_en (register_file)                   0.00       2.04 r
+  reg_file/U11/X (SAEDRVT14_AN2B_MM_4)                    0.03       2.08 r
+  reg_file/U3/X (SAEDRVT14_ND3_2)                         0.06       2.14 f
+  reg_file/U63/X (SAEDRVT14_AO22_2)                       0.08       2.22 f
+  reg_file/reg_array_reg[0][7]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.01       2.22 f
+  data arrival time                                                  2.22
+
+  clock clk (rise edge)                                   4.00       4.00
+  clock network delay (ideal)                             0.00       4.00
+  clock uncertainty                                      -0.35       3.65
+  reg_file/reg_array_reg[0][7]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.00       3.65 r
+  library setup time                                     -0.02       3.63
+  data required time                                                 3.63
+  --------------------------------------------------------------------------
+  data required time                                                 3.63
+  data arrival time                                                 -2.22
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.41
+
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: reg_file/reg_array_reg[0][6]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mips_16            16000                 saed14rvt_ss0p6v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 f
+  reset (in)                                              0.00       2.00 f
+  control_unit/reset (control)                            0.00       2.00 f
+  control_unit/U3/X (SAEDRVT14_OAI21_V1_4)                0.04       2.04 r
+  control_unit/reg_write (control)                        0.00       2.04 r
+  reg_file/reg_write_en (register_file)                   0.00       2.04 r
+  reg_file/U11/X (SAEDRVT14_AN2B_MM_4)                    0.03       2.08 r
+  reg_file/U3/X (SAEDRVT14_ND3_2)                         0.06       2.14 f
+  reg_file/U62/X (SAEDRVT14_AO22_2)                       0.08       2.22 f
+  reg_file/reg_array_reg[0][6]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.01       2.22 f
+  data arrival time                                                  2.22
+
+  clock clk (rise edge)                                   4.00       4.00
+  clock network delay (ideal)                             0.00       4.00
+  clock uncertainty                                      -0.35       3.65
+  reg_file/reg_array_reg[0][6]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.00       3.65 r
+  library setup time                                     -0.02       3.63
+  data required time                                                 3.63
+  --------------------------------------------------------------------------
+  data required time                                                 3.63
+  data arrival time                                                 -2.22
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.41
+
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: reg_file/reg_array_reg[0][5]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mips_16            16000                 saed14rvt_ss0p6v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 f
+  reset (in)                                              0.00       2.00 f
+  control_unit/reset (control)                            0.00       2.00 f
+  control_unit/U3/X (SAEDRVT14_OAI21_V1_4)                0.04       2.04 r
+  control_unit/reg_write (control)                        0.00       2.04 r
+  reg_file/reg_write_en (register_file)                   0.00       2.04 r
+  reg_file/U11/X (SAEDRVT14_AN2B_MM_4)                    0.03       2.08 r
+  reg_file/U3/X (SAEDRVT14_ND3_2)                         0.06       2.14 f
+  reg_file/U61/X (SAEDRVT14_AO22_2)                       0.08       2.22 f
+  reg_file/reg_array_reg[0][5]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.01       2.22 f
+  data arrival time                                                  2.22
+
+  clock clk (rise edge)                                   4.00       4.00
+  clock network delay (ideal)                             0.00       4.00
+  clock uncertainty                                      -0.35       3.65
+  reg_file/reg_array_reg[0][5]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.00       3.65 r
+  library setup time                                     -0.02       3.63
+  data required time                                                 3.63
+  --------------------------------------------------------------------------
+  data required time                                                 3.63
+  data arrival time                                                 -2.22
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.41
+
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: reg_file/reg_array_reg[0][4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mips_16            16000                 saed14rvt_ss0p6v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 f
+  reset (in)                                              0.00       2.00 f
+  control_unit/reset (control)                            0.00       2.00 f
+  control_unit/U3/X (SAEDRVT14_OAI21_V1_4)                0.04       2.04 r
+  control_unit/reg_write (control)                        0.00       2.04 r
+  reg_file/reg_write_en (register_file)                   0.00       2.04 r
+  reg_file/U11/X (SAEDRVT14_AN2B_MM_4)                    0.03       2.08 r
+  reg_file/U3/X (SAEDRVT14_ND3_2)                         0.06       2.14 f
+  reg_file/U60/X (SAEDRVT14_AO22_2)                       0.08       2.22 f
+  reg_file/reg_array_reg[0][4]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.01       2.22 f
+  data arrival time                                                  2.22
+
+  clock clk (rise edge)                                   4.00       4.00
+  clock network delay (ideal)                             0.00       4.00
+  clock uncertainty                                      -0.35       3.65
+  reg_file/reg_array_reg[0][4]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.00       3.65 r
+  library setup time                                     -0.02       3.63
+  data required time                                                 3.63
+  --------------------------------------------------------------------------
+  data required time                                                 3.63
+  data arrival time                                                 -2.22
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.41
+
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: reg_file/reg_array_reg[0][3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mips_16            16000                 saed14rvt_ss0p6v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 f
+  reset (in)                                              0.00       2.00 f
+  control_unit/reset (control)                            0.00       2.00 f
+  control_unit/U3/X (SAEDRVT14_OAI21_V1_4)                0.04       2.04 r
+  control_unit/reg_write (control)                        0.00       2.04 r
+  reg_file/reg_write_en (register_file)                   0.00       2.04 r
+  reg_file/U11/X (SAEDRVT14_AN2B_MM_4)                    0.03       2.08 r
+  reg_file/U3/X (SAEDRVT14_ND3_2)                         0.06       2.14 f
+  reg_file/U59/X (SAEDRVT14_AO22_2)                       0.08       2.22 f
+  reg_file/reg_array_reg[0][3]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.01       2.22 f
+  data arrival time                                                  2.22
+
+  clock clk (rise edge)                                   4.00       4.00
+  clock network delay (ideal)                             0.00       4.00
+  clock uncertainty                                      -0.35       3.65
+  reg_file/reg_array_reg[0][3]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.00       3.65 r
+  library setup time                                     -0.02       3.63
+  data required time                                                 3.63
+  --------------------------------------------------------------------------
+  data required time                                                 3.63
+  data arrival time                                                 -2.22
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.41
+
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: reg_file/reg_array_reg[0][2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mips_16            16000                 saed14rvt_ss0p6v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 f
+  reset (in)                                              0.00       2.00 f
+  control_unit/reset (control)                            0.00       2.00 f
+  control_unit/U3/X (SAEDRVT14_OAI21_V1_4)                0.04       2.04 r
+  control_unit/reg_write (control)                        0.00       2.04 r
+  reg_file/reg_write_en (register_file)                   0.00       2.04 r
+  reg_file/U11/X (SAEDRVT14_AN2B_MM_4)                    0.03       2.08 r
+  reg_file/U3/X (SAEDRVT14_ND3_2)                         0.06       2.14 f
+  reg_file/U58/X (SAEDRVT14_AO22_2)                       0.08       2.22 f
+  reg_file/reg_array_reg[0][2]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.01       2.22 f
+  data arrival time                                                  2.22
+
+  clock clk (rise edge)                                   4.00       4.00
+  clock network delay (ideal)                             0.00       4.00
+  clock uncertainty                                      -0.35       3.65
+  reg_file/reg_array_reg[0][2]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.00       3.65 r
+  library setup time                                     -0.02       3.63
+  data required time                                                 3.63
+  --------------------------------------------------------------------------
+  data required time                                                 3.63
+  data arrival time                                                 -2.22
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.41
+
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: reg_file/reg_array_reg[0][1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mips_16            16000                 saed14rvt_ss0p6v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 f
+  reset (in)                                              0.00       2.00 f
+  control_unit/reset (control)                            0.00       2.00 f
+  control_unit/U3/X (SAEDRVT14_OAI21_V1_4)                0.04       2.04 r
+  control_unit/reg_write (control)                        0.00       2.04 r
+  reg_file/reg_write_en (register_file)                   0.00       2.04 r
+  reg_file/U11/X (SAEDRVT14_AN2B_MM_4)                    0.03       2.08 r
+  reg_file/U3/X (SAEDRVT14_ND3_2)                         0.06       2.14 f
+  reg_file/U57/X (SAEDRVT14_AO22_2)                       0.08       2.22 f
+  reg_file/reg_array_reg[0][1]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.01       2.22 f
+  data arrival time                                                  2.22
+
+  clock clk (rise edge)                                   4.00       4.00
+  clock network delay (ideal)                             0.00       4.00
+  clock uncertainty                                      -0.35       3.65
+  reg_file/reg_array_reg[0][1]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.00       3.65 r
+  library setup time                                     -0.02       3.63
+  data required time                                                 3.63
+  --------------------------------------------------------------------------
+  data required time                                                 3.63
+  data arrival time                                                 -2.22
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.41
+
+
+  Startpoint: reset (input port clocked by clk)
+  Endpoint: reg_file/reg_array_reg[0][0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mips_16            16000                 saed14rvt_ss0p6v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 f
+  reset (in)                                              0.00       2.00 f
+  control_unit/reset (control)                            0.00       2.00 f
+  control_unit/U3/X (SAEDRVT14_OAI21_V1_4)                0.04       2.04 r
+  control_unit/reg_write (control)                        0.00       2.04 r
+  reg_file/reg_write_en (register_file)                   0.00       2.04 r
+  reg_file/U11/X (SAEDRVT14_AN2B_MM_4)                    0.03       2.08 r
+  reg_file/U3/X (SAEDRVT14_ND3_2)                         0.06       2.14 f
+  reg_file/U56/X (SAEDRVT14_AO22_2)                       0.08       2.22 f
+  reg_file/reg_array_reg[0][0]/D (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.01       2.22 f
+  data arrival time                                                  2.22
+
+  clock clk (rise edge)                                   4.00       4.00
+  clock network delay (ideal)                             0.00       4.00
+  clock uncertainty                                      -0.35       3.65
+  reg_file/reg_array_reg[0][0]/CK (SAEDRVT14_FSDPRBQ_V2LP_2)
+                                                          0.00       3.65 r
+  library setup time                                     -0.02       3.63
+  data required time                                                 3.63
+  --------------------------------------------------------------------------
+  data required time                                                 3.63
+  data arrival time                                                 -2.22
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.41
+
+
+1

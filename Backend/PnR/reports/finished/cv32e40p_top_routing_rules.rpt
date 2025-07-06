@@ -1,0 +1,6 @@
+Name     WidthMltplr SpacingMltplr TaperDist DriverTaperDist TaperOverPinLayers TaperUnderPinLayers DriverTaperOverPinLayers DriverTaperUnderPinLayers ParallelWireLayers
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+clknet_NDR 2         2
+clknet_NDR_ext_spacing 2 2
+default_rule_equivalent_ndr_double_spacing 1 1
+1

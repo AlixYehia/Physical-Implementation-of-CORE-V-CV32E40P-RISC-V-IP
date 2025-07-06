@@ -1,4 +1,6 @@
 
+set_host_options -max_cores 12
+
 ############################  Search PATH ################################
 
 set top_module cv32e40p_top

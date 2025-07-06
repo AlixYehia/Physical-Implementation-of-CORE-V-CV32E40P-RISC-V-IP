@@ -1,0 +1,32 @@
+****************************************
+Report : library
+Library: cv32e40p_top
+Version: O-2018.06-SP1
+Date   : Tue Jul  1 12:10:06 2025
+****************************************
+
+Full name: /home/ICer/ITI/PnR_Grad/Backend/PnR/cv32e40p_top:cv32e40p_top
+File name: /home/ICer/ITI/PnR_Grad/Backend/PnR/cv32e40p_top
+Design count: 1
+No timing data.
+
+
+Parasitic tech data:
+----------------------------------------
+ Parasitic tech name:            tlup_max
+ Parasitic itf technology name:  saed14nm_1p9m_Cmax
+ Parasitic tech type:            TLUPLUS
+ Parasitic source file name:     /mnt/hgfs/saed14_pdk/ttt/SAED14nm_PDK_12232018/starrc/max/saed14nm_1p9m_Cmax.tluplus
+ Parasitic canonical file name:  /mnt/hgfs/saed14_pdk/ttt/SAED14nm_PDK_12232018/starrc/max/saed14nm_1p9m_Cmax.tluplus
+
+----------------------------------------
+ Parasitic tech name:            tlup_min
+ Parasitic itf technology name:  saed14nm_1p9m_Cmin
+ Parasitic tech type:            TLUPLUS
+ Parasitic source file name:     /mnt/hgfs/saed14_pdk/ttt/SAED14nm_PDK_12232018/starrc/min/saed14nm_1p9m_Cmin.tluplus
+ Parasitic canonical file name:  /mnt/hgfs/saed14_pdk/ttt/SAED14nm_PDK_12232018/starrc/min/saed14nm_1p9m_Cmin.tluplus
+
+
+
+
+1

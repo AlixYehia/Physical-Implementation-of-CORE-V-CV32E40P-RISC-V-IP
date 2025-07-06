@@ -1,0 +1,37 @@
+****************************************
+Report : constraint
+	-all_violators
+	-path slack_only
+Design : cv32e40p_top
+Version: O-2018.06-SP1
+Date   : Sun Jul  6 22:16:58 2025
+****************************************
+
+
+
+
+
+
+   min_capacitance
+
+                             Required        Actual
+   Pin                      Capacitance    Capacitance       Slack
+   -----------------------------------------------------------------
+   boot_addr_i[0]               0.15           0.00          -0.15  (VIOLATED)
+   boot_addr_i[1]               0.15           0.00          -0.15  (VIOLATED)
+   dm_exception_addr_i[0]       0.15           0.00          -0.15  (VIOLATED)
+   dm_exception_addr_i[1]       0.15           0.00          -0.15  (VIOLATED)
+   dm_halt_addr_i[0]            0.15           0.00          -0.15  (VIOLATED)
+   dm_halt_addr_i[1]            0.15           0.00          -0.15  (VIOLATED)
+   mtvec_addr_i[0]              0.15           0.00          -0.15  (VIOLATED)
+   mtvec_addr_i[1]              0.15           0.00          -0.15  (VIOLATED)
+   mtvec_addr_i[2]              0.15           0.00          -0.15  (VIOLATED)
+   mtvec_addr_i[3]              0.15           0.00          -0.15  (VIOLATED)
+   mtvec_addr_i[4]              0.15           0.00          -0.15  (VIOLATED)
+   mtvec_addr_i[5]              0.15           0.00          -0.15  (VIOLATED)
+   mtvec_addr_i[6]              0.15           0.00          -0.15  (VIOLATED)
+   mtvec_addr_i[7]              0.15           0.00          -0.15  (VIOLATED)
+   pulp_clock_en_i              0.15           0.00          -0.15  (VIOLATED)
+
+
+1

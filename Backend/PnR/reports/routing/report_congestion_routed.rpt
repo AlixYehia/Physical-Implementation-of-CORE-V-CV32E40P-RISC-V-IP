@@ -1,0 +1,15 @@
+****************************************
+Report : congestion
+Design : cv32e40p_top
+Version: O-2018.06-SP1
+Date   : Fri Jul  4 21:42:22 2025
+****************************************
+
+Layer     |    overflow     |              # GRCs has
+Name      |  total  |  max  | overflow (%)      | max overflow
+---------------------------------------------------------------
+Both Dirs |     750 |     9 |     418  ( 0.09%) |       1
+H routing |     525 |     7 |     293  ( 0.12%) |       1
+V routing |     225 |     9 |     125  ( 0.05%) |       1
+
+1

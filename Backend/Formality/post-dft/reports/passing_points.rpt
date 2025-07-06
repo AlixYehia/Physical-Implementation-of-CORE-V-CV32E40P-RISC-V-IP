@@ -4,10 +4,10 @@ Report         : passing_points
 Reference      : Ref:/WORK/cv32e40p_top
 Implementation : Imp:/WORK/cv32e40p_top
 Version        : L-2016.03-SP1
-Date           : Wed May 21 22:37:51 2025
+Date           : Wed Jul  2 12:47:42 2025
 **************************************************
 
-2246 Passing compare points:
+2278 Passing compare points:
 
   Ref  LAT        Ref:/WORK/cv32e40p_top/core_i/sleep_unit_i/core_clock_gate_i/core_clock_gate
   Impl LAT        Imp:/WORK/cv32e40p_top/core_i/sleep_unit_i/core_clock_gate_i/core_clock_gate
@@ -2067,6 +2067,9 @@ Date           : Wed May 21 22:37:51 2025
   Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/controller_i/ctrl_fsm_cs_reg[3]
   Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/controller_i/ctrl_fsm_cs_reg[3]
 
+  Ref  DFF0X      Ref:/WORK/cv32e40p_top/core_i/id_stage_i/controller_i/ctrl_fsm_cs_reg[4]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/controller_i/ctrl_fsm_cs_reg[4]
+
   Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/controller_i/debug_force_wakeup_q_reg
   Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/controller_i/debug_force_wakeup_q_reg
 
@@ -2513,6 +2516,99 @@ Date           : Wed May 21 22:37:51 2025
 
   Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/mult_signed_mode_ex_o_reg[1]
   Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/mult_signed_mode_ex_o_reg[1]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[10]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[10]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[11]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[11]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[12]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[12]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[13]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[13]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[14]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[14]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[15]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[15]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[16]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[16]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[17]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[17]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[18]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[18]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[19]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[19]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[1]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[1]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[20]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[20]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[21]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[21]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[22]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[22]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[23]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[23]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[24]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[24]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[25]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[25]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[26]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[26]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[27]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[27]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[28]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[28]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[29]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[29]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[2]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[2]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[30]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[30]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[31]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[31]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[3]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[3]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[4]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[4]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[5]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[5]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[6]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[6]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[7]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[7]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[8]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[8]
+
+  Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[9]
+  Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/pc_ex_o_reg[9]
 
   Ref  DFF        Ref:/WORK/cv32e40p_top/core_i/id_stage_i/prepost_useincr_ex_o_reg
   Impl DFF        Imp:/WORK/cv32e40p_top/core_i/id_stage_i/prepost_useincr_ex_o_reg

@@ -35,8 +35,26 @@
 #                                                                            //
 #//////////////////////////////////////////////////////////////////////////////
 
+
+# Modified script by Eng. Ali
+
+
+####################################################################################
+           #########################################################
+                  #### Section 0 : DC Variables ####
+           #########################################################
+#################################################################################### 
+
+# Prevent assign statements in the generated netlist (must be applied before compile command)
+set_fix_multiple_port_nets -all -buffer_constants -feedthroughs
+
+
+
 # 200MHz
 set clock_period 5.0
+
+# 10 MHz
+set scan_clock_period 100
 
 # Input delays for interrupts
 set in_delay_irq          [expr $clock_period * 0.50] 
@@ -75,6 +93,7 @@ set out_delay_core_sleep [expr $clock_period * 0.25]
 # All clocks
 set clock_ports [list \
     clk_i \
+    scan_clk \
 ]
 
 # IRQ Input ports
@@ -122,20 +141,68 @@ set sleep_output_ports [list \
     core_sleep_o \
 ]
 
-############## Defining default clock definitions ##############
+set scan_input_ports [list test_mode SI SE]
+
+set scan_output_port SO
+
+set resets [list rst_ni scan_rst]
+
+####################################################################################
+           #########################################################
+                  #### Section 1 : Clock Definition ####
+           #########################################################
+#################################################################################### 
 
 create_clock \
       -name clk_i \
       -period $clock_period \
-      [get_ports clk_i] 
+      [get_ports clk_i]
+
+set_clock_uncertainty [expr 0.01 * $clock_period] [get_clocks clk_i]
+
+
+create_clock \
+      -name scan_clk \
+      -period 100 \
+      [get_ports scan_clk] 
+
+set_clock_uncertainty [expr 0.1 * $scan_clock_period] [get_clocks scan_clk]
+
+# Clocks
+set_dont_touch_network [get_clocks clk_i]
+set_dont_touch_network [get_ports scan_clk]
+# Resets
+set_dont_touch_network [get_ports rst_ni]
+set_dont_touch_network [get_ports scan_rst]
+
+####################################################################################
+           #########################################################
+             #### Section 2 : Clocks Relationship ####
+           #########################################################
+####################################################################################
+
+set_case_analysis 1 [get_ports test_mode]
+set_clock_groups -physically_exclusive -group {scan_clk} -group {clk_i}
+
+set_false_path -from [get_clocks clk_i] -to [get_ports {SI SO SE}]
+set_false_path -from [get_ports {SI SO SE}] -to [get_clocks clk_i]
+####################################################################################
+           #########################################################
+             #### Section 3 : set input/output delay on ports ####
+           #########################################################
+####################################################################################
 
 
 ########### Defining Default I/O constraints ###################
 
 set all_clock_ports $clock_ports
 
-set all_other_input_ports  [remove_from_collection [all_inputs]  [get_ports [list $all_clock_ports $obi_input_ports $irq_input_ports $early_input_ports]]]
-set all_other_output_ports [remove_from_collection [all_outputs] [get_ports [list $all_clock_ports $obi_output_ports $sleep_output_ports $irq_output_ports]]]
+
+# Here, I must use concat instead of list, since the variables are lists and get_ports can't work on a list of lists — it treats clk_i scan_clk as a single port name. The same applies to outputs.
+
+set all_other_input_ports  [remove_from_collection [all_inputs]  [get_ports [concat $all_clock_ports $resets $obi_input_ports $irq_input_ports $early_input_ports $scan_input_ports]]]
+
+set all_other_output_ports [remove_from_collection [all_outputs] [get_ports [concat $all_clock_ports $obi_output_ports $sleep_output_ports $irq_output_ports $scan_output_port]]]
 
 # IRQs
 set_input_delay  $in_delay_irq          [get_ports $irq_input_ports        ] -clock clk_i
@@ -165,3 +232,36 @@ set_input_delay  $in_delay_other        [get_ports $all_other_input_ports  ] -cl
 
 set_output_delay $out_delay_other       [get_ports $all_other_output_ports ] -clock clk_i
 set_output_delay $out_delay_core_sleep  [ get_ports core_sleep_o           ] -clock clk_i
+
+
+####################################################################################
+           #########################################################
+                  #### Section 4 : Driving cells ####
+           #########################################################
+####################################################################################
+
+set_driving_cell -lib_cell SAEDRVT14_BUF_4 -pin X [remove_from_collection [all_inputs] [get_ports {clk_i scan_clk rst_ni scan_rst}]]
+
+
+####################################################################################
+           #########################################################
+                  #### Section 5 : Output load ####
+           ########################################################
+####################################################################################
+
+set_load 0.5 [all_outputs] 
+
+set_max_fanout 25 [current_design]
+
+
+####################################################################################
+           #########################################################
+                 #### Section 6 : Operating Condition ####
+           #########################################################
+####################################################################################
+
+# Define the Worst Library for Max(#setup) analysis
+# Define the Best Library for Min(hold) analysis
+
+#set_operating_conditions -min_library "saed14rvt_ff0p88vm40c" -min "ff0p88vm40c" -max_library "saed14rvt_ss0p6v125c" -max "ss0p6v125c"
+

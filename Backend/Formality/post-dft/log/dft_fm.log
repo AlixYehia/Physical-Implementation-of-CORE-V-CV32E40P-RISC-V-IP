@@ -19,9 +19,12 @@
 
 Build: 4031317
 Hostname: IC_EDA (RHEL64)
-Current time: Wed May 21 22:35:13 2025
+Current time: Wed Jul  2 12:44:40 2025
 
 Loading db file '/home/synopsys/Formality2016/libraries/syn/gtech.db'
+set_host_options -max_cores 12
+Warning:  max_cores must be <= 8; setting max_cores to 8.
+1
 ############################  Search PATH ################################
 set top_module cv32e40p_top
 cv32e40p_top
@@ -400,15 +403,15 @@ match
 Reference design is 'Ref:/WORK/cv32e40p_top'
 Implementation design is 'Imp:/WORK/cv32e40p_top'
 Status:  Checking designs...
-    Warning: 6 (127) undriven nets found in reference (implementation) design; see formality.log for list (FM-399)
+    Warning: 5 (94) undriven nets found in reference (implementation) design; see formality.log for list (FM-399)
 Status:  Building verification models...
 Status:  Processing Guide Commands...
     Set 'Ref:/WORK/cv32e40p_top/SE' to constant 0    
     Set 'Imp:/WORK/cv32e40p_top/SE' to constant 0    
-    Set 'Ref:/WORK/cv32e40p_top/test_mode' to constant 1    
-    Set 'Imp:/WORK/cv32e40p_top/test_mode' to constant 1    
+    Set 'Ref:/WORK/cv32e40p_top/test_mode' to constant 0    
+    Set 'Imp:/WORK/cv32e40p_top/test_mode' to constant 0    
     Set 'Imp:/WORK/cv32e40p_top/SE' to constant 0    ; previous value was also 0
-    Set 'Imp:/WORK/cv32e40p_top/test_mode' to constant 1    ; previous value was also 1
+    Set 'Imp:/WORK/cv32e40p_top/test_mode' to constant 0    ; previous value was also 0
 
 ***************************** Guidance Summary *****************************
                                          Status
@@ -418,14 +421,15 @@ environment         :          2          0          0          0          2
 instance_map        :         25          0          0          0         25
 mark                :         32          0          0          0         32
 multiplier          :          9          0          0          0          9
-reg_constant        :        355          0          0          0        355
+reg_constant        :        354          0          0          0        354
 replace             :          2          0          0          0          2
 scan_input          :          2          0          0          0          2
 transformation
    map              :        144          0          0          0        144
    share            :          4          0          0          0          4
    tree             :         10          0          0          0         10
-uniquify            :         19         10          0          0         29
+uniquify            :         20         10          0          0         30
+ununiquify          :          1          0          0          0          1
 
 Note: If verification succeeds you can safely ignore unaccepted guidance commands.
 
@@ -440,13 +444,13 @@ SVF files produced:
 Status:  Matching...
     
 *********************************** Matching Results ***********************************    
- 2246 Compare points matched by name    
+ 2278 Compare points matched by name    
  0 Compare points matched by signature analysis    
  0 Compare points matched by topology    
- 238 Matched primary inputs, black-box outputs    
+ 239 Matched primary inputs, black-box outputs    
  0(0) Unmatched reference(implementation) compare points    
  0(0) Unmatched reference(implementation) primary inputs, black-box outputs    
- 356(0) Unmatched reference(implementation) unread points    
+ 355(0) Unmatched reference(implementation) unread points    
 ****************************************************************************************
 
 1
@@ -456,13 +460,13 @@ Reference design is 'Ref:/WORK/cv32e40p_top'
 Implementation design is 'Imp:/WORK/cv32e40p_top'
     
 *********************************** Matching Results ***********************************    
- 2246 Compare points matched by name    
+ 2278 Compare points matched by name    
  0 Compare points matched by signature analysis    
  0 Compare points matched by topology    
- 238 Matched primary inputs, black-box outputs    
+ 239 Matched primary inputs, black-box outputs    
  0(0) Unmatched reference(implementation) compare points    
  0(0) Unmatched reference(implementation) primary inputs, black-box outputs    
- 356(0) Unmatched reference(implementation) unread points    
+ 355(0) Unmatched reference(implementation) unread points    
 ****************************************************************************************
 
 Status:  Verifying...
@@ -513,16 +517,16 @@ Verification SUCCEEDED
 -----------------------------------------------------------------------
  Reference design: Ref:/WORK/cv32e40p_top
  Implementation design: Imp:/WORK/cv32e40p_top
- 2246 Passing compare points
+ 2278 Passing compare points
 ----------------------------------------------------------------------------------------
 Matched Compare Points     BBPin    Loop   BBNet     Cut    Port     DFF     LAT   TOTAL
 ----------------------------------------------------------------------------------------
-Passing (equivalent)           0       0       0       0     113    2132       1    2246
+Passing (equivalent)           0       0       0       0     113    2164       1    2278
 Failing (not equivalent)       0       0       0       0       0       0       0       0
 Not Compared
   Constant reg                                                        86       0      86
   Don't verify                 0       0       0       0       5       0       0       5
-  Unread                       0       0       0       0       0      39       0      39
+  Unread                       0       0       0       0       0       8       0       8
 ****************************************************************************************
 1
 if {!$successful} {
@@ -539,3 +543,10 @@ start_gui
 1
 1
 fm_shell (verify)> 
+Maximum memory usage for this session: 1833776 KB
+CPU usage for this session: 230.2 seconds
+Current time: Wed Jul  2 12:48:44 2025
+Elapsed time: 245 seconds
+Number of cores used: 8
+
+Thank you for using Formality (R)!

@@ -1,0 +1,105 @@
+
+icc2_shell> set design mips_16
+mips_16
+icc2_shell> 
+icc2_shell> sh rm -rf $design
+icc2_shell> 
+icc2_shell> #set sc_dir "/home/standard_cell_libraries/NangateOpenCellLibrary_PDKv1_3_v2010_12"
+icc2_shell> set sc_dir "/home/ICer/PDK"
+/home/ICer/PDK
+icc2_shell> 
+icc2_shell> 
+icc2_shell> set_app_var search_path "/home/ICer/PDK/lib/Front_End/Liberty/NLDM"
+/home/ICer/PDK/lib/Front_End/Liberty/NLDM
+icc2_shell> 
+icc2_shell> set_app_var link_library "* NangateOpenCellLibrary_ss0p95vn40c.db"
+* NangateOpenCellLibrary_ss0p95vn40c.db
+icc2_shell> #set_app_var target_library "NangateOpenCellLibrary_ss0p95vn40c.db"
+icc2_shell> 
+icc2_shell> 
+icc2_shell> 
+? ? 
+icc2_shell> create_lib ./${design}  -technology $sc_dir/tech/techfile/milkyway/FreePDK45_10m.tf  -ref_libs $sc_dir/lib/Back_End/mdb
+Error: Syntax error in property belonging to section Layer. Ignoring it. (FreePDK45_10m.tf:859) (TECH-229)
+Warning: Property layerNumber is re-defined in section Layer. Ignoring previous definition.(FreePDK45_10m.tf line:860) (TECH-220)
+Warning: Property maskName is re-defined in section Layer. Ignoring previous definition.(FreePDK45_10m.tf line:861) (TECH-220)
+Warning: Property isDefaultLayer is re-defined in section Layer. Ignoring previous definition.(FreePDK45_10m.tf line:862) (TECH-220)
+Warning: Property visible is re-defined in section Layer. Ignoring previous definition.(FreePDK45_10m.tf line:863) (TECH-220)
+Warning: Property selectable is re-defined in section Layer. Ignoring previous definition.(FreePDK45_10m.tf line:864) (TECH-220)
+Warning: Property blink is re-defined in section Layer. Ignoring previous definition.(FreePDK45_10m.tf line:865) (TECH-220)
+Warning: Property color is re-defined in section Layer. Ignoring previous definition.(FreePDK45_10m.tf line:866) (TECH-220)
+Warning: Property lineStyle is re-defined in section Layer. Ignoring previous definition.(FreePDK45_10m.tf line:867) (TECH-220)
+Warning: Property pattern is re-defined in section Layer. Ignoring previous definition.(FreePDK45_10m.tf line:868) (TECH-220)
+Warning: Property pitch is re-defined in section Layer. Ignoring previous definition.(FreePDK45_10m.tf line:870) (TECH-220)
+Warning: Property defaultWidth is re-defined in section Layer. Ignoring previous definition.(FreePDK45_10m.tf line:871) (TECH-220)
+Warning: Property minWidth is re-defined in section Layer. Ignoring previous definition.(FreePDK45_10m.tf line:872) (TECH-220)
+Warning: Property minSpacing is re-defined in section Layer. Ignoring previous definition.(FreePDK45_10m.tf line:873) (TECH-220)
+Warning: FreePDK45_10m.tf line 1094, ContactCode 'VIA45' has undefined or zero-enclosures. (TECH-250)
+Warning: ContactCode has an invalid maskName. Layer '' is not a pre-defined maskName. (line 1107) (TECH-258w)
+Warning: Found invalid layer/layer stack for ContactCode 'VIA56'. (line 1105) (TECH-055w)
+Warning: FreePDK45_10m.tf line 1111, ContactCode 'VIA56' has undefined or zero-enclosures. (TECH-250)
+Warning: FreePDK45_10m.tf line 1107, layer 'metal6' referenced by 'ContactCode VIA56' is undefined. This rule will be ignored. (TECH-003)
+Warning: ContactCode has an invalid maskName. Layer '' is not a pre-defined maskName. (line 1123) (TECH-258w)
+Warning: Found invalid layer/layer stack for ContactCode 'VIA67'. (line 1122) (TECH-055w)
+Warning: FreePDK45_10m.tf line 1123, layer 'metal6' referenced by 'ContactCode VIA67' is undefined. This rule will be ignored. (TECH-003)
+Warning: FreePDK45_10m.tf line 1145, ContactCode 'VIA78' has undefined or zero-enclosures. (TECH-250)
+Warning: FreePDK45_10m.tf line 1162, ContactCode 'VIA89' has undefined or zero-enclosures. (TECH-250)
+Warning: FreePDK45_10m.tf line 1179, ContactCode 'VIA910' has undefined or zero-enclosures. (TECH-250)
+Warning: FreePDK45_10m.tf line 1318, layer 'metal6' referenced by 'DensityRule' is undefined. This rule will be ignored. (TECH-003)
+Warning: FreePDK45_10m.tf line 1325, layer 'metal6' referenced by 'DensityRule' is undefined. This rule will be ignored. (TECH-003)
+Error: Layer is missing with mask name 'via5'. (TECH-041)
+Error: Valid contact code is missing for via layer 'via6'. (TECH-039)
+Error: Cannot load technology file '/home/ICer/PDK/tech/techfile/milkyway/FreePDK45_10m.tf'. (LIB-007)
+Error: problem in create_lib
+        Use error_info for more info. (CMD-013)
+icc2_shell> 
+icc2_shell> man TECH-041
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
+       TECH-041 (error) Layer is missing with mask name '%s'.
+
+DESCRIPTION
+       This  error message occurs when a Layer section with the specified mask
+       name is missing from the technology file.  All metal and via layers  up
+       to the highest defined physical layer must be defined in the technology
+       file.
+
+       For example, if only metal1, via1, metal2, via2, metal3, and metal4 are
+       defined, then via3 is missing and the error message appears.
+
+       The following is an example of the error message:
+
+         Error : Layer is missing with mask name 'via3'. (TECH-041)
+
+WHAT NEXT
+       Define  a  Layer  section with the specified mask name and then run the
+       command again.
+
+                          Version O-2018.06-SP1
+            Copyright (c) 2018 Synopsys, Inc. All rights reserved.
+icc2_shell> 
+icc2_shell> 
+? ? 
+icc2_shell> create_lib ./${design}  -technology $sc_dir/tech/techfile/milkyway/FreePDK45_10m.tf  -ref_libs $sc_dir/lib/Back_End/mdb
+Warning: FreePDK45_10m.tf line 1094, ContactCode 'VIA45' has undefined or zero-enclosures. (TECH-250)
+Warning: FreePDK45_10m.tf line 1111, ContactCode 'VIA56' has undefined or zero-enclosures. (TECH-250)
+Warning: FreePDK45_10m.tf line 1145, ContactCode 'VIA78' has undefined or zero-enclosures. (TECH-250)
+Warning: FreePDK45_10m.tf line 1162, ContactCode 'VIA89' has undefined or zero-enclosures. (TECH-250)
+Warning: FreePDK45_10m.tf line 1179, ContactCode 'VIA910' has undefined or zero-enclosures. (TECH-250)
+Error: Cannot load technology file '/home/ICer/PDK/tech/techfile/milkyway/FreePDK45_10m.tf'. (LIB-007)
+Error: problem in create_lib
+        Use error_info for more info. (CMD-013)
+icc2_shell> 
+icc2_shell> set tlupmax "$sc_dir/tech/rcxt/FreePDK45_10m_Cmax.tlup"
+/home/ICer/PDK/tech/rcxt/FreePDK45_10m_Cmax.tlup
+icc2_shell> 
+icc2_shell> 
+? ? 
+icc2_shell> create_lib ./ndm/${design}  -technology $sc_dir/tech/techfile/milkyway/FreePDK45_10m.tf  -ref_libs $sc_dir/lib/Back_End/mdb
+Error: Unable to access directory '/home/ICer/ref_flow_2025/ndm'; path is invalid (FILE-005)
+Error: problem in create_lib
+        Use error_info for more info. (CMD-013)
+icc2_shell> 
+icc2_shell> 
